@@ -8144,7 +8144,7 @@ body {
 }
 
 .home-impact-card span {
-    color: #64748b;
+    color: #111827;
     font-weight: 700;
     line-height: 1.35;
     font-size: 14px;
@@ -11801,6 +11801,7 @@ body {
 
 .libraries-new-search {
     max-width: 780px;
+    width: 100%;
     margin: 38px auto 0;
     background: white;
     border-radius: 24px;
@@ -11823,7 +11824,9 @@ body {
     background: transparent;
     font-size: 16px;
 }
-
+.libraries-new-search input::placeholder {
+    font-size: 15px;
+}
 /* STATS HERO */
 
 .libraries-hero-stats {
@@ -11991,6 +11994,9 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+.library-cover div {
+    margin-top: 45px;
+}
 
 .library-cover.north,
 .library-cover.green {
@@ -12116,9 +12122,17 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #f97316;
+    background: linear-gradient(135deg, #f59e0b, #f97316);
+    color: #fff;
     text-decoration: none;
     font-weight: 900;
+
+    padding: 14px 22px;
+    border-radius: 16px;
+}
+
+.library-feature-body > a i {
+    color: #fff;
 }
 
 /* MAPA */
@@ -14627,7 +14641,12 @@ body {
     inset: 0;
     border-radius: 30px;
     background:
-        linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent);
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,.7),
+            transparent
+        );
     transform: translateX(-100%);
     animation: navSoftShine 9s ease-in-out infinite;
     pointer-events: none;
@@ -14642,7 +14661,9 @@ body {
     transform: translateY(-2px) scale(1.04);
 }
 
-/* Chips más vivos */
+/* ==========================================
+   CHIPS PREMIUM
+========================================== */
 
 .menu-item button,
 .menu-item > a {
@@ -14650,16 +14671,70 @@ body {
     overflow: hidden;
     border: 1px solid rgba(226,232,240,.82);
     background: rgba(255,255,255,.72);
+
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+
+    padding: 11px 18px;
+
+    transition:
+        transform .28s ease,
+        box-shadow .28s ease,
+        background .28s ease;
 }
+
+.menu-label,
+.menu-item span {
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+}
+
+/* Capa de color suave */
 
 .menu-item button::before,
 .menu-item > a::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(250,204,21,.18), rgba(20,184,166,.12));
+    background:
+        linear-gradient(
+            135deg,
+            rgba(250,204,21,.18),
+            rgba(20,184,166,.12)
+        );
     opacity: 0;
     transition: .25s ease;
+}
+
+/* Efecto brillo premium */
+
+.menu-item button::after,
+.menu-item > a::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -60%;
+    width: 45%;
+    height: 210%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.75),
+        transparent
+    );
+    transform: rotate(22deg);
+    transition: left .55s ease;
+    opacity: 0;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.menu-item:hover button::after,
+.menu-item:hover > a::after {
+    left: 125%;
+    opacity: 1;
 }
 
 .menu-item button i,
@@ -14667,15 +14742,11 @@ body {
 .menu-item > a i,
 .menu-item > a span {
     position: relative;
-    z-index: 2;
+    z-index: 4;
 }
-
-.menu-item:hover button::before,
-.menu-item:hover > a::before {
-    opacity: 1;
-}
-
-/* Colores de borde suave por sección */
+/* ==========================================
+   COLORES POR SECCIÓN
+========================================== */
 
 .bibliotecas button {
     border-color: rgba(22,101,52,.18);
@@ -14688,8 +14759,8 @@ body {
 }
 
 .comunidad button {
-    border-color: rgba(37,99,235,.18);
-    background: rgba(239,246,255,.78);
+    border-color: rgba(124,58,237,.20);
+    background: rgba(245,243,255,.78);
 }
 
 .programacion button {
@@ -14697,39 +14768,45 @@ body {
     background: rgba(255,247,237,.78);
 }
 
-/* Convocatorias más integrada con el hero */
+/* ==========================================
+   CONVOCATORIAS
+========================================== */
 
 .convocatorias > a {
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #f59e0b, #f97316, #14b8a6);
+
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #f97316,
+            #14b8a6
+        );
+
     background-size: 180% 180%;
     animation: navCtaGradient 8s ease infinite;
+
+    color: #fff;
+    border: none;
 }
 
-.convocatorias > a::after {
-    content: "";
-    position: absolute;
-    top: -40%;
-    left: -30%;
-    width: 40%;
-    height: 180%;
-    background: rgba(255,255,255,.35);
-    transform: rotate(22deg);
-    transition: .35s ease;
-}
-
-.convocatorias:hover > a::after {
-    left: 120%;
-}
-
-/* Login más premium */
+/* ==========================================
+   LOGIN
+========================================== */
 
 .user-icon {
     background:
-        linear-gradient(135deg, rgba(255,247,237,.96), rgba(236,253,245,.90));
+        linear-gradient(
+            135deg,
+            rgba(255,247,237,.96),
+            rgba(236,253,245,.90)
+        );
+
     border: 1px solid rgba(249,115,22,.22);
-    box-shadow: 0 10px 24px rgba(249,115,22,.12);
+
+    box-shadow:
+        0 10px 24px rgba(249,115,22,.12);
 }
 
 .user-icon i {
@@ -14737,18 +14814,34 @@ body {
 }
 
 .user-icon:hover {
-    background: linear-gradient(135deg, #f59e0b, #f97316, #14b8a6);
+    background:
+        linear-gradient(
+            135deg,
+            #f59e0b,
+            #f97316,
+            #14b8a6
+        );
+
     background-size: 180% 180%;
     animation: navCtaGradient 5s ease infinite;
 }
 
-/* Dropdown más tipo tarjeta premium */
+/* ==========================================
+   DROPDOWN
+========================================== */
 
 .dropdown-menu {
     backdrop-filter: blur(18px);
+
     background:
-        linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,247,237,.96));
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.98),
+            rgba(255,247,237,.96)
+        );
+
     border: 1px solid rgba(255,255,255,.85);
+
     box-shadow:
         0 24px 60px rgba(15,23,42,.16),
         inset 0 1px 0 rgba(255,255,255,.9);
@@ -14758,10 +14851,12 @@ body {
     color: #f97316;
 }
 
-/* Animaciones */
+/* ==========================================
+   ANIMACIONES
+========================================== */
 
 @keyframes navSoftShine {
-    0%, 55%, 100% {
+    0%,55%,100% {
         transform: translateX(-120%);
         opacity: 0;
     }
@@ -14790,7 +14885,12 @@ body {
     }
 }
 
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
 @media(max-width: 720px) {
+
     .top-navigation {
         margin: 12px 12px 0;
     }
@@ -14798,4 +14898,119 @@ body {
     .top-navigation::before {
         display: none;
     }
+
+    .menu-item button,
+    .menu-item > a,
+    .menu-label,
+    .menu-item span {
+        font-size: 12px;
+    }
+}
+.top-logo-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.cultura-logo {
+    height: 46px;
+    width: auto;
+    object-fit: contain;
+}
+
+.menu-item button,
+.menu-item > a {
+    width: 58px;
+    min-width: 58px;
+    justify-content: center;
+    transition: all .35s ease;
+}
+
+.menu-label {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: all .35s ease;
+}
+
+.menu-item:hover button,
+.menu-item:hover > a {
+    width: auto;
+    min-width: 58px;
+    padding-right: 18px;
+}
+
+.menu-item:hover .menu-label {
+    max-width: 220px;
+    opacity: 1;
+    margin-left: 8px;
+}
+.menu-item button,
+.menu-item > a {
+    position: relative;
+    overflow: hidden;
+}
+
+.menu-item button::after,
+.menu-item > a::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -80%;
+    width: 60px;
+    height: 220%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.8),
+        transparent
+    );
+    transform: rotate(25deg);
+    opacity: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.menu-item:hover button::after,
+.menu-item:hover > a::after {
+    opacity: 1;
+    animation: menuShine .7s ease forwards;
+}
+
+.menu-item i,
+.menu-item span {
+    position: relative;
+    z-index: 10;
+}
+
+@keyframes menuShine {
+    from {
+        left: -80%;
+    }
+    to {
+        left: 140%;
+    }
+}
+.top-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.top-logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.rbpc-logo {
+    height: 76px;
+    width: auto;
+    object-fit: contain;
+}
+
+.cultura-logo {
+    height: 64px;
+    width: auto;
+    object-fit: contain;
 }
