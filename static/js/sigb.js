@@ -1095,3 +1095,23 @@ function enableKeyboardMode() {
 function signLanguageSoon() {
     alert("La opción de lengua de señas estará disponible próximamente.");
 }
+document.addEventListener("DOMContentLoaded", function () {
+    const hero = document.querySelector(".home-hero-v2, .hero-modern");
+
+    if (!hero) return;
+
+    hero.addEventListener("mousemove", function (event) {
+        const rect = hero.getBoundingClientRect();
+
+        const x = ((event.clientX - rect.left) / rect.width) * 100;
+        const y = ((event.clientY - rect.top) / rect.height) * 100;
+
+        hero.style.setProperty("--x", `${x}%`);
+        hero.style.setProperty("--y", `${y}%`);
+    });
+
+    hero.addEventListener("mouseleave", function () {
+        hero.style.setProperty("--x", "20%");
+        hero.style.setProperty("--y", "30%");
+    });
+});
