@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo OPAC | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    {% include "components/top_navigation.html" %}
+
+    <main class="opac-page">
+
+        <section class="opac-header">
+
+            <span class="opac-badge">
+                <i class="fa-solid fa-layer-group"></i>
+                Catálogo OPAC
+            </span>
+
+            <h1>
+                Descubre de lo que se está <strong>hablando</strong>
+            </h1>
+
+            <p>
+                Explora libros, recursos digitales, audiolibros, podcast,
+                exposiciones y contenidos culturales disponibles en la Red.
+            </p>
+
+        </section>
+
+        <section class="opac-controls">
+
+            <div class="opac-tabs">
+
+                <button class="opac-tab active" data-type="todos" onclick="filterOpac('todos', this)">
+                    ✨ Lo Nuevo
+                </button>
+
+                <button class="opac-tab" data-type="recomendado" onclick="filterOpac('recomendado', this)">
+                    ☆ Recomendado
+                </button>
+
+                <button class="opac-tab" data-type="mas-leido" onclick="filterOpac('mas-leido', this)">
+                    ↗ Más Leído
+                </button>
+
+                <button class="opac-tab" data-type="libro" onclick="filterOpac('libro', this)">
+                    📖 Literatura
+                </button>
+
+                <button class="opac-tab" data-type="audiolibro" onclick="filterOpac('audiolibro', this)">
+                    🎧 Audiolibros
+                </button>
+
+                <button class="opac-tab" data-type="podcast" onclick="filterOpac('podcast', this)">
+                    🎙 Podcast
+                </button>
+
+                <button class="opac-tab" data-type="exposicion" onclick="filterOpac('exposicion', this)">
+                    🖼 Exposiciones
+                </button>
+
+            </div>
+
+            <div class="opac-search-row">
+
+                <div class="opac-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text"
+                           id="opacSearch"
+                           placeholder="Buscar en el catálogo..."
+                           onkeyup="searchOpac()">
+                </div>
+
+                <select class="opac-select">
+                    <option>Más reciente</option>
+                    <option>Más consultado</option>
+                    <option>Mejor valorado</option>
+                </select>
+
+                <button class="opac-filter-btn">
+                    <i class="fa-solid fa-sliders"></i>
+                    Filtros avanzados
+                </button>
+
+            </div>
+
+        </section>
+
+        <p class="opac-count">
+            Mostrando recursos disponibles
+        </p>
+
+        <section class="opac-grid">
+
+            <article class="opac-card libro recomendado mas-leido">
+                <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=800" alt="Libro">
+                <span class="opac-type">Libro</span>
+                <h3>El infinito en un junco</h3>
+                <p>Irene Vallejo</p>
+                <small>⭐ 4.8 · 4.6K vistas</small>
+            </article>
+
+            <article class="opac-card libro recomendado">
+                <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=800" alt="Libro">
+                <span class="opac-type">Libro</span>
+                <h3>Cien años de soledad</h3>
+                <p>Gabriel García Márquez</p>
+                <small>⭐ 4.9 · 125K vistas</small>
+            </article>
+
+            <article class="opac-card audiolibro">
+                <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800" alt="Audiolibro">
+                <span class="opac-type">Audiolibro</span>
+                <h3>Historias para imaginar</h3>
+                <p>Red de Bibliotecas</p>
+                <small>⭐ 4.6 · 8.5K escuchas</small>
+            </article>
+
+            <article class="opac-card podcast">
+                <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=800" alt="Podcast">
+                <span class="opac-type">Podcast</span>
+                <h3>Voces del Pacífico</h3>
+                <p>Podcast cultural</p>
+                <small>⭐ 4.7 · 12.3K escuchas</small>
+            </article>
+
+            <article class="opac-card exposicion">
+                <img src="https://images.unsplash.com/photo-1564399579883-451a5d44ec08?w=800" alt="Exposición">
+                <span class="opac-type">Exposición</span>
+                <h3>Arte, memoria y territorio</h3>
+                <p>Museo Arqueológico</p>
+                <small>⭐ 4.8 · 15K visitas</small>
+            </article>
+
+            <article class="opac-card libro mas-leido">
+                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800" alt="Biblioteca">
+                <span class="opac-type">E-book</span>
+                <h3>La sombra del viento</h3>
+                <p>Carlos Ruiz Zafón</p>
+                <small>⭐ 4.7 · 88K vistas</small>
+            </article>
+
+            <article class="opac-card biblioteca-digital recomendado">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800" alt="Recurso digital">
+                <span class="opac-type">Digital</span>
+                <h3>Recursos para aprender tecnología</h3>
+                <p>Biblioteca Digital</p>
+                <small>⭐ 4.5 · Recurso abierto</small>
+            </article>
+
+            <article class="opac-card exposicion">
+                <img src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?w=800" alt="Archivo fotográfico">
+                <span class="opac-type">Archivo</span>
+                <h3>Memoria fotográfica de Cali</h3>
+                <p>Archivo Fotográfico</p>
+                <small>⭐ 4.6 · Patrimonio visual</small>
+            </article>
+
+        </section>
+
+    </main>
+    {% include 'components/accessibility.html' %}
+    {% include 'components/luma.html' %}
+    {% include 'components/footer.html' %}
+    <script>
+        window.OPAC_INITIAL_TYPE = "{{ tipo }}";
+    </script>
+
+    <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

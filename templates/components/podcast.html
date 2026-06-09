@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Podcast RBPC | Red de Bibliotecas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="podcast-page">
+
+    <section class="podcast-hero">
+        <span class="podcast-badge">
+            <i class="fa-solid fa-headphones"></i>
+            Podcast · Red de Bibliotecas Públicas de Cali
+        </span>
+
+        <h1>Podcast de la Red</h1>
+        <p>Historias que se escuchan</p>
+
+        <div class="podcast-meta">
+            <span><i class="fa-solid fa-microphone-lines"></i> Temporada 3 · 8 episodios</span>
+            <span><i class="fa-regular fa-clock"></i> Producción mensual</span>
+            <span><i class="fa-solid fa-headphones"></i> Acceso gratuito</span>
+        </div>
+
+        <div class="podcast-actions">
+            <a href="/biblioteca-digital">
+                <i class="fa-solid fa-book-open"></i>
+                Biblioteca Digital
+            </a>
+
+            <a href="#">
+                <i class="fa-brands fa-spotify"></i>
+                Escuchar en Spotify
+            </a>
+        </div>
+    </section>
+
+    <section class="podcast-section">
+        <div class="section-title">
+            <span>Temporada 3</span>
+            <h2>Historias sonoras que celebran nuestra cultura</h2>
+            <p>
+                Narrativas sonoras que celebran la lectura, la cultura
+                y las historias de nuestras comunidades en Santiago de Cali.
+            </p>
+        </div>
+
+        <div class="podcast-filters">
+            <button class="podcast-filter active" onclick="filterPodcast('all', this)">Todos</button>
+            <button class="podcast-filter" onclick="filterPodcast('cuentos', this)">Cuentos</button>
+            <button class="podcast-filter" onclick="filterPodcast('critica', this)">Crítica literaria</button>
+            <button class="podcast-filter" onclick="filterPodcast('comunidad', this)">Comunidad</button>
+            <button class="podcast-filter" onclick="filterPodcast('maker', this)">MakerLab</button>
+        </div>
+
+        <div class="podcast-grid">
+
+            <article class="podcast-item cuentos">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T1 · E15 · 25 min</span>
+                    <h3>Borondoteca: Cuentos para soñar</h3>
+                    <p>Serie de cuentacuentos con narradores profesionales de la Red de Bibliotecas de Cali.</p>
+                </div>
+            </article>
+
+            <article class="podcast-item critica">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T2 · E3 · 42 min</span>
+                    <h3>Crítica Literaria: Realismo mágico hoy</h3>
+                    <p>Análisis de cómo el realismo mágico sigue vigente en la narrativa latinoamericana contemporánea.</p>
+                </div>
+            </article>
+
+            <article class="podcast-item comunidad">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T1 · E5 · 52 min</span>
+                    <h3>La chuspa literaria: Libros que cambiaron vidas</h3>
+                    <p>Comunidad de lectores comparte experiencias que marcaron su relación con la lectura.</p>
+                </div>
+            </article>
+
+            <article class="podcast-item maker">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T1 · E8 · 30 min</span>
+                    <h3>MakerLab: Creando en la biblioteca</h3>
+                    <p>Bibliotecas como espacios de creación, impresión 3D, robótica y diseño digital.</p>
+                </div>
+            </article>
+
+            <article class="podcast-item critica">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T2 · E12 · 38 min</span>
+                    <h3>Páginas al aire: Entrevista con Juan Fernando Merino</h3>
+                    <p>Conversación sobre narrativa caleña y el futuro de la literatura regional.</p>
+                </div>
+            </article>
+
+            <article class="podcast-item comunidad">
+                <div class="podcast-play"><i class="fa-solid fa-play"></i></div>
+                <div>
+                    <span>T3 · E1 · 45 min</span>
+                    <h3>Voces del Pacífico</h3>
+                    <p>Tradiciones orales, música y gastronomía del Pacífico colombiano.</p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+</main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

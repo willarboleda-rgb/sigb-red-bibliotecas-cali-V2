@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Bibliotecas | Red de Bibliotecas Públicas de Cali
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include 'components/top_navigation.html' %}
+
+<main class="libraries-page">
+
+    <!-- HERO -->
+
+    <section class="libraries-new-hero">
+
+        <span class="libraries-new-badge">
+            <i class="fa-solid fa-lines-leaning"></i>
+            Red de Bibliotecas
+        </span>
+
+        <h1>
+            Las Bibliotecas de la Red
+        </h1>
+
+        <p>
+            Explora las bibliotecas públicas que transforman la cultura de Cali.
+            Descubre espacios de lectura, creación y comunidad en cada rincón de la ciudad.
+        </p>
+
+        <div class="libraries-new-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                   id="librariesSearch"
+                   placeholder="Buscar biblioteca por nombre, comuna o territorio..."
+                   onkeyup="searchLibraries()">
+
+        </div>
+
+        <div class="libraries-hero-stats">
+
+            <span>
+                <i class="fa-regular fa-building"></i>
+                23 Bibliotecas
+            </span>
+
+            <span>
+                <i class="fa-solid fa-book-open"></i>
+                221.5k Libros
+            </span>
+
+            <span>
+                <i class="fa-solid fa-users"></i>
+                49.4k Usuarios activos
+            </span>
+
+            <span>
+                <i class="fa-solid fa-globe"></i>
+                5 Territorios
+            </span>
+
+        </div>
+
+    </section>
+
+    <!-- TERRITORIOS RESUMEN -->
+
+    <section class="libraries-territory-summary">
+
+        <article>
+            <i class="fa-regular fa-building"></i>
+            <h3>Norte</h3>
+            <p>5 bibliotecas</p>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-building"></i>
+            <h3>Oriente</h3>
+            <p>4 bibliotecas</p>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-building"></i>
+            <h3>Sur</h3>
+            <p>5 bibliotecas</p>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-building"></i>
+            <h3>Occidente</h3>
+            <p>4 bibliotecas</p>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-building"></i>
+            <h3>Centro</h3>
+            <p>5 bibliotecas</p>
+        </article>
+
+    </section>
+
+    <!-- FILTROS -->
+
+    <section class="libraries-filter-section">
+
+        <i class="fa-solid fa-filter"></i>
+
+        <button class="libraries-filter active"
+                onclick="filterLibraries('all', this)">
+            Todos
+        </button>
+
+        <button class="libraries-filter"
+                onclick="filterLibraries('urbana', this)">
+            Urbanas
+        </button>
+
+        <button class="libraries-filter"
+                onclick="filterLibraries('rural', this)">
+            Rurales
+        </button>
+
+        <button class="libraries-filter"
+                onclick="filterLibraries('tematica', this)">
+            Temáticas
+        </button>
+
+        <button class="libraries-filter"
+                onclick="filterLibraries('certificada', this)">
+            Certificadas
+        </button>
+
+        <button class="libraries-filter"
+                onclick="filterLibraries('bibliomio', this)">
+            BiblioMíos
+        </button>
+
+    </section>
+
+    <!-- TARJETAS DESTACADAS -->
+
+    <section class="libraries-card-grid">
+
+        <article class="library-feature-card urbana certificada norte">
+
+            <div class="library-cover north">
+                <span>Norte</span>
+                <button><i class="fa-regular fa-heart"></i></button>
+
+                <div>
+                    <h3>CC Nuevo Latir</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Comuna 3</p>
+                </div>
+
+                <strong>
+                    <i class="fa-solid fa-star"></i>
+                    4.8
+                </strong>
+            </div>
+
+            <div class="library-feature-body">
+
+                <div class="library-tags">
+                    <span>CC</span>
+                    <span>Certificada</span>
+                    <span>Programa Infantil</span>
+                    <span>+2</span>
+                </div>
+
+                <p>
+                    Centro cultural comunitario que transforma el norte de Cali
+                    con programas de lectura y creación artística.
+                </p>
+
+                <div class="library-meta">
+                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
+                    <span><i class="fa-solid fa-phone"></i> (602) 885-3201</span>
+                </div>
+
+                <div class="library-numbers">
+                    <span><strong>12.4k</strong> Libros</span>
+                    <span><strong>2.3k</strong> Usuarios</span>
+                    <em>✨ Mediación de Lectura Infantil</em>
+                </div>
+
+                <a href="/directorio">
+                    Ver Biblioteca
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="library-feature-card urbana certificada norte">
+
+            <div class="library-cover green">
+                <span>Norte</span>
+                <button><i class="fa-regular fa-heart"></i></button>
+
+                <div>
+                    <h3>CC Comuna 1</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Comuna 1</p>
+                </div>
+
+                <strong>
+                    <i class="fa-solid fa-star"></i>
+                    4.6
+                </strong>
+            </div>
+
+            <div class="library-feature-body">
+
+                <div class="library-tags">
+                    <span>CC</span>
+                    <span>Certificada</span>
+                    <span>Programa Juvenil</span>
+                    <span>+2</span>
+                </div>
+
+                <p>
+                    Espacio de encuentro comunitario en el corazón del norte.
+                    Ofrece talleres de tecnología y clubes de lectura.
+                </p>
+
+                <div class="library-meta">
+                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
+                    <span><i class="fa-solid fa-phone"></i> (602) 885-3202</span>
+                </div>
+
+                <div class="library-numbers">
+                    <span><strong>8.9k</strong> Libros</span>
+                    <span><strong>1.9k</strong> Usuarios</span>
+                    <em>✨ Club de Creadores Digitales</em>
+                </div>
+
+                <a href="/directorio">
+                    Ver Biblioteca
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="library-feature-card rural sur">
+
+            <div class="library-cover south">
+                <span>Sur</span>
+                <button><i class="fa-regular fa-heart"></i></button>
+
+                <div>
+                    <h3>La Campiña</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Comuna 17</p>
+                </div>
+
+                <strong>
+                    <i class="fa-solid fa-star"></i>
+                    4.6
+                </strong>
+            </div>
+
+            <div class="library-feature-body">
+
+                <div class="library-tags">
+                    <span>Rural</span>
+                    <span>Huerta Comunitaria</span>
+                    <span>Pet Friendly</span>
+                </div>
+
+                <p>
+                    Biblioteca rural con huerta comunitaria que integra la lectura
+                    con la agricultura y los procesos ambientales.
+                </p>
+
+                <div class="library-meta">
+                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-17:00</span>
+                    <span><i class="fa-solid fa-phone"></i> (602) 885-3210</span>
+                </div>
+
+                <div class="library-numbers">
+                    <span><strong>4.5k</strong> Libros</span>
+                    <span><strong>980</strong> Usuarios</span>
+                    <em>✨ Semillas y Palabras</em>
+                </div>
+
+                <a href="/directorio">
+                    Ver Biblioteca
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+        <article class="library-feature-card tematica certificada oriente">
+
+            <div class="library-cover orange">
+                <span>Oriente</span>
+                <button><i class="fa-regular fa-heart"></i></button>
+
+                <div>
+                    <h3>Patrimonial Centenario</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Comuna 14</p>
+                </div>
+
+                <strong>
+                    <i class="fa-solid fa-star"></i>
+                    4.7
+                </strong>
+            </div>
+
+            <div class="library-feature-body">
+
+                <div class="library-tags">
+                    <span>Temática</span>
+                    <span>Certificada</span>
+                    <span>Auditorio</span>
+                    <span>+2</span>
+                </div>
+
+                <p>
+                    Espacio patrimonial que preserva la historia del oriente de Cali
+                    y fortalece la memoria cultural.
+                </p>
+
+                <div class="library-meta">
+                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-17:00</span>
+                    <span><i class="fa-solid fa-phone"></i> (602) 885-3207</span>
+                </div>
+
+                <div class="library-numbers">
+                    <span><strong>9.4k</strong> Libros</span>
+                    <span><strong>2.0k</strong> Usuarios</span>
+                    <em>✨ Archivo Histórico del Oriente</em>
+                </div>
+
+                <a href="/directorio">
+                    Ver Biblioteca
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <!-- MAPA -->
+
+    <section class="map-section">
+
+        <div class="section-header">
+
+            <span>Mapa Oficial</span>
+
+            <h2>
+                Encuentra tu biblioteca más cercana
+            </h2>
+
+            <p>
+                Consulta la ubicación de las bibliotecas y espacios
+                de lectura de la Red mediante el mapa interactivo.
+            </p>
+
+        </div>
+
+        <div class="map-layout">
+
+            <div class="map-container">
+
+                <iframe
+                    src="https://www.google.com/maps/d/u/0/embed?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA"
+                    loading="lazy">
+                </iframe>
+
+            </div>
+
+            <div class="libraries-panel">
+
+                <h3>
+                    Bibliotecas destacadas
+                </h3>
+
+                <div class="library-card">
+                    <h4>Biblioteca León de Greiff</h4>
+                    <p>Servicios bibliotecarios, lectura, formación y actividades culturales.</p>
+                </div>
+
+                <div class="library-card">
+                    <h4>Biblioteca Gabo</h4>
+                    <p>Espacio de encuentro para la lectura, creatividad y participación ciudadana.</p>
+                </div>
+
+                <div class="library-card">
+                    <h4>Biblioteca Rigoberta Menchú</h4>
+                    <p>Programas comunitarios, lectura y fortalecimiento social.</p>
+                </div>
+
+                <div class="library-card">
+                    <h4>Biblioteca San Marino</h4>
+                    <p>Acceso a servicios bibliotecarios, contenidos digitales y actividades.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="services-cta">
+
+        <h2>
+            Consulta el directorio completo
+        </h2>
+
+        <p>
+            Accede a la información detallada de todas las bibliotecas
+            y espacios de lectura de la Red.
+        </p>
+
+        <a href="/directorio"
+           class="btn-primary">
+            Ver Directorio Completo →
+        </a>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

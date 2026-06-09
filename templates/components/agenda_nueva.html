@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Programación Cultural | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="agenda-page">
+
+    <section class="agenda-header">
+
+        <span>
+            <i class="fa-regular fa-calendar"></i>
+            Programación Cultural
+        </span>
+
+        <h1>
+            Próximos <strong>Eventos</strong>
+        </h1>
+
+        <p>
+            Talleres, clubes de lectura, exposiciones, conversatorios y actividades culturales
+            desarrolladas en la Red de Bibliotecas Públicas de Cali.
+        </p>
+
+    </section>
+
+    <section class="agenda-filters">
+
+        <button class="agenda-filter active" onclick="filterAgenda('all', this)">Todos</button>
+        <button class="agenda-filter" onclick="filterAgenda('club', this)">Club de Lectura</button>
+        <button class="agenda-filter" onclick="filterAgenda('taller', this)">Talleres</button>
+        <button class="agenda-filter" onclick="filterAgenda('exposicion', this)">Exposiciones</button>
+        <button class="agenda-filter" onclick="filterAgenda('conversatorio', this)">Conversatorios</button>
+        <button class="agenda-filter" onclick="filterAgenda('virtual', this)">Virtuales</button>
+
+    </section>
+
+    <section class="agenda-grid">
+
+        <article class="agenda-card club">
+            <div class="agenda-date">
+                <strong>15</strong>
+                <span>JUL</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Club de Lectura</span>
+                <h3>Club de Lectura: Cien años de soledad</h3>
+                <p>Reunión mensual para discutir la obra maestra de García Márquez.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Biblioteca Departamental</small>
+                <small><i class="fa-regular fa-clock"></i> 10:00 a.m.</small>
+                <small><i class="fa-solid fa-user-group"></i> Presencial</small>
+            </div>
+        </article>
+
+        <article class="agenda-card taller">
+            <div class="agenda-date">
+                <strong>20</strong>
+                <span>JUL</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Taller</span>
+                <h3>Taller de Escritura Creativa</h3>
+                <p>Aprende técnicas de escritura creativa con autores locales.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Biblioteca San Antonio</small>
+                <small><i class="fa-regular fa-clock"></i> 5:00 p.m.</small>
+                <small><i class="fa-solid fa-user-group"></i> Presencial</small>
+            </div>
+        </article>
+
+        <article class="agenda-card seminario virtual">
+            <div class="agenda-date">
+                <strong>25</strong>
+                <span>JUL</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Seminario</span>
+                <h3>Seminario: Literatura y Tecnología</h3>
+                <p>Explora la intersección entre literatura contemporánea y nuevas tecnologías digitales.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Virtual - Zoom</small>
+                <small><i class="fa-regular fa-clock"></i> 9:00 a.m.</small>
+                <small><i class="fa-solid fa-desktop"></i> Virtual</small>
+            </div>
+        </article>
+
+        <article class="agenda-card curso virtual">
+            <div class="agenda-date">
+                <strong>28</strong>
+                <span>JUL</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Curso</span>
+                <h3>Curso Introducción a la Narrativa</h3>
+                <p>Curso de 4 semanas sobre fundamentos de la narrativa literaria.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Plataforma Aula</small>
+                <small><i class="fa-regular fa-clock"></i> 11:00 a.m.</small>
+                <small><i class="fa-solid fa-desktop"></i> Virtual</small>
+            </div>
+        </article>
+
+        <article class="agenda-card exposicion">
+            <div class="agenda-date">
+                <strong>01</strong>
+                <span>AGO</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Exposición</span>
+                <h3>Exposición: Ilustradores Colombianos</h3>
+                <p>Muestra de obras de ilustradores de literatura infantil colombiana.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Galería Biblioteca Departamental</small>
+                <small><i class="fa-regular fa-clock"></i> 5:00 p.m.</small>
+                <small><i class="fa-solid fa-user-group"></i> Presencial</small>
+            </div>
+        </article>
+
+        <article class="agenda-card encuentro">
+            <div class="agenda-date">
+                <strong>02</strong>
+                <span>AGO</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Encuentro</span>
+                <h3>Encuentro de Poesía Viva</h3>
+                <p>Noche de poesía en vivo con poetas del Valle del Cauca.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Parque de la Literatura</small>
+                <small><i class="fa-regular fa-clock"></i> 2:00 p.m.</small>
+                <small><i class="fa-solid fa-user-group"></i> Presencial</small>
+            </div>
+        </article>
+
+        <article class="agenda-card conversatorio virtual">
+            <div class="agenda-date">
+                <strong>10</strong>
+                <span>AGO</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Conversatorio</span>
+                <h3>Irene Vallejo y el poder del libro</h3>
+                <p>Diálogo virtual con autora invitada sobre la historia y el futuro del libro.</p>
+                <small><i class="fa-solid fa-location-dot"></i> YouTube Live</small>
+                <small><i class="fa-regular fa-clock"></i> 12:00 m.</small>
+                <small><i class="fa-solid fa-desktop"></i> Virtual</small>
+            </div>
+        </article>
+
+        <article class="agenda-card celebracion">
+            <div class="agenda-date">
+                <strong>15</strong>
+                <span>AGO</span>
+            </div>
+
+            <div class="agenda-info">
+                <span>Celebración</span>
+                <h3>Celebración del Día del Libro</h3>
+                <p>Actividades especiales, lecturas, mercado de libros usados y más.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Centro Cultural de Cali</small>
+                <small><i class="fa-regular fa-clock"></i> 4:00 p.m.</small>
+                <small><i class="fa-solid fa-user-group"></i> Presencial</small>
+            </div>
+        </article>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

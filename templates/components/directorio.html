@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Directorio | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="directory-page">
+
+    <section class="directory-hero">
+
+        <div class="directory-hero-badges">
+            <span><i class="fa-regular fa-compass"></i> Red de Bibliotecas</span>
+            <span><i class="fa-solid fa-users"></i> 5 Territorios LEO</span>
+        </div>
+
+        <h1>
+            Directorio <strong>de la Red</strong>
+        </h1>
+
+        <p>
+            Explora los 61 espacios bibliotecarios de la Red de Bibliotecas Públicas de Santiago de Cali,
+            organizados en 5 Territorios LEO que conectan la lectura con la comunidad.
+        </p>
+
+    </section>
+
+    <section class="directory-tools">
+
+        <div class="directory-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text"
+                   id="directorySearch"
+                   placeholder="Buscar biblioteca, comuna o corregimiento..."
+                   onkeyup="searchDirectory()">
+        </div>
+
+        <button class="directory-filter-btn">
+            <i class="fa-solid fa-filter"></i>
+            Filtrar Territorio
+        </button>
+
+    </section>
+
+    <section class="directory-stats">
+
+        <article>
+            <i class="fa-solid fa-building-columns orange"></i>
+            <div>
+                <strong>61</strong>
+                <span>Espacios</span>
+            </div>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-compass green"></i>
+            <div>
+                <strong>5</strong>
+                <span>Territorios</span>
+            </div>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-star blue"></i>
+            <div>
+                <strong>57</strong>
+                <span>Activos</span>
+            </div>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-clock purple"></i>
+            <div>
+                <strong>4</strong>
+                <span>En adecuación</span>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="directory-territory t1">
+
+        <div class="territory-header">
+            <div class="territory-number">
+                <strong>1</strong>
+                
+            </div>
+
+            <div>
+                <h2>T1 Azul <span>12 espacios</span></h2>
+                <h3>Diversidad y Diálogo Intercultural</h3>
+                <p>
+                    Territorio que promueve la diversidad cultural, el diálogo intercultural y la inclusión
+                    en las comunidades del oriente y sur de Cali.
+                </p>
+            </div>
+
+            <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="directory-grid">
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>CC Los Naranjos</h3>
+                <div><span>T1 Azul</span><span>Comuna 13</span></div>
+                <p>Centro Cultural con programa de primera infancia y talleres culturales.</p>
+            </article>
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>CC Nuevo Latir</h3>
+                <div><span>T1 Azul</span><span>Comuna 14</span></div>
+                <p>Biblioteca emblemática del distrito de Aguablanca.</p>
+            </article>
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>Fundautónoma</h3>
+                <div><span>T1 Azul</span><span>Comuna 13</span></div>
+                <p>Centro de emprendimiento cultural y comunitario.</p>
+            </article>
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>Daniel Guillard</h3>
+                <div><span>T1 Azul</span><span>Comuna 13</span></div>
+                <p>Ganadora del Premio IFLA Green Library 2019.</p>
+            </article>
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>Desepaz</h3>
+                <div><span>T1 Azul</span><span>Comuna 16</span></div>
+                <p>Biblioteca con huertas comunitarias y programas ambientales.</p>
+            </article>
+
+            <article class="library-card t1">
+                <i class="fa-regular fa-building"></i>
+                <h3>Somos Pacífico</h3>
+                <div><span>T1 Azul</span><span>Comuna 21</span></div>
+                <p>Biblioteca con enfoque en cultura afrocolombiana.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="directory-territory t2">
+
+        <div class="territory-header">
+            <div class="territory-number">
+                <strong>2</strong>
+                
+            </div>
+
+            <div>
+                <h2>T2 Morado <span>11 espacios</span></h2>
+                <h3>Diversidad Biocultural</h3>
+                <p>
+                    Territorio dedicado a la diversidad biocultural, conectando la lectura con el medio ambiente
+                    y la naturaleza del norte de Cali.
+                </p>
+            </div>
+
+            <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="directory-grid">
+
+            <article class="library-card t2">
+                <i class="fa-regular fa-building"></i>
+                <h3>CC Comuna 1</h3>
+                <div><span>T2 Morado</span><span>Comuna 1</span></div>
+                <p>Premio Nacional Daniel Samper Ortega 2018 y 2022.</p>
+            </article>
+
+            <article class="library-card t2">
+                <i class="fa-regular fa-building"></i>
+                <h3>Bajo Aguacatal</h3>
+                <div><span>T2 Morado</span><span>Comuna 1</span></div>
+                <p>Biblioteca con foco en formación y lectura.</p>
+            </article>
+
+            <article class="library-card t2">
+                <i class="fa-regular fa-building"></i>
+                <h3>El Dorado</h3>
+                <div><span>T2 Morado</span><span>Comuna 10</span></div>
+                <p>Biblioteca del norte de la ciudad.</p>
+            </article>
+
+            <article class="library-card t2">
+                <i class="fa-regular fa-building"></i>
+                <h3>San Pedro Claver</h3>
+                <div><span>T2 Morado</span><span>Comuna 11</span></div>
+                <p>Biblioteca con enfoque en derechos humanos.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="directory-territory t3">
+
+        <div class="territory-header">
+            <div class="territory-number">
+                <strong>3</strong>
+                
+            </div>
+
+            <div>
+                <h2>T3 Amarillo <span>13 espacios</span></h2>
+                <h3>Patrimonio, Memoria y Creación</h3>
+                <p>
+                    Territorio comprometido con la preservación del patrimonio histórico, la memoria cultural
+                    y la creación literaria del centro de Cali.
+                </p>
+            </div>
+
+            <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="directory-grid">
+
+            <article class="library-card t3">
+                <i class="fa-regular fa-building"></i>
+                <h3>Patrimonial Centenario</h3>
+                <div><span>T3 Amarillo</span><span>Comuna 3</span></div>
+                <p>Biblioteca histórica, la más antigua de Cali, fundada en 1910.</p>
+            </article>
+
+            <article class="library-card t3">
+                <i class="fa-regular fa-building"></i>
+                <h3>Sala Borges</h3>
+                <div><span>T3 Amarillo</span><span>Centro Cultural Cali</span></div>
+                <p>Sala literaria especializada.</p>
+            </article>
+
+            <article class="library-card t3">
+                <i class="fa-regular fa-building"></i>
+                <h3>Infantil y Juvenil</h3>
+                <div><span>T3 Amarillo</span><span>Centro Cultural Cali</span></div>
+                <p>Biblioteca infantil certificada.</p>
+            </article>
+
+            <article class="library-card t3">
+                <i class="fa-regular fa-building"></i>
+                <h3>Isaías Gamboa</h3>
+                <div><span>T3 Amarillo</span><span>Comuna 4</span></div>
+                <p>Biblioteca fundada por la comunidad en 1989.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="directory-territory t4">
+
+        <div class="territory-header">
+            <div class="territory-number">
+                <strong>4</strong>
+                
+            </div>
+
+            <div>
+                <h2>T4 Verde <span>12 espacios</span></h2>
+                <h3>Innovación y Creación</h3>
+                <p>
+                    Territorio enfocado en la innovación, la tecnología y la creación artística del oriente
+                    y suroriente de Cali.
+                </p>
+            </div>
+
+            <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="directory-grid">
+
+            <article class="library-card t4">
+                <i class="fa-regular fa-building"></i>
+                <h3>El Sena</h3>
+                <div><span>T4 Verde</span><span>Comuna 5</span></div>
+                <p>Biblioteca en alianza con SENA.</p>
+            </article>
+
+            <article class="library-card t4">
+                <i class="fa-regular fa-building"></i>
+                <h3>Isabel Allende</h3>
+                <div><span>T4 Verde</span><span>Comuna 7</span></div>
+                <p>Biblioteca con enfoque en literatura y escritura.</p>
+            </article>
+
+            <article class="library-card t4">
+                <i class="fa-regular fa-building"></i>
+                <h3>CC Comuna 18</h3>
+                <div><span>T4 Verde</span><span>Comuna 18</span></div>
+                <p>Centro cultural del oriente.</p>
+            </article>
+
+            <article class="library-card t4">
+                <i class="fa-regular fa-building"></i>
+                <h3>Alto Nápoles</h3>
+                <div><span>T4 Verde</span><span>Comuna 18</span></div>
+                <p>Biblioteca con talleres creativos.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="directory-territory t5">
+
+        <div class="territory-header">
+            <div class="territory-number">
+                <strong>5</strong>
+                
+            </div>
+
+            <div>
+                <h2>T5 Naranja <span>13 espacios</span></h2>
+                <h3>Identidad, Territorio y Cultura</h3>
+                <p>
+                    Territorio que fortalece la identidad local, el sentido de pertenencia y la cultura viva
+                    del sur y corregimientos de Cali.
+                </p>
+            </div>
+
+            <a href="#">Ver más <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="directory-grid">
+
+            <article class="library-card t5">
+                <i class="fa-regular fa-building"></i>
+                <h3>Álvaro Mutis</h3>
+                <div><span>T5 Naranja</span><span>Comuna 12</span></div>
+                <p>Biblioteca nombrada en honor al Premio Nobel.</p>
+            </article>
+
+            <article class="library-card t5">
+                <i class="fa-regular fa-building"></i>
+                <h3>Gabo</h3>
+                <div><span>T5 Naranja</span><span>Comuna 15</span></div>
+                <p>Biblioteca con enfoque en periodismo y narrativa.</p>
+            </article>
+
+            <article class="library-card t5">
+                <i class="fa-regular fa-building"></i>
+                <h3>Rigoberta Menchú</h3>
+                <div><span>T5 Naranja</span><span>Comuna 15</span></div>
+                <p>Biblioteca nombrada en honor a la Nobel de Paz.</p>
+            </article>
+
+            <article class="library-card t5">
+                <i class="fa-regular fa-building"></i>
+                <h3>Felidia</h3>
+                <div><span>T5 Naranja</span><span>Corregimiento Felidia</span><span>Rural</span></div>
+                <p>Biblioteca rural.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibliomios-section">
+
+        <div class="bibliomios-title">
+            <i class="fa-solid fa-book-open"></i>
+            <div>
+                <h2>BiblioMíos</h2>
+                <p>Estaciones de lectura en el sistema MIO de Cali.</p>
+            </div>
+        </div>
+
+        <div class="bibliomios-grid">
+
+            <article>
+                <span>🚌</span>
+                <h3>Andrés Sanín</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Estación MIO Andrés Sanín</p>
+            </article>
+
+            <article>
+                <span>🚌</span>
+                <h3>Simón Bolívar</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Estación MIO Simón Bolívar</p>
+            </article>
+
+            <article>
+                <span>🚌</span>
+                <h3>Unidad Deportiva</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Estación MIO Unidad Deportiva</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="directory-contact">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        <div>
+            <h2>¿Necesitas información de una biblioteca?</h2>
+            <p>
+                Contacta a la Red de Bibliotecas de Santiago de Cali para obtener horarios,
+                servicios adicionales y programas especiales de cada espacio.
+            </p>
+        </div>
+
+        <strong>
+            <i class="fa-solid fa-phone"></i>
+            (602) 886 1200
+        </strong>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

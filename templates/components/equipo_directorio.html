@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipo, Espacios y Bibliotecarios | SIGB</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="team-directory-page">
+
+    <section class="team-directory-hero">
+
+        <span>
+            <i class="fa-solid fa-users"></i>
+            Directorio institucional
+        </span>
+
+        <h1>Equipo, espacios y bibliotecarios</h1>
+
+        <p>
+            Conoce a las personas y espacios que hacen posible la Red de Bibliotecas Públicas de Cali.
+        </p>
+
+    </section>
+
+    <section class="team-directory-tools">
+
+        <button class="active" onclick="filterTeamDirectory('equipo', this)">Equipo Central</button>
+        <button onclick="filterTeamDirectory('bibliotecario', this)">Bibliotecarios</button>
+        <button onclick="filterTeamDirectory('espacio', this)">Espacios</button>
+
+    </section>
+
+    <section class="team-directory-grid">
+
+        <article class="team-card equipo">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>María Fernanda López Mejía</h3>
+            <span>Directora General</span>
+            <p>Dirección</p>
+        </article>
+
+        <article class="team-card equipo">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>Gloria Patricia Echeverri Londoño</h3>
+            <span>Coordinadora de Programación Cultural</span>
+            <p>Cultura</p>
+        </article>
+
+        <article class="team-card equipo">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>David Santiago Mena Orejuela</h3>
+            <span>Coordinador de Tecnología</span>
+            <p>Tecnología</p>
+        </article>
+
+        <article class="team-card equipo">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>Natalia Herrera Zapata</h3>
+            <span>Coordinadora de Servicios al Público</span>
+            <p>Servicios Bibliotecarios</p>
+        </article>
+
+        <article class="team-card equipo">
+            <i class="fa-solid fa-user-tie"></i>
+            <h3>Héctor Fabio Arias Betancourt</h3>
+            <span>Coordinador de Formación y Promoción</span>
+            <p>Formación</p>
+        </article>
+
+        <article class="team-card bibliotecario">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Camilo Esteban Grajales Cañón</h3>
+            <span>Auxiliar Bibliotecario</span>
+            <p>Servicios Bibliotecarios</p>
+        </article>
+
+        <article class="team-card bibliotecario">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Diana Carolina Güepes Martínez</h3>
+            <span>Promotora de Lectura y Escritura</span>
+            <p>Formación</p>
+        </article>
+
+        <article class="team-card bibliotecario">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Roberto Alejandro Salazar Cárdenas</h3>
+            <span>Profesional de Referencia y Préstamo</span>
+            <p>Servicios Bibliotecarios</p>
+        </article>
+
+        <article class="team-card bibliotecario">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Sara Milena Ospina Rendón</h3>
+            <span>Gestora Cultural</span>
+            <p>Cultura</p>
+        </article>
+
+        <article class="team-card bibliotecario">
+            <i class="fa-solid fa-book-open-reader"></i>
+            <h3>Valentina Rosales Quintero</h3>
+            <span>Profesional de Soporte Tecnológico</span>
+            <p>Tecnología</p>
+        </article>
+
+        <article class="team-card espacio">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Biblioteca Departamental</h3>
+            <span>Centro</span>
+            <p>Servicios, lectura, programación cultural y consulta.</p>
+        </article>
+
+        <article class="team-card espacio">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Biblioteca Gabo</h3>
+            <span>Oriente</span>
+            <p>Lectura, memoria local y programas comunitarios.</p>
+        </article>
+
+        <article class="team-card espacio">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Biblioteca León de Greiff</h3>
+            <span>Norte</span>
+            <p>Servicios bibliográficos y actividades culturales.</p>
+        </article>
+
+        <article class="team-card espacio">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Biblioteca San Antonio</h3>
+            <span>Occidente</span>
+            <p>Clubes de lectura, talleres y mediación cultural.</p>
+        </article>
+
+        <article class="team-card espacio">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Biblioteca Rigoberta Menchú</h3>
+            <span>Sur</span>
+            <p>Participación comunitaria y fortalecimiento social.</p>
+        </article>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

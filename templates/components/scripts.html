@@ -1,0 +1,226 @@
+<script>
+    function toggleChatbot() {
+        const box = document.getElementById("chatbotBox");
+        box.style.display = box.style.display === "flex" ? "none" : "flex";
+    }
+
+    function addMessage(text, type = "bot") {
+        const messages = document.getElementById("chatbotMessages");
+
+        const div = document.createElement("div");
+        div.className = type === "user" ? "user-message" : "bot-message";
+        div.innerHTML = text;
+
+        messages.appendChild(div);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function getLumaResponse(text) {
+        const pregunta = text.toLowerCase();
+
+        if (pregunta.includes("hola") || pregunta.includes("buenos") || pregunta.includes("buenas")) {
+            return "¡Hola! Soy Luma 🦜. Estoy aquí para ayudarte a explorar el Catálogo Maestro.";
+        }
+
+        if (pregunta.includes("libro") || pregunta.includes("buscar") || pregunta.includes("autor")) {
+            return "Puedes buscar libros desde el buscador principal escribiendo título, autor, tema o palabra clave.";
+        }
+
+        if (pregunta.includes("biblioteca") || pregunta.includes("comuna") || pregunta.includes("cercana") || pregunta.includes("mapa")) {
+            return "Puedes consultar bibliotecas por comuna usando el mapa interactivo. Allí encontrarás ubicación, comuna y servicios disponibles.";
+        }
+
+        if (pregunta.includes("evento") || pregunta.includes("taller") || pregunta.includes("club") || pregunta.includes("programación")) {
+            return "En la sección Agenda cultural puedes consultar talleres, clubes de lectura, exposiciones y encuentros de la Red. También puedes revisar eventos recomendados desde tu perfil ciudadano.";
+        }
+
+        if (pregunta.includes("préstamo") || pregunta.includes("prestamo") || pregunta.includes("renovar") || pregunta.includes("devolver")) {
+            return "Desde Mi Perfil puedes consultar tus préstamos activos, fechas de devolución y futuras renovaciones.";
+        }
+
+        if (pregunta.includes("dislexia")) {
+            return "Puedes activar el modo para personas con dislexia desde el botón de Accesibilidad. Este modo mejora la lectura con mayor espaciado y una fuente más clara.";
+        }
+
+        if (pregunta.includes("contraseña") || pregunta.includes("clave")) {
+            return "Puedes usar la opción ¿Olvidaste tu contraseña? en el login. En esta demo está como funcionalidad visual.";
+        }
+
+        if (pregunta.includes("registro") || pregunta.includes("crear cuenta")) {
+            return "Para crear una cuenta ciudadana, ingresa a la opción Crear cuenta ciudadana desde el login.";
+        }
+
+        if (pregunta.includes("maleta")) {
+            return "Las Maletas Viajeras son colecciones itinerantes de libros y materiales de lectura que se prestan a comunidades.";
+        }
+
+        if (pregunta.includes("llave")) {
+            return "La Llave del Saber identifica al usuario dentro de la Red de Bibliotecas y permite asociar servicios bibliotecarios.";
+        }
+
+        if (pregunta.includes("recomienda") || pregunta.includes("recomendación") || pregunta.includes("recomendacion")) {
+            return "Te recomiendo explorar literatura caleña, audiolibros, contenidos infantiles, cómics y agenda cultural cercana a tu biblioteca favorita.";
+        }
+        // ACTIVIDADES PARA NIÑOS
+
+if (
+    pregunta.includes("niños") ||
+    pregunta.includes("niñas") ||
+    pregunta.includes("infantil")
+) {
+    return "Actualmente la Red cuenta con clubes de lectura infantil, actividades de promoción lectora, talleres creativos, cuentería y programación cultural para niños y niñas.";
+}
+
+
+// BIBLIOTECAS ACCESIBLES
+
+if (
+    pregunta.includes("accesibilidad") ||
+    pregunta.includes("bibliotecas accesibles")
+) {
+    return "Varias bibliotecas cuentan con servicios de accesibilidad, apoyo a personas con discapacidad visual, recursos digitales y opciones de lectura inclusiva.";
+}
+
+
+// BIBLIOTECA DIGITAL
+
+if (
+    pregunta.includes("biblioteca digital") ||
+    pregunta.includes("digital")
+) {
+    return "La Biblioteca Digital permite acceder a libros electrónicos, audiolibros, podcast, exposiciones digitales y recursos educativos.";
+}
+
+
+// COMUNA 13
+
+if (
+    pregunta.includes("comuna 13")
+) {
+    return "En la Comuna 13 puedes encontrar servicios bibliotecarios comunitarios y actividades culturales orientadas a la participación ciudadana.";
+}
+
+
+// HORARIOS
+
+if (
+    pregunta.includes("horario") ||
+    pregunta.includes("horarios")
+) {
+    return "Los horarios pueden variar según cada biblioteca. Próximamente podrás consultarlos directamente desde la sección Bibliotecas.";
+}
+
+
+// PRESTAMO
+
+if (
+    pregunta.includes("prestar") ||
+    pregunta.includes("préstamo") ||
+    pregunta.includes("prestamo")
+) {
+    return "Los préstamos permiten llevar materiales bibliográficos por un tiempo determinado. Desde Mi Perfil podrás consultar tus préstamos activos.";
+}
+
+
+// CULTURA
+
+if (
+    pregunta.includes("cultura") ||
+    pregunta.includes("cultural")
+) {
+    return "La Red de Bibliotecas ofrece actividades culturales, exposiciones, talleres, clubes de lectura y eventos comunitarios durante todo el año.";
+}
+if (
+    pregunta.includes("cuantas bibliotecas") ||
+    pregunta.includes("cuántas bibliotecas") ||
+    pregunta.includes("bibliotecas tiene")
+) {
+    return "La Red de Bibliotecas Públicas de Cali cuenta con 61 bibliotecas y espacios conectados en diferentes comunas y corregimientos.";
+}
+
+if (
+    pregunta.includes("usuarios") ||
+    pregunta.includes("impacto")
+) {
+    return "Actualmente el prototipo muestra indicadores de impacto como usuarios activos, préstamos, eventos culturales y bibliotecas conectadas.";
+}
+
+if (
+    pregunta.includes("eventos este mes") ||
+    pregunta.includes("cuantos eventos") ||
+    pregunta.includes("cuántos eventos")
+) {
+    return "En esta demo se muestran 18 eventos culturales programados para el mes, incluyendo clubes de lectura, talleres y exposiciones.";
+}
+
+        return "Puedo ayudarte con libros, bibliotecas, eventos, préstamos, accesibilidad, registro y recomendaciones. Intenta preguntarme, por ejemplo: ¿cómo busco un libro?";
+    }
+
+    function sendChatbotMessage() {
+        const input = document.getElementById("chatbotInput");
+        const text = input.value.trim();
+
+        if (text === "") return;
+
+        addMessage(text, "user");
+
+        setTimeout(() => {
+            const response = getLumaResponse(text);
+            addMessage(response, "bot");
+        }, 400);
+
+        input.value = "";
+    }
+
+    function quickQuestion(tipo) {
+        let pregunta = "";
+
+        if (tipo === "libros") pregunta = "¿Cómo busco un libro?";
+        if (tipo === "eventos") pregunta = "¿Qué eventos culturales hay?";
+        if (tipo === "bibliotecas") pregunta = "¿Cómo consulto bibliotecas por comuna?";
+        if (tipo === "dislexia") pregunta = "¿Cómo activo el modo dislexia?";
+        if (tipo === "infantil") pregunta = "¿Qué actividades hay para niños?";
+        if (tipo === "digital")  pregunta = "¿Qué ofrece la biblioteca digital?";
+        addMessage(pregunta, "user");
+
+        setTimeout(() => {
+            addMessage(getLumaResponse(pregunta), "bot");
+        }, 400);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const input = document.getElementById("chatbotInput");
+
+        if (input) {
+            input.addEventListener("keypress", function (event) {
+                if (event.key === "Enter") {
+                    sendChatbotMessage();
+                }
+            });
+        }
+    });
+
+    function toggleAccessibility() {
+        const options = document.getElementById("accessibilityOptions");
+        options.style.display = options.style.display === "flex" ? "none" : "flex";
+    }
+
+    function toggleDyslexiaMode() {
+        document.body.classList.toggle("dyslexia-mode");
+    }
+
+    function increaseFont() {
+        document.body.classList.toggle("large-font-mode");
+    }
+
+    function toggleContrast() {
+        document.body.classList.toggle("high-contrast-mode");
+    }
+    function showVoiceSoon() {
+    addMessage(
+        "🎤 Próximamente podrás hablar con Luma mediante comandos de voz. Esta opción está pensada para apoyar la accesibilidad de personas con discapacidad visual.",
+        "bot"
+    );
+}
+    
+</script>

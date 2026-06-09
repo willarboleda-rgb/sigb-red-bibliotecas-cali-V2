@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Novedades | Red de Bibliotecas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="news-page">
+
+    <section class="news-header">
+        <div>
+            <span class="news-title-icon">
+                <i class="fa-regular fa-newspaper"></i>
+            </span>
+            <h1>Novedades <strong>de la Red</strong></h1>
+        </div>
+
+        <div class="news-header-actions">
+            <button><i class="fa-regular fa-bell"></i> Suscribirse</button>
+            <span><i class="fa-regular fa-newspaper"></i> 10 artículos</span>
+        </div>
+    </section>
+
+    <section class="featured-news">
+
+        <span class="featured-label">
+            <i class="fa-solid fa-bolt"></i>
+            Noticia destacada
+        </span>
+
+        <div class="featured-card">
+            <div class="featured-tags">
+                <span>⚡ Destacado</span>
+                <span>🏗 Infraestructura</span>
+                <span>📌 Fijado</span>
+            </div>
+
+            <h2>Nueva sede de Biblioteca Vallencáncora abre sus puertas</h2>
+
+            <p>
+                La Biblioteca Vallencáncora, ubicada en la Comuna 18, inauguró su nueva sede moderna
+                con más de 30.000 volúmenes, salas de lectura al aire libre y un auditorio para 200 personas.
+            </p>
+
+            <div class="featured-meta">
+                <span><i class="fa-regular fa-calendar"></i> 15 de junio de 2025</span>
+                <span><i class="fa-regular fa-clock"></i> 5 min de lectura</span>
+                <span><i class="fa-regular fa-eye"></i> 12.4k vistas</span>
+            </div>
+
+            <div class="featured-actions">
+                <button>Leer más <i class="fa-solid fa-chevron-right"></i></button>
+                <button><i class="fa-regular fa-heart"></i> 892</button>
+                <button><i class="fa-regular fa-bookmark"></i> Guardar</button>
+                <button><i class="fa-solid fa-share-nodes"></i> Compartir</button>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="news-tools">
+        <div class="news-filters">
+            <button class="news-filter active" onclick="filterNews('all', this)">Todos</button>
+            <button class="news-filter" onclick="filterNews('eventos', this)">🎉 Eventos</button>
+            <button class="news-filter" onclick="filterNews('servicios', this)">📚 Servicios</button>
+            <button class="news-filter" onclick="filterNews('colecciones', this)">📖 Colecciones</button>
+            <button class="news-filter" onclick="filterNews('comunidad', this)">💚 Comunidad</button>
+        </div>
+
+        <div class="news-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="newsSearch" placeholder="Buscar noticias..." onkeyup="searchNews()">
+        </div>
+    </section>
+
+    <section class="latest-news">
+
+        <div class="latest-title">
+            <h2><i class="fa-regular fa-newspaper"></i> Últimas Noticias</h2>
+            <span>9 resultados</span>
+        </div>
+
+        <div class="news-grid">
+
+            <article class="news-card eventos">
+                <div class="news-cover gradient-red"><span>🎉 Eventos</span></div>
+                <div class="news-body">
+                    <h3>Feria del Libro de Cali 2025 supera expectativas con más de 50.000 visitantes</h3>
+                    <p>La XXVIII Feria del Libro de Cali batió récords de asistencia con programación cultural diversa.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 10 de junio de 2025 · 4 min</small>
+                    <div><span>♡ 1.5k</span><span>👁 23.8k</span><span>💬 124</span></div>
+                </div>
+            </article>
+
+            <article class="news-card servicios">
+                <div class="news-cover gradient-blue"><span>📚 Servicios</span></div>
+                <div class="news-body">
+                    <h3>Programa de lectura en casa llega a 15 comunas de Santiago de Cali</h3>
+                    <p>El programa “Leer en Casa” beneficia a familias con acompañamiento lector y recursos digitales.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 8 de junio de 2025 · 6 min</small>
+                    <div><span>♡ 634</span><span>👁 8.9k</span><span>💬 45</span></div>
+                </div>
+            </article>
+
+            <article class="news-card colecciones">
+                <div class="news-cover gradient-purple"><span>📖 Colecciones</span></div>
+                <div class="news-body">
+                    <h3>Colaboración con Biblioteca Nacional digitaliza 10.000 documentos históricos</h3>
+                    <p>Alianza para preservar y facilitar el acceso al patrimonio documental de la ciudad.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 5 de junio de 2025 · 7 min</small>
+                    <div><span>♡ 1.0k</span><span>👁 15.6k</span><span>💬 89</span></div>
+                </div>
+            </article>
+
+            <article class="news-card comunidad">
+                <div class="news-cover gradient-gold"><span>💚 Comunidad</span></div>
+                <div class="news-body">
+                    <h3>Club de lectura juvenil gana premio nacional de fomento lector</h3>
+                    <p>El club “Palabras que Vuelan”, de la Biblioteca San Antonio, fue reconocido por su impacto.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 2 de junio de 2025 · 5 min</small>
+                    <div><span>♡ 1.9k</span><span>👁 11.2k</span><span>💬 156</span></div>
+                </div>
+            </article>
+
+            <article class="news-card colecciones">
+                <div class="news-cover gradient-orange"><span>📖 Colecciones</span></div>
+                <div class="news-body">
+                    <h3>Nueva colección de literatura afrocolombiana disponible en la Red</h3>
+                    <p>La Red enriquece su catálogo con títulos de literatura afrocolombiana y memoria cultural.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 28 de mayo de 2025 · 4 min</small>
+                    <div><span>♡ 543</span><span>👁 7.8k</span><span>💬 38</span></div>
+                </div>
+            </article>
+
+            <article class="news-card servicios">
+                <div class="news-cover gradient-green"><span>📚 Servicios</span></div>
+                <div class="news-body">
+                    <h3>Biblioteca móvil recorre barrios vulnerables de Cali</h3>
+                    <p>El programa Biblioteca sobre Ruedas beneficia a más de 3.000 personas mensualmente.</p>
+                    <small><i class="fa-regular fa-calendar"></i> 25 de mayo de 2025 · 5 min</small>
+                    <div><span>♡ 487</span><span>👁 6.3k</span><span>💬 32</span></div>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="news-extra">
+
+        <article class="most-read">
+            <h2><i class="fa-solid fa-arrow-trend-up"></i> Lo Más Leído</h2>
+
+            <ol>
+                <li>Feria del Libro de Cali 2025 supera expectativas con más de 50.000 visitantes</li>
+                <li>Colaboración con Biblioteca Nacional digitaliza 10.000 documentos históricos</li>
+                <li>Restauración del archivo fotográfico de Cali revela imágenes inéditas de 1920</li>
+                <li>Nueva sede de Biblioteca Vallencáncora abre sus puertas</li>
+                <li>Club de lectura juvenil gana premio nacional de fomento lector</li>
+            </ol>
+        </article>
+
+        <article class="newsletter-card">
+            <h2><i class="fa-regular fa-bell"></i> Boletín Informativo</h2>
+            <p>Recibe las últimas noticias y eventos de la Red de Bibliotecas directamente en tu correo.</p>
+            <div>
+                <input type="email" placeholder="tu@correo.com">
+                <button>Suscribir</button>
+            </div>
+            <small>Sin spam. Cancela cuando quieras.</small>
+        </article>
+
+        <article class="news-stats">
+            <h2>Estadísticas</h2>
+            <p><span>Artículos publicados</span><strong>10</strong></p>
+            <p><span>Vistas totales</span><strong>114.7k</strong></p>
+            <p><span>Me gusta totales</span><strong>9.2k</strong></p>
+            <p><span>Comentarios totales</span><strong>732</strong></p>
+        </article>
+
+    </section>
+
+</main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

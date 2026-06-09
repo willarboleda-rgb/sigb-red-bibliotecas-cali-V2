@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil | Sistema Integrado de Gestión Bibliotecaria</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+</head>
+
+<body class="public-body">
+
+{% include 'components/top_navigation.html' %}
+
+<main class="profile-page">
+
+    <aside class="profile-sidebar">
+
+        <div class="profile-card">
+
+            <div class="profile-head">
+                <div class="avatar">CS</div>
+                <h3>Carolina Sánchez</h3>
+                <p class="doc">Cédula de ciudadanía</p>
+                <span class="uid-badge">Usuario N° 4148F2K010</span>
+            </div>
+
+            <div class="profile-nav">
+                <div class="pnav-item active"><i class="fa-solid fa-user"></i> Mi perfil</div>
+                <div class="pnav-item"><i class="fa-solid fa-book-open"></i> Mis préstamos</div>
+                <div class="pnav-item"><i class="fa-solid fa-heart"></i> Favoritos</div>
+                <div class="pnav-item"><i class="fa-solid fa-star"></i> Recomendaciones</div>
+                <div class="pnav-item"><i class="fa-solid fa-calendar-days"></i> Mi agenda</div>
+                <div class="pnav-item" onclick="window.open('https://www.google.com/maps/d/edit?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA&ll=3.6183296174529813,-76.5512867&z=11','_blank')"><i class="fa-solid fa-map-location-dot"></i> Mapa de bibliotecas</div>
+                <div class="pnav-item"><i class="fa-solid fa-universal-access"></i> Accesibilidad</div>
+                <div class="pnav-item"><i class="fa-solid fa-gear"></i> Configuración</div>
+            </div>
+
+            <div class="llave-card-full">
+                <div class="llave-label">Llave del Saber</div>
+                <div class="barcode-wrap">
+                    <div class="barcode"></div>
+                    <div class="barcode-num">0 000214 638190</div>
+                </div>
+            </div>
+
+        </div>
+
+    </aside>
+
+    <section class="profile-content">
+
+        <section class="profile-hero">
+            <div>
+                <span class="profile-badge">Panel ciudadano</span>
+                <h1>Hola, Carolina 👋</h1>
+                <p>
+                    Consulta tus préstamos, recomendaciones, eventos culturales
+                    y bibliotecas cercanas desde tu perfil ciudadano.
+                </p>
+            </div>
+
+            <button class="map-open-btn profile-map-btn"
+        onclick="window.open('https://www.google.com/maps/d/edit?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA&ll=3.6183296174529813,-76.5512867&z=11','_blank')">
+    <i class="fa-solid fa-map-location-dot"></i>
+    Consultar mapa por comuna
+</button>
+        </section>
+
+        <section class="profile-alerts">
+
+            <div class="profile-alert-card notification">
+                <div class="alert-icon">
+                    <i class="fa-solid fa-bell"></i>
+                </div>
+
+                <div>
+                    <strong>Notificaciones</strong>
+                    <p>
+                        Tienes 1 préstamo próximo a vencer y 2 eventos culturales programados esta semana.
+                    </p>
+                </div>
+
+                <span class="alert-count">3</span>
+            </div>
+
+            <div class="profile-alert-card luma">
+                <div class="alert-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                </div>
+
+                <div>
+                    <strong>Luma recomienda</strong>
+                    <p>
+                        Revisa tus préstamos activos y explora actividades culturales cercanas a tu biblioteca favorita.
+                    </p>
+                </div>
+
+                <span class="alert-count">🦜</span>
+            </div>
+
+        </section>
+
+        <section class="profile-summary-grid">
+
+            <div class="profile-summary-card">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <div>
+                    <span>Préstamos activos</span>
+                    <strong>3</strong>
+                </div>
+            </div>
+
+            <div class="profile-summary-card">
+                <i class="fa-solid fa-heart"></i>
+                <div>
+                    <span>Favoritos</span>
+                    <strong>12</strong>
+                </div>
+            </div>
+
+            <div class="profile-summary-card">
+                <i class="fa-solid fa-calendar-check"></i>
+                <div>
+                    <span>Eventos inscritos</span>
+                    <strong>2</strong>
+                </div>
+            </div>
+
+            <div class="profile-summary-card">
+                <i class="fa-solid fa-star"></i>
+                <div>
+                    <span>Recomendaciones</span>
+                    <strong>8</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="profile-actions-grid">
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Mis préstamos</h3>
+                <p>Consulta fechas de devolución, estado de préstamos y renovaciones.</p>
+            </div>
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <h3>Recomendaciones de Luma</h3>
+                <p>Explora contenidos sugeridos según tus intereses y hábitos de lectura.</p>
+            </div>
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-calendar-days"></i>
+                <h3>Programación cultural</h3>
+                <p>Revisa talleres, clubes de lectura, exposiciones y actividades cercanas.</p>
+            </div>
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-map"></i>
+                <h3>Bibliotecas cercanas</h3>
+                <p>Ubica bibliotecas por comuna, servicios, horarios y dirección.</p>
+            </div>
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-headphones"></i>
+                <h3>Audiolibros y podcast</h3>
+                <p>Accede a contenidos sonoros y recursos digitales de la Red.</p>
+            </div>
+
+            <div class="profile-action-card">
+                <i class="fa-solid fa-universal-access"></i>
+                <h3>Preferencias de accesibilidad</h3>
+                <p>Configura modo dislexia, alto contraste y ajustes de lectura.</p>
+            </div>
+
+        </section>
+
+        <section class="profile-detail-grid">
+
+            <div class="profile-detail-card">
+                <div class="detail-header">
+                    <h3>Mis préstamos activos</h3>
+                    <span>3 activos</span>
+                </div>
+
+                <div class="loan-item">
+                    <div>
+                        <strong>El infinito en un junco</strong>
+                        <p>Irene Vallejo</p>
+                    </div>
+                    <span class="status-pill warning">Vence 15 JUN</span>
+                </div>
+
+                <div class="loan-item">
+                    <div>
+                        <strong>Batman: Silencio</strong>
+                        <p>Novela gráfica</p>
+                    </div>
+                    <span class="status-pill">Vence 18 JUN</span>
+                </div>
+
+                <div class="loan-item">
+                    <div>
+                        <strong>Historias para imaginar</strong>
+                        <p>Red de Bibliotecas</p>
+                    </div>
+                    <span class="status-pill">Vence 22 JUN</span>
+                </div>
+            </div>
+
+            <div class="profile-detail-card">
+                <div class="detail-header">
+                    <h3>Mis favoritos</h3>
+                    <span>12 guardados</span>
+                </div>
+
+                <div class="favorite-tags">
+                    <span>📖 Literatura caleña</span>
+                    <span>🎧 Podcast culturales</span>
+                    <span>👧 Infantil y juvenil</span>
+                    <span>🎨 Exposiciones digitales</span>
+                    <span>🧠 Innovación y tecnología</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section class="profile-detail-grid two">
+
+            <div class="profile-detail-card">
+                <div class="detail-header">
+                    <h3>Eventos inscritos</h3>
+                    <span>2 próximos</span>
+                </div>
+
+                <div class="event-mini">
+                    <div class="mini-date">
+                        <strong>12</strong>
+                        <span>JUN</span>
+                    </div>
+                    <div>
+                        <strong>Lecturas para imaginar</strong>
+                        <p>Centro Cultural de Cali · 3:00 p.m.</p>
+                    </div>
+                </div>
+
+                <div class="event-mini">
+                    <div class="mini-date orange">
+                        <strong>18</strong>
+                        <span>JUN</span>
+                    </div>
+                    <div>
+                        <strong>Ilustración y cómic</strong>
+                        <p>Biblioteca Oriente · 4:30 p.m.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profile-detail-card library-card">
+                <div class="detail-header">
+                    <h3>Biblioteca favorita</h3>
+                    <span>Principal</span>
+                </div>
+
+                <div class="library-icon">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <h3>Centro Cultural de Cali</h3>
+                <p>Carrera 5 No. 6 - 05</p>
+                <p>Servicios: préstamo, consulta, actividades culturales y biblioteca digital.</p>
+
+                <button class="small-map-button"         onclick="window.open('https://www.google.com/maps/d/edit?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA&ll=3.6183296174529813,-76.5512867&z=11','_blank')">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Ver en el mapa
+                </button>
+            </div>
+
+        </section>
+
+        <section class="ai-recommendations">
+            <div class="section-header">
+                <span>Luma recomienda</span>
+                <h2>Contenido sugerido para ti</h2>
+                <p>
+                    Estas recomendaciones se basan en tus intereses, biblioteca favorita
+                    y actividades culturales de la Red.
+                </p>
+            </div>
+
+            <div class="ai-grid">
+
+                <div class="ai-card">
+                    <span>📖</span>
+                    <h3>Literatura caleña</h3>
+                    <p>Historias, crónicas y memorias de Cali.</p>
+                </div>
+
+                <div class="ai-card">
+                    <span>🎧</span>
+                    <h3>Audiolibros</h3>
+                    <p>Lecturas para escuchar desde cualquier lugar.</p>
+                </div>
+
+                <div class="ai-card">
+                    <span>🎭</span>
+                    <h3>Eventos culturales</h3>
+                    <p>Actividades cercanas a tu biblioteca favorita.</p>
+                </div>
+
+                <div class="ai-card">
+                    <span>📚</span>
+                    <h3>Lo más leído</h3>
+                    <p>Tendencias de lectura en la Red.</p>
+                </div>
+
+            </div>
+        </section>
+
+    </section>
+
+</main>
+
+
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+    let userMapInitialized = false;
+    let userMap;
+
+    function openUserMapModal() {
+        document.getElementById("userMapModal").style.display = "block";
+
+        setTimeout(() => {
+            if (!userMapInitialized) {
+                userMap = L.map('userMapCali').setView([3.4516, -76.5320], 12);
+
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '© OpenStreetMap'
+                }).addTo(userMap);
+
+                const bibliotecas = [
+                    {
+                        nombre: 'Centro Cultural de Cali',
+                        comuna: 'Comuna 3',
+                        direccion: 'Carrera 5 No. 6 - 05',
+                        coords: [3.4516, -76.5320]
+                    },
+                    {
+                        nombre: 'Biblioteca Pública Municipal',
+                        comuna: 'Comuna 2',
+                        direccion: 'Norte de Cali',
+                        coords: [3.4745, -76.5280]
+                    },
+                    {
+                        nombre: 'Biblioteca Comunitaria Oriente',
+                        comuna: 'Comuna 13',
+                        direccion: 'Oriente de Cali',
+                        coords: [3.4272, -76.4850]
+                    }
+                ];
+
+                bibliotecas.forEach(biblioteca => {
+                    L.marker(biblioteca.coords)
+                        .addTo(userMap)
+                        .bindPopup(`
+                            <strong>${biblioteca.nombre}</strong><br>
+                            ${biblioteca.comuna}<br>
+                            ${biblioteca.direccion}
+                        `);
+                });
+
+                userMapInitialized = true;
+            } else {
+                userMap.invalidateSize();
+            }
+        }, 300);
+    }
+
+    function closeUserMapModal() {
+        document.getElementById("userMapModal").style.display = "none";
+    }
+</script>
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

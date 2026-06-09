@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Programación Permanente | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="permanent-page">
+
+    <section class="permanent-hero">
+
+        <span class="permanent-badge">
+            <i class="fa-regular fa-calendar"></i>
+            Programación Permanente · RBPC
+        </span>
+
+        <h1>Programación Permanente</h1>
+
+        <p>
+            La agenda cultural ininterrumpida de la Red de Bibliotecas Públicas de Cali.
+            Actividades para toda la comunidad, todos los días del año.
+        </p>
+
+        <div class="permanent-stats">
+            <article>
+                <span>Bibliotecas</span>
+                <strong>22</strong>
+            </article>
+
+            <article>
+                <span>Actividades mensuales</span>
+                <strong>150+</strong>
+            </article>
+
+            <article>
+                <span>Territorios LEO</span>
+                <strong>5</strong>
+            </article>
+
+            <article>
+                <span>Días de cultura</span>
+                <strong>365</strong>
+            </article>
+        </div>
+
+    </section>
+
+    <section class="permanent-search-section">
+
+        <div class="section-title">
+            <span>Busca tu biblioteca</span>
+            <h2>Explora la Programación</h2>
+            <p>
+                Encuentra actividades en las 22 bibliotecas de la Red.
+                Filtra por nombre, territorio o tipo de actividad.
+            </p>
+        </div>
+
+        <div class="permanent-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text"
+                   id="permanentSearch"
+                   placeholder="Buscar biblioteca, actividad, territorio..."
+                   onkeyup="searchPermanent()">
+        </div>
+
+        <div class="permanent-filters">
+            <button class="permanent-filter active" onclick="filterPermanent('all', this)">Todos</button>
+            <button class="permanent-filter" onclick="filterPermanent('norte', this)">🔵 Norte</button>
+            <button class="permanent-filter" onclick="filterPermanent('sur', this)">🟢 Sur</button>
+            <button class="permanent-filter" onclick="filterPermanent('oriente', this)">🟡 Oriente</button>
+            <button class="permanent-filter" onclick="filterPermanent('occidente', this)">🟣 Occidente</button>
+            <button class="permanent-filter" onclick="filterPermanent('centro', this)">🔴 Centro</button>
+        </div>
+
+        <p class="permanent-count">
+            <strong>22</strong> bibliotecas encontradas
+        </p>
+
+        <div class="permanent-grid">
+
+            <article class="permanent-card centro">
+                <span>Centro</span>
+                <h3>Biblioteca Carlos Garcés</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 5 #3-37, Centro Histórico</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 6 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card centro">
+                <span>Centro</span>
+                <h3>Biblioteca Departamental</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Av. 3N #N 6-40, Centro</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 3 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card centro">
+                <span>Centro</span>
+                <h3>Biblioteca San Francisco</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 7 #4-52, San Francisco</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 3 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card centro">
+                <span>Centro</span>
+                <h3>Biblioteca Rafael Borelli</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cra. 6 #10-24, Centro</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 2 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card sur">
+                <span>Sur</span>
+                <h3>Biblioteca de Siloé</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 5 Sur #48C-32, Comuna 20</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 6 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card sur">
+                <span>Sur</span>
+                <h3>Biblioteca El Limonar</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 38 Sur #32-15, Comuna 14</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 3 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card norte">
+                <span>Norte</span>
+                <h3>Biblioteca El Vallado</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 15N #6AN-22, Barrio El Vallado</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 4 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card norte">
+                <span>Norte</span>
+                <h3>Biblioteca Las Américas</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 58N #16-80, Barrio Las Américas</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 2 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card oriente">
+                <span>Oriente</span>
+                <h3>Biblioteca de La Floresta</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cra. 42 #30-60, Barrio La Floresta</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 5 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card oriente">
+                <span>Oriente</span>
+                <h3>Biblioteca San Nicolás</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Calle 32 #27-45, San Nicolás</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 3 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card occidente">
+                <span>Occidente</span>
+                <h3>Biblioteca Pampalinda</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cra. 100 #14A-30, Barrio Pampalinda</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 5 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+            <article class="permanent-card occidente">
+                <span>Occidente</span>
+                <h3>Biblioteca San Antonio</h3>
+                <p><i class="fa-solid fa-location-dot"></i> Cra. 8 #82-25, Barrio San Antonio</p>
+                <div>
+                    <small><i class="fa-regular fa-calendar"></i> 3 actividades / semana</small>
+                    <button>Ver programación <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="program-axis-section">
+
+        <div class="section-title">
+            <span>Ejes temáticos</span>
+            <h2>Ejes de Programación</h2>
+            <p>
+                Seis ejes temáticos articulan toda la oferta cultural de la Red de Bibliotecas de Cali.
+            </p>
+        </div>
+
+        <div class="axis-grid">
+
+            <article class="axis-card orange">
+                <i class="fa-solid fa-book-open"></i>
+                <h3>Lectura y Escritura</h3>
+                <p>Fomento de hábitos lectores y creación literaria a través de clubes, talleres y círculos de lectura.</p>
+                <div>
+                    <span>Clubes de lectura</span>
+                    <span>Talleres de escritura creativa</span>
+                    <span>Círculos de lectura</span>
+                    <span>Encuentros con autores</span>
+                    <span>Maratones de lectura</span>
+                </div>
+            </article>
+
+            <article class="axis-card pink">
+                <i class="fa-solid fa-palette"></i>
+                <h3>Artes y Creatividad</h3>
+                <p>Expresión artística y desarrollo creativo en diversas disciplinas para todas las edades.</p>
+                <div>
+                    <span>Talleres de pintura</span>
+                    <span>Dibujo artístico</span>
+                    <span>Manualidades</span>
+                    <span>Arte digital</span>
+                    <span>Intervenciones urbanas</span>
+                </div>
+            </article>
+
+            <article class="axis-card purple">
+                <i class="fa-solid fa-music"></i>
+                <h3>Música y Audiovisuales</h3>
+                <p>Formación musical, producción audiovisual y cine como herramientas de expresión cultural.</p>
+                <div>
+                    <span>Talleres de instrumentos</span>
+                    <span>Producción musical</span>
+                    <span>Cine club</span>
+                    <span>Edición de video</span>
+                    <span>Podcast comunitario</span>
+                </div>
+            </article>
+
+            <article class="axis-card green">
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Tecnología e Innovación</h3>
+                <p>Alfabetización digital y herramientas tecnológicas para la inclusión y el empoderamiento.</p>
+                <div>
+                    <span>Alfabetización digital</span>
+                    <span>Robótica educativa</span>
+                    <span>Programación básica</span>
+                    <span>Ofimática</span>
+                    <span>Seguridad en línea</span>
+                </div>
+            </article>
+
+            <article class="axis-card orange">
+                <i class="fa-solid fa-building-columns"></i>
+                <h3>Patrimonio Cultural</h3>
+                <p>Preservación y difusión de la memoria histórica, las tradiciones y el patrimonio cultural de Cali.</p>
+                <div>
+                    <span>Historia local</span>
+                    <span>Tradiciones orales</span>
+                    <span>Archivo comunitario</span>
+                    <span>Patrimonio inmaterial</span>
+                </div>
+            </article>
+
+            <article class="axis-card blue">
+                <i class="fa-solid fa-users"></i>
+                <h3>Formación Ciudadana</h3>
+                <p>Construcción de ciudadanía a través del diálogo, la participación y la conciencia ambiental.</p>
+                <div>
+                    <span>Derechos humanos</span>
+                    <span>Participación comunitaria</span>
+                    <span>Medio ambiente</span>
+                    <span>Foros ciudadanos</span>
+                    <span>Liderazgo juvenil</span>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

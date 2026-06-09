@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Estrategias y Proyectos | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    {% include "components/top_navigation.html" %}
+
+    <main class="strategies-page">
+
+        <section class="strategies-hero">
+            <span>Plan estratégico · Red de Bibliotecas</span>
+            <h1>Estrategias y Proyectos</h1>
+            <p>
+                Iniciativas que transforman comunidades a través de la lectura,
+                la escritura, la oralidad, la memoria, la cultura y la innovación.
+            </p>
+
+            <div class="strategies-stats">
+                <div><strong>5</strong><span>Territorios LEO</span></div>
+                <div><strong>260k+</strong><span>Materiales</span></div>
+                <div><strong>60+</strong><span>Espacios</span></div>
+                <div><strong>35 años</strong><span>Trayectoria</span></div>
+            </div>
+        </section>
+
+        <section class="strategy-section">
+            <div class="section-header">
+                <span>✨ Estrategia principal</span>
+                <h2>Estrategia LEO</h2>
+                <p>
+                    Lectura, Escritura y Oralidad como marco estratégico que articula
+                    la labor de la Red de Bibliotecas en cinco territorios de acción.
+                </p>
+            </div>
+
+            <div class="leo-card">
+                <div class="leo-icons">
+                    <span>📖</span>
+                    <span>🧠</span>
+                    <span>🎙️</span>
+                </div>
+
+                <p>
+                    La Estrategia LEO es el marco principal que guía las acciones de la Red de
+                    Bibliotecas. Su reorganización en territorios permite una gestión más cercana
+                    a las comunidades y una especialización temática por zona.
+                </p>
+            </div>
+        </section>
+
+        <section class="territories-section">
+            <div class="section-header">
+                <span>📍 Territorios</span>
+                <h2>Territorios LEO</h2>
+                <p>
+                    Organización territorial para fortalecer la atención, los servicios y los
+                    procesos culturales en las bibliotecas públicas de Cali.
+                </p>
+            </div>
+
+            <div class="territory-filters">
+                <button class="filter-btn active" onclick="filterStrategies('all', this)">Todos</button>
+                <button class="filter-btn" onclick="filterStrategies('territorio', this)">Territorios</button>
+                <button class="filter-btn" onclick="filterStrategies('programa', this)">Programas</button>
+                <button class="filter-btn" onclick="filterStrategies('proyecto', this)">Proyectos</button>
+                <button class="filter-btn" onclick="filterStrategies('calidad', this)">Calidad</button>
+                <button class="filter-btn" onclick="filterStrategies('meta', this)">Metas</button>
+            </div>
+
+            <div class="territory-grid">
+
+                <article class="strategy-card territorio">
+                    <div class="card-top blue">T1</div>
+                    <h3>T1 Azul</h3>
+                    <strong>Acceso a la información</strong>
+                    <p>
+                        Territorio orientado a promover el acceso equitativo a la información,
+                        el conocimiento y los servicios bibliotecarios.
+                    </p>
+                </article>
+
+                <article class="strategy-card territorio">
+                    <div class="card-top purple">T2</div>
+                    <h3>T2 Morado</h3>
+                    <strong>Lectura, escritura y oralidad</strong>
+                    <p>
+                        Territorio enfocado en el fortalecimiento de prácticas lectoras,
+                        escritura creativa y experiencias de oralidad.
+                    </p>
+                </article>
+
+                <article class="strategy-card territorio">
+                    <div class="card-top yellow">T3</div>
+                    <h3>T3 Amarillo</h3>
+                    <strong>Patrimonio y memoria</strong>
+                    <p>
+                        Espacio para la preservación de la memoria local, la identidad cultural
+                        y el reconocimiento del patrimonio comunitario.
+                    </p>
+                </article>
+
+                <article class="strategy-card territorio">
+                    <div class="card-top green">T4</div>
+                    <h3>T4 Verde</h3>
+                    <strong>Laboratorio de innovación y creación</strong>
+                    <p>
+                        Espacio para la experimentación, la innovación social y cultural, y la
+                        creación de nuevos formatos de servicios bibliotecarios.
+                    </p>
+                </article>
+
+                <article class="strategy-card territorio">
+                    <div class="card-top orange">T5</div>
+                    <h3>T5 Naranja</h3>
+                    <strong>Identidad, territorio y cultura</strong>
+                    <p>
+                        Enfocado en el fortalecimiento de la identidad caleña, la apropiación
+                        territorial y la valoración de expresiones culturales locales.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="programs-section">
+    <div class="section-header">
+        <span>🎯 Programación</span>
+        <h2>Programas Transversales</h2>
+        <p>
+            Iniciativas que atraviesan todos los territorios y fortalecen la misión
+            de la Red de Bibliotecas.
+        </p>
+    </div>
+
+    <div class="program-grid">
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-leaf"></i>
+            <h3>Semana de la Biodiversidad</h3>
+            <p>Actividades ambientales, talleres ecológicos y concientización sobre la biodiversidad del Valle del Cauca.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-people-carry-box"></i>
+            <h3>Ferias de Servicio</h3>
+            <p>Ferias itinerantes que llevan servicios bibliotecarios, culturales y tecnológicos a comunidades vulnerables.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-drum"></i>
+            <h3>Quilombo Pedagógico Germán Patiño Ossa</h3>
+            <p>Espacio pedagógico de música afrocolombiana y tradiciones del Pacífico.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>Libro al Viento</h3>
+            <p>Programa de distribución gratuita de libros en espacios públicos para promover la lectura casual y espontánea.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-shield-heart"></i>
+            <h3>Cali Cultura y Segura</h3>
+            <p>Estrategia de seguridad ciudadana a través del arte, la cultura y la participación comunitaria en los barrios.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-venus"></i>
+            <h3>Semana de la Mujer</h3>
+            <p>Programación especial con lecturas, talleres y foros dedicados a la mujer y sus aportes a la sociedad caleña.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-candy-cane"></i>
+            <h3>Festival de Macetas</h3>
+            <p>Intervención artística comunitaria con macetas decoradas que embellecen espacios públicos y promueven la cultura ambiental.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-landmark"></i>
+            <h3>Renovando Nuestro Patrimonio</h3>
+            <p>Actividades de restauración, preservación y difusión del patrimonio cultural material e inmaterial de Cali.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-hands-holding-circle"></i>
+            <h3>Semana de la Afrocolombianidad</h3>
+            <p>Celebración de la cultura afrocolombiana con música, literatura, gastronomía y tradiciones del Pacífico.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-building-columns"></i>
+            <h3>Semana del Patrimonio</h3>
+            <p>Jornadas de puertas abiertas, visitas guiadas y actividades para valorar el patrimonio histórico y arquitectónico.</p>
+        </article>
+
+        <article class="strategy-card programa">
+            <i class="fa-solid fa-heart-pulse"></i>
+            <h3>Cuidarte</h3>
+            <p>Programa de bienestar y autocuidado dirigido a bibliotecarios y personal de la Red.</p>
+        </article>
+
+    </div>
+</section>
+
+        <section class="quality-section calidad">
+            <div class="section-header">
+                <span>🏅 Excelencia</span>
+                <h2>Gestión de Calidad</h2>
+                <p>
+                    Compromiso con la excelencia en el servicio bibliotecario a través de procesos
+                    certificados y mejoras continuas.
+                </p>
+            </div>
+
+            <div class="quality-card">
+                <h3>ISO 9001:2015</h3>
+                <strong>Sistema de Gestión de Calidad</strong>
+                <p>
+                    La Red de Bibliotecas de Santiago de Cali cuenta con certificación ISO 9001:2015
+                    para sus procesos de gestión de calidad, garantizando estándares internacionales
+                    en la prestación de servicios bibliotecarios.
+                </p>
+
+                <div class="quality-list">
+                    <span>Procesos estandarizados</span>
+                    <span>Mejora continua</span>
+                    <span>Auditorías internas</span>
+                    <span>Planes de mejora</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+    <div class="section-header">
+        <span>🚀 Impacto</span>
+        <h2>Proyectos Destacados</h2>
+        <p>
+            Iniciativas que transforman comunidades, preservan la memoria y democratizan
+            el acceso a la cultura.
+        </p>
+    </div>
+
+    <div class="projects-grid">
+
+        <article class="project-card proyecto">
+            <div class="project-number green">01</div>
+            <h3>Biblioteca Digital Make Make</h3>
+            <p>600 ejemplares de literatura infantil con acceso gratuito para niños y familias de todas las comunas de Cali.</p>
+            <span>600 ejemplares</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number orange">02</div>
+            <h3>Archivo Fotográfico</h3>
+            <p>Memoria histórica del distrito de Aguablanca y de Cali, preservando imágenes desde 1920 hasta la actualidad.</p>
+            <span>10.000+ fotografías</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number purple">03</div>
+            <h3>Fondo Editorial de la RBPC</h3>
+            <p>Publicaciones locales incluyendo el Fondo de la Caleñidad y series de procesos bibliotecarios propios.</p>
+            <span>45 publicaciones</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number pink">04</div>
+            <h3>Pet Friendly Protocol</h3>
+            <p>Resolución que permite el ingreso de mascotas a las bibliotecas de la Red.</p>
+            <span>Resolución 2022</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number red">05</div>
+            <h3>Emisora Oriente Estéreo 96.0 FM</h3>
+            <p>Radio comunitaria con el programa Bibliotecas Cuentan, conectando la lectura con las comunidades.</p>
+            <span>96.0 FM</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number blue">06</div>
+            <h3>Magazín 61</h3>
+            <p>Contenido en vivo con invitados especiales y autores destacados.</p>
+            <span>61 ediciones</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number green">07</div>
+            <h3>Gaia en la Biblioteca</h3>
+            <p>Proyecto IFLA Green Library de la Biblioteca Daniel Guillard, con enfoque en sostenibilidad ambiental.</p>
+            <span>IFLA Green Library</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number orange">08</div>
+            <h3>Biblioghetto</h3>
+            <p>Iniciativa de lectura en territorios vulnerables, llevando libros y talleres literarios a barrios de alta necesidad.</p>
+            <span>15 barrios</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number purple">09</div>
+            <h3>Pijamadas Literarias</h3>
+            <p>Eventos de lectura nocturnos para niños y familias, promoviendo el hábito lector en un ambiente lúdico.</p>
+            <span>48 eventos/año</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number pink">10</div>
+            <h3>Letras Confinadas</h3>
+            <p>Proyecto de escritura colectiva desarrollado durante la pandemia como ejercicio de resistencia literaria.</p>
+            <span>663 participantes</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number red">11</div>
+            <h3>Brigadas de Espacios No Convencionales</h3>
+            <p>Promotores de lectura llevando libros y actividades a parques, clubes, plazas y espacios comunitarios.</p>
+            <span>120+ espacios</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number blue">12</div>
+            <h3>Huertas Comunitarias</h3>
+            <p>Proyectos ambientales en bibliotecas como Desepaz y La Unión, combinando lectura con agricultura urbana.</p>
+            <span>8 bibliotecas</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number green">13</div>
+            <h3>Concurso de Poesía Inédita</h3>
+            <p>Concurso anual de poesía con 24 ediciones consecutivas, descubriendo nuevos talentos literarios del suroccidente.</p>
+            <span>24 ediciones</span>
+        </article>
+
+        <article class="project-card proyecto">
+            <div class="project-number orange">14</div>
+            <h3>Concurso Andrés Caicedo</h3>
+            <p>Concurso para jóvenes de 15 a 25 años, en honor al autor caleño y orientado al fomento de la creación literaria juvenil.</p>
+            <span>15 a 25 años</span>
+        </article>
+
+    </div>
+</section>
+
+        <section class="goals-section">
+            <div class="section-header">
+                <span>✨ Visión estratégica</span>
+                <h2>Metas y Objetivos</h2>
+                <p>
+                    Los pilares fundamentales que guían la gestión de la Red de Bibliotecas hacia el futuro.
+                </p>
+            </div>
+
+            <div class="goals-grid">
+
+                <article class="strategy-card meta">
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Acceso a la Información</h3>
+                    <p>Promover el acceso equitativo a la información y el conocimiento para todas las comunidades.</p>
+                </article>
+
+                <article class="strategy-card meta">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                    <h3>Hábitos de Lectura, Escritura y Oralidad</h3>
+                    <p>Fortalecer los hábitos LEO mediante clubes, festivales y procesos comunitarios.</p>
+                </article>
+
+                <article class="strategy-card meta">
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Espacio Técnico Adecuado</h3>
+                    <p>Consolidar la biblioteca como espacio para el aprendizaje, la creación y la convivencia.</p>
+                </article>
+
+                <article class="strategy-card meta">
+                    <i class="fa-solid fa-bolt"></i>
+                    <h3>Inclusión Digital</h3>
+                    <p>Impulsar la eliminación de barreras tecnológicas para el acceso universal al conocimiento.</p>
+                </article>
+
+                <article class="strategy-card meta">
+                    <i class="fa-solid fa-award"></i>
+                    <h3>Formación del Personal</h3>
+                    <p>Promover la formación continua del personal bibliotecario para un servicio de excelencia.</p>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+</body>
+
+</html>

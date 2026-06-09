@@ -1,0 +1,215 @@
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+    Red de Bibliotecas Públicas de Cali
+</title>
+
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/sigb.css') }}">
+
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+{% include 'components/navbar.html' %}
+
+<section class="libraries-hero">
+
+    <div class="section-header">
+
+        <span>Red de Bibliotecas Públicas de Cali</span>
+
+        <h1>
+            Explora las bibliotecas de la ciudad
+        </h1>
+
+        <p>
+            Consulta la ubicación, servicios, programación cultural y recursos
+            disponibles en las bibliotecas y espacios de lectura de la Red.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="library-search-section">
+
+    <div class="library-search-box">
+
+        <input
+            type="text"
+            placeholder="Buscar biblioteca, comuna, servicio o actividad">
+
+        <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+    </div>
+
+</section>
+
+<section class="impact-section">
+
+    <div class="impact-card">
+        <i class="fa-solid fa-building-columns"></i>
+        <div>
+            <strong>61</strong>
+            <span>Bibliotecas y espacios culturales</span>
+        </div>
+    </div>
+
+    <div class="impact-card">
+        <i class="fa-solid fa-location-dot"></i>
+        <div>
+            <strong>22</strong>
+            <span>Comunas con cobertura</span>
+        </div>
+    </div>
+
+    <div class="impact-card">
+        <i class="fa-solid fa-users"></i>
+        <div>
+            <strong>32.500+</strong>
+            <span>Usuarios activos</span>
+        </div>
+    </div>
+
+    <div class="impact-card">
+        <i class="fa-solid fa-book"></i>
+        <div>
+            <strong>18.420+</strong>
+            <span>Recursos bibliográficos</span>
+        </div>
+    </div>
+
+</section>
+
+<section class="official-map-section">
+
+    <div class="section-header">
+
+        <span>Mapa interactivo</span>
+
+        <h2>
+            Mapa Oficial de la Red
+        </h2>
+
+        <p>
+            Ubica las bibliotecas públicas, centros culturales y espacios
+            de lectura distribuidos en Cali.
+        </p>
+
+    </div>
+
+    <div class="official-map">
+
+        <iframe
+            src="https://www.google.com/maps/d/u/0/embed?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA"
+            loading="lazy">
+        </iframe>
+
+    </div>
+
+</section>
+
+<section class="libraries-directory">
+
+    <div class="section-header">
+
+        <span>Directorio</span>
+
+        <h2>
+            Bibliotecas destacadas
+        </h2>
+
+        <p>
+            Conoce algunos de los espacios que hacen parte de la Red de
+            Bibliotecas Públicas de Cali.
+        </p>
+
+    </div>
+
+    <div class="directory-grid">
+
+        <article class="directory-card">
+
+            <i class="fa-solid fa-building-columns"></i>
+
+            <h3>
+                Biblioteca Pública Central Didáctica La Casona
+            </h3>
+
+            <p>
+                Servicios bibliotecarios, promoción de lectura,
+                actividades culturales y formación ciudadana.
+            </p>
+
+            <a href="#" class="directory-link">
+                Ver información
+            </a>
+
+        </article>
+
+        <article class="directory-card">
+
+            <i class="fa-solid fa-book-open"></i>
+
+            <h3>
+                Biblioteca Centenario
+            </h3>
+
+            <p>
+                Consulta bibliográfica, actividades de lectura,
+                acceso digital y programación cultural.
+            </p>
+
+            <a href="#" class="directory-link">
+                Ver información
+            </a>
+
+        </article>
+
+        <article class="directory-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <h3>
+                Biblioteca Comunitaria El Pondaje
+            </h3>
+
+            <p>
+                Espacio comunitario para lectura, formación,
+                encuentro y participación ciudadana.
+            </p>
+
+            <a href="#" class="directory-link">
+                Ver información
+            </a>
+
+        </article>
+
+        <article class="directory-card">
+
+            <i class="fa-solid fa-laptop"></i>
+
+            <h3>
+                Biblioteca Digital de Cali
+            </h3>
+
+            <p>
+                Recursos digitales, documentos, contenidos educativos
+                y acceso remoto al conocimiento.
+            </p>
+
+            <a href="#" class="directory-link">
+                Ver información
+            </a>
+
+        </article>
+
+    </div>
+
+</section>
+
+{% include 'components/footer.html' %}

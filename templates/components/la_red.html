@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>La Red | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="network-page">
+
+    <section class="network-hero">
+
+        <span class="network-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Red de Bibliotecas Públicas de Cali
+        </span>
+
+        <h1>
+            Red de Bibliotecas Públicas de Cali
+        </h1>
+
+        <p>
+            35 años promoviendo la lectura, la escritura y la biodiversidad.
+        </p>
+
+        <div class="network-quote">
+            <i class="fa-regular fa-heart"></i>
+
+            <p>
+                “Una comunidad que valora sus bibliotecas es una comunidad comprometida
+                con la paz, la educación y la justicia social”
+            </p>
+
+            <span>
+                — Alcaldía de Santiago de Cali
+            </span>
+        </div>
+
+    </section>
+
+    <section class="network-stat-cards">
+
+        <article>
+            <i class="fa-solid fa-building-columns"></i>
+            <strong>61</strong>
+            <span>Espacios Bibliotecarios</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-book-open"></i>
+            <strong>260.000+</strong>
+            <span>Materiales Bibliográficos</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-location-dot"></i>
+            <strong>19</strong>
+            <span>Comunas</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-map-location-dot"></i>
+            <strong>14</strong>
+            <span>Corregimientos</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-lines-leaning"></i>
+            <strong>5</strong>
+            <span>Territorios LEO</span>
+        </article>
+
+        <article>
+            <i class="fa-regular fa-clock"></i>
+            <strong>35</strong>
+            <span>Años de Historia</span>
+        </article>
+
+    </section>
+
+    <section class="network-tabs">
+
+        <button class="network-tab active" onclick="showNetworkSection('historia', this)">
+            <i class="fa-regular fa-clock"></i>
+            Nuestra Historia
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('estructura', this)">
+            <i class="fa-solid fa-building"></i>
+            Estructura Actual
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('alianzas', this)">
+            <i class="fa-solid fa-globe"></i>
+            Alianzas
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('reconocimientos', this)">
+            <i class="fa-solid fa-award"></i>
+            Reconocimientos
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('politica', this)">
+            <i class="fa-solid fa-shield-halved"></i>
+            Política Pública
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('leo', this)">
+            <i class="fa-solid fa-book-open-reader"></i>
+            Actividades LEO
+        </button>
+
+        <button class="network-tab" onclick="showNetworkSection('gestion', this)">
+            <i class="fa-solid fa-chart-column"></i>
+            Gestión
+        </button>
+
+    </section>
+
+    <section class="network-content active" id="network-historia">
+
+        <article class="network-info-card">
+
+            <div class="network-card-title">
+                <i class="fa-solid fa-bullseye"></i>
+                <h2>Nuestra Misión</h2>
+            </div>
+
+            <p>
+                Democratizar el acceso a la información y el conocimiento, promoviendo la lectura,
+                la escritura y la oralidad como herramientas fundamentales para la construcción de
+                ciudadanía, la inclusión social y el desarrollo cultural de Santiago de Cali.
+            </p>
+
+        </article>
+
+        <article class="network-info-card">
+
+            <div class="network-card-title">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <h2>Evolución Histórica</h2>
+            </div>
+
+            <p>
+                Nacida en 1989 como una iniciativa comunitaria de los barrios de Cali, la Red ha
+                evolucionado hasta convertirse en una de las redes de bibliotecas públicas más
+                importantes de Colombia. Fundada como comunidad, madurada como red y fortalecida
+                como política pública.
+            </p>
+
+            <div class="network-evolution">
+                <span>Bibliotecas Populares</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <span>Bibliotecas Comunitarias</span>
+                <i class="fa-solid fa-chevron-right"></i>
+                <strong>Red de Bibliotecas Públicas de Cali</strong>
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-estructura">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-sitemap"></i>
+                <h2>Estructura Actual</h2>
+            </div>
+
+            <p>
+                La Red se organiza mediante territorios LEO, bibliotecas públicas, equipos de gestión
+                cultural, mediadores de lectura y servicios bibliotecarios orientados a la ciudadanía.
+            </p>
+
+            <div class="network-tags">
+                <span>Dirección General</span>
+                <span>Coordinación Territorial</span>
+                <span>Equipo LEO</span>
+                <span>Bibliotecarios</span>
+                <span>Gestión Cultural</span>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-alianzas">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-handshake-angle"></i>
+                <h2>Alianzas</h2>
+            </div>
+
+            <p>
+                La Red articula acciones con instituciones culturales, educativas, comunitarias y
+                gubernamentales para fortalecer el acceso a la lectura, la cultura y el conocimiento.
+            </p>
+
+            <div class="network-tags">
+                <span>Instituciones educativas</span>
+                <span>Organizaciones comunitarias</span>
+                <span>Sector cultural</span>
+                <span>Bibliotecas aliadas</span>
+            </div>
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-reconocimientos">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-medal"></i>
+                <h2>Reconocimientos</h2>
+            </div>
+
+            <p>
+                La Red ha consolidado procesos de alto valor público por su aporte a la lectura,
+                la inclusión social, la memoria territorial y la participación comunitaria.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-politica">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <h2>Política Pública</h2>
+            </div>
+
+            <p>
+                La Red se fortalece como una apuesta de ciudad orientada a garantizar derechos culturales,
+                acceso a la información y apropiación social del conocimiento.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-leo">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-book"></i>
+                <h2>Actividades LEO</h2>
+            </div>
+
+            <p>
+                Lectura, Escritura y Oralidad son ejes centrales de la programación bibliotecaria,
+                con clubes de lectura, talleres, narración oral, encuentros con autores y actividades
+                comunitarias.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="network-content" id="network-gestion">
+
+        <article class="network-info-card">
+            <div class="network-card-title">
+                <i class="fa-solid fa-chart-line"></i>
+                <h2>Gestión</h2>
+            </div>
+
+            <p>
+                La gestión de la Red se orienta al fortalecimiento de servicios bibliotecarios,
+                seguimiento territorial, programación cultural, apropiación ciudadana y mejora
+                continua de los espacios de lectura.
+            </p>
+        </article>
+
+    </section>
+
+    <section class="network-timeline">
+
+        <div class="network-card-title">
+            <i class="fa-regular fa-clock"></i>
+            <h2>Línea del Tiempo</h2>
+        </div>
+
+        <div class="timeline-list">
+
+            <article>
+                <span>1910</span>
+                <h3>Biblioteca del Centenario</h3>
+                <p>
+                    Primera biblioteca pública de Cali, fundada para conmemorar el centenario
+                    de la independencia.
+                </p>
+            </article>
+
+            <article>
+                <span>1970s</span>
+                <h3>Bibliotecas Populares</h3>
+                <p>
+                    Surgen las Bibliotecas Populares como iniciativa comunitaria en barrios de Cali.
+                </p>
+            </article>
+
+            <article>
+                <span>1989</span>
+                <h3>Fundación de la RBPC</h3>
+                <p>
+                    Se crea formalmente la Red de Bibliotecas Públicas de Cali como entidad municipal.
+                </p>
+            </article>
+
+            <article>
+                <span>2015</span>
+                <h3>Contratación Directa</h3>
+                <p>
+                    La Secretaría de Cultura asume la contratación directa del personal bibliotecario.
+                </p>
+            </article>
+
+            <article>
+                <span>2021</span>
+                <h3>Reestructuración</h3>
+                <p>
+                    Transición de nodos a Territorios LEO: Lectura, Escritura y Oralidad.
+                </p>
+            </article>
+
+            <article>
+                <span>2024</span>
+                <h3>35 Aniversario</h3>
+                <p>
+                    La RBPC celebra 35 años promoviendo la lectura, la escritura y la biodiversidad.
+                </p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="network-leadership">
+
+        <div class="network-card-title">
+            <i class="fa-solid fa-users"></i>
+            <h2>Liderazgo de la Red</h2>
+        </div>
+
+        <p>
+            La Red de Bibliotecas Públicas de Cali cuenta con un equipo de profesionales comprometidos
+            con la lectura, la cultura y la comunidad. Nuestros coordinadores territoriales y bibliotecarios
+            trabajan día a día para fortalecer los servicios bibliotecarios en los cinco territorios LEO
+            de la ciudad.
+        </p>
+
+        <div class="network-tags">
+            <span>Dirección General</span>
+            <span>Coordinación Territorial</span>
+            <span>Equipo LEO</span>
+            <span>Bibliotecarios</span>
+            <span>Gestión Cultural</span>
+        </div>
+
+    </section>
+
+    <section class="network-cta">
+
+        <i class="fa-solid fa-lines-leaning"></i>
+
+        <h2>
+            Conoce Nuestros <strong>Espacios</strong>
+        </h2>
+
+        <p>
+            Explora los 61 espacios bibliotecarios distribuidos en las 19 comunas y 14 corregimientos
+            de Santiago de Cali. Cada territorio tiene su propia identidad y oferta cultural.
+        </p>
+
+        <div class="network-cta-actions">
+
+    <a href="/bibliotecas">
+        <i class="fa-solid fa-building-columns"></i>
+        Ver bibliotecas
+    </a>
+
+    <a href="/directorio">
+        <i class="fa-solid fa-location-dot"></i>
+        Ver directorio
+    </a>
+
+</div>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

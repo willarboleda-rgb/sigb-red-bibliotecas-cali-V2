@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Ingreso | Sistema Integrado de Gestión Bibliotecaria</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="auth-body">
+
+<main class="auth-wrapper">
+
+    <section class="auth-visual">
+
+        <a href="/"
+           class="auth-back">
+            <i class="fa-solid fa-arrow-left"></i>
+            Volver al inicio
+        </a>
+
+        <span class="auth-badge">
+            <i class="fa-solid fa-book-open-reader"></i>
+            Red de Bibliotecas Públicas de Cali
+        </span>
+
+        <h1>
+            Bienvenido al Sistema Integrado de Gestión Bibliotecaria
+        </h1>
+
+        <p>
+            Accede a libros, contenidos digitales, eventos culturales y servicios
+            personalizados de la Red de Bibliotecas Públicas de Cali.
+        </p>
+
+        <div class="auth-benefits">
+
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <span>Mis préstamos</span>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-star"></i>
+                <span>Recomendaciones</span>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>Eventos culturales</span>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Bibliotecas cercanas</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="auth-card">
+
+        <div class="auth-brand">
+
+            <div class="auth-brand-icon">
+                🦜
+            </div>
+
+            <div>
+                <strong>Luma</strong>
+                <span>Guacamaya bibliotecaria</span>
+            </div>
+
+        </div>
+
+        <h2>
+            Iniciar sesión
+        </h2>
+
+        <p>
+            Ingresa con tu usuario para consultar tus servicios bibliotecarios.
+        </p>
+
+        <form method="POST"
+              action="/login">
+
+            <div class="auth-role-selector">
+
+                <button type="button"
+                        class="auth-role active"
+                        onclick="selectRole('ciudadano', this)">
+
+                    <i class="fa-solid fa-user"></i>
+                    Ciudadano
+
+                </button>
+
+                <button type="button"
+                        class="auth-role"
+                        onclick="selectRole('bibliotecario', this)">
+
+                    <i class="fa-solid fa-id-card"></i>
+                    Bibliotecario
+
+                </button>
+
+            </div>
+
+            <input type="hidden"
+                   id="selectedRole"
+                   name="role"
+                   value="ciudadano">
+
+            <label>
+                Usuario o correo electrónico
+                <input type="text"
+                       name="usuario"
+                       placeholder="Ej. usuario@correo.com">
+            </label>
+
+            <label>
+                Contraseña
+                <input type="password"
+                       name="password"
+                       placeholder="Ingresa tu contraseña">
+            </label>
+
+            <div class="auth-row">
+
+                <label class="auth-check">
+                    <input type="checkbox">
+                    Recordarme
+                </label>
+
+                <a href="#">
+                    ¿Olvidaste tu contraseña?
+                </a>
+
+            </div>
+
+            <button type="submit"
+                    class="auth-submit">
+                Ingresar
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+        </form>
+
+        <div class="auth-divider">
+            <span>o</span>
+        </div>
+
+        <a href="/registro"
+           class="auth-outline">
+            Crear cuenta ciudadana
+        </a>
+
+        <small>
+            También puedes ingresar como funcionario o bibliotecario autorizado.
+        </small>
+
+    </section>
+
+</main>
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

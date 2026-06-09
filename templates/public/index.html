@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Sistema Integrado de Gestión Bibliotecaria
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+    {% include 'components/accessibility.html' %}
+
+    {% include 'components/top_navigation.html' %}
+
+    {% include 'components/hero.html' %}
+
+    {% include 'components/stats.html' %}
+
+    {% include 'components/colecciones.html' %}
+
+    {% include 'components/biblioteca_destacada.html' %}
+
+    {% include 'components/agenda.html' %}
+
+    {% include 'components/novedades_home.html' %}
+    
+    {% include 'components/luma.html' %}
+
+    {% include 'components/footer.html' %}
+    <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Servicios | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include 'components/top_navigation.html' %}
+
+<main class="services-pdf-page">
+
+    <!-- HERO -->
+
+    <section class="services-pdf-hero">
+
+        <span class="services-pdf-badge">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            Red de Bibliotecas Públicas de Cali
+        </span>
+
+        <h1>
+            Servicios de la Red
+        </h1>
+
+        <p>
+            Descubre todo lo que las bibliotecas públicas de Cali ofrecen para ti.
+        </p>
+
+        <div class="services-pdf-search">
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+            <input type="text"
+                   id="servicesSearch"
+                   placeholder="Buscar un servicio específico..."
+                   onkeyup="searchServiceCategories()">
+
+        </div>
+
+        <div class="services-pdf-chips">
+
+            <button onclick="filterServiceCategories('prestamo', this)">Préstamo</button>
+            <button onclick="filterServiceCategories('digital', this)">Digital</button>
+            <button onclick="filterServiceCategories('ninos', this)">Niños</button>
+            <button onclick="filterServiceCategories('talleres', this)">Talleres</button>
+            <button onclick="filterServiceCategories('cultura', this)">Cultura</button>
+            <button onclick="filterServiceCategories('tecnologia', this)">Tecnología</button>
+            <button onclick="filterServiceCategories('accesibilidad', this)">Accesibilidad</button>
+
+        </div>
+        <span class="floating-shape shape-1"></span>
+<span class="floating-shape shape-2"></span>
+<span class="floating-shape shape-3"></span>
+<span class="floating-shape shape-4"></span>
+<span class="floating-shape shape-5"></span>
+
+    </section>
+
+    <!-- MÉTRICAS -->
+
+    <section class="services-pdf-stats">
+
+        <article>
+            <i class="fa-solid fa-building-columns"></i>
+            <strong>22</strong>
+            <span>Bibliotecas</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-book-open"></i>
+            <strong>260k+</strong>
+            <span>Materiales</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-users"></i>
+            <strong>32.5k+</strong>
+            <span>Usuarios</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            <strong>58</strong>
+            <span>Servicios</span>
+        </article>
+
+    </section>
+
+    <!-- CATEGORÍAS -->
+
+    <section class="services-categories-section">
+
+        <div class="services-category-title">
+
+            <span>Explora</span>
+
+            <h2>
+                Categorías de Servicios
+            </h2>
+
+            <p>
+                10 categorías · 58 servicios disponibles
+            </p>
+
+        </div>
+
+        <div class="services-accordion">
+
+            <article class="service-category-card prestamo active">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon yellow">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>📖 Préstamo de Libros</h3>
+                        <p>Accede a nuestra colección física y digital</p>
+                        <span>5 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Préstamo externo de libros.</li>
+                        <li>Consulta en sala.</li>
+                        <li>Renovación de material bibliográfico.</li>
+                        <li>Reserva de títulos disponibles.</li>
+                        <li>Orientación para búsqueda en catálogo.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card digital tecnologia">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon cyan">
+                        <i class="fa-solid fa-laptop"></i>
+                    </div>
+
+                    <div>
+                        <h3>💻 Biblioteca Digital</h3>
+                        <p>Plataformas y recursos en línea disponibles 24/7</p>
+                        <span>5 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Consulta de recursos digitales.</li>
+                        <li>Acceso a libros electrónicos.</li>
+                        <li>Audiolibros y podcast culturales.</li>
+                        <li>Exposiciones digitales.</li>
+                        <li>Acompañamiento para uso de plataformas.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card ninos">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon red">
+                        <i class="fa-solid fa-child-reaching"></i>
+                    </div>
+
+                    <div>
+                        <h3>👶 Primera Infancia</h3>
+                        <p>Programas especiales para los más pequeños</p>
+                        <span>5 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Lecturas para primera infancia.</li>
+                        <li>Actividades sensoriales.</li>
+                        <li>Hora del cuento.</li>
+                        <li>Juegos de lenguaje.</li>
+                        <li>Acompañamiento a familias cuidadoras.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card talleres">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon pink">
+                        <i class="fa-solid fa-palette"></i>
+                    </div>
+
+                    <div>
+                        <h3>🎨 Formación y Talleres</h3>
+                        <p>Aprende, crea y comparte en nuestras actividades</p>
+                        <span>6 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Talleres de escritura creativa.</li>
+                        <li>Talleres artísticos.</li>
+                        <li>Formación lectora.</li>
+                        <li>Laboratorios de creación.</li>
+                        <li>Clubes de lectura.</li>
+                        <li>Encuentros con autores.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card cultura">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon orange">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+
+                    <div>
+                        <h3>🎤 Cultura y Eventos</h3>
+                        <p>Programación cultural vibrante y diversa</p>
+                        <span>8 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Agenda cultural.</li>
+                        <li>Conversatorios.</li>
+                        <li>Exposiciones.</li>
+                        <li>Cine foros.</li>
+                        <li>Presentaciones artísticas.</li>
+                        <li>Ferias y encuentros.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card comunidad">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon green">
+                        <i class="fa-solid fa-tree"></i>
+                    </div>
+
+                    <div>
+                        <h3>🌿 Espacios y Comunidad</h3>
+                        <p>Conectando personas y construyendo comunidad</p>
+                        <span>7 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Encuentros comunitarios.</li>
+                        <li>Actividades territoriales.</li>
+                        <li>Uso de salas y espacios.</li>
+                        <li>Memoria local.</li>
+                        <li>Participación ciudadana.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card procesos lectura">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon blue">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+
+                    <div>
+                        <h3>📚 Procesos Especiales</h3>
+                        <p>Programas estratégicos de lectura y extensión</p>
+                        <span>6 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Extensión bibliotecaria.</li>
+                        <li>Maletas viajeras.</li>
+                        <li>Procesos con instituciones educativas.</li>
+                        <li>Lectura en espacios no convencionales.</li>
+                        <li>Proyectos comunitarios.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card patrimonio cultura">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon gold">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div>
+                        <h3>🏛 Patrimonio y Cultura</h3>
+                        <p>Preservando la memoria y el acervo cultural de Cali</p>
+                        <span>5 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Archivo fotográfico.</li>
+                        <li>Patrimonio documental.</li>
+                        <li>Exposiciones de memoria.</li>
+                        <li>Historia local.</li>
+                        <li>Fondo editorial.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card tecnologia digital">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon violet">
+                        <i class="fa-solid fa-computer"></i>
+                    </div>
+
+                    <div>
+                        <h3>📱 Tecnología y Acceso</h3>
+                        <p>Puente digital para la inclusión tecnológica</p>
+                        <span>6 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Acceso a internet.</li>
+                        <li>Uso de computadores.</li>
+                        <li>Alfabetización digital.</li>
+                        <li>Apoyo en trámites digitales.</li>
+                        <li>Formación tecnológica básica.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+            <article class="service-category-card accesibilidad inclusion">
+
+                <button type="button"
+                        onclick="toggleServiceCategory(this)">
+
+                    <div class="service-category-icon teal">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+
+                    <div>
+                        <h3>♿ Inclusión y Accesibilidad</h3>
+                        <p>Bibliotecas para todos, sin excepción</p>
+                        <span>4 servicios</span>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </button>
+
+                <div class="service-category-content">
+
+                    <ul>
+                        <li>Atención diferencial.</li>
+                        <li>Apoyo a personas con discapacidad.</li>
+                        <li>Recursos accesibles.</li>
+                        <li>Orientación personalizada.</li>
+                    </ul>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- CTA -->
+
+    <section class="services-pdf-cta">
+
+        <h2>
+            ¿Necesitas más información?
+        </h2>
+
+        <p>
+            Visita cualquier biblioteca de la Red o contacta con nuestro equipo.
+            Estamos para ayudarte.
+        </p>
+
+        <div>
+            <a href="/bibliotecas">
+                <i class="fa-solid fa-location-dot"></i>
+                Ver Sedes
+            </a>
+
+            <a href="/pqrsd">
+                <i class="fa-solid fa-phone"></i>
+                Contáctanos
+            </a>
+        </div>
+
+    </section>
+
+</main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

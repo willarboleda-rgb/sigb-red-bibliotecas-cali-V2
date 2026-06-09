@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Panel Administrativo | Sistema Integrado de Gestión Bibliotecaria</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet"
+          href="https://unpkg.com/leaflet/dist/leaflet.css">
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+
+<body class="admin-body">
+
+    <main class="admin-page">
+
+        <!-- HERO ADMIN -->
+
+<section class="admin-dashboard-header">
+
+    <div class="admin-hero-top">
+
+        <div class="admin-brand">
+
+            <div class="admin-brand-icon">
+                SIGB
+            </div>
+
+            <div>
+                <strong>Sistema Integrado de Gestión Bibliotecaria</strong>
+                <span>Panel administrativo de la Red de Bibliotecas Públicas de Cali</span>
+            </div>
+
+        </div>
+
+        <div class="admin-user-panel">
+
+            <span>
+                <i class="fa-solid fa-building-columns"></i>
+                Centro Cultural de Cali
+            </span>
+
+            <a href="/">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="/login">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Salir
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="admin-hero-content">
+
+        <div>
+
+            <span class="admin-badge">
+                Panel administrativo
+            </span>
+
+            <h1>
+                Bienvenido, Administrador
+            </h1>
+
+            <p>
+                Consulta indicadores, préstamos, tareas operativas, programación cultural
+                y seguimiento de la Red de Bibliotecas Públicas de Cali.
+            </p>
+
+        </div>
+
+        <div class="admin-location-card">
+
+            <i class="fa-solid fa-building"></i>
+
+            <div>
+                <strong>Centro Cultural de Cali</strong>
+                <span>Biblioteca activa</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+        <!-- BUSCADOR ADMIN -->
+
+        <section class="admin-searchbar">
+
+            <button>
+                Préstamo
+            </button>
+
+            <input type="text"
+                   placeholder="Ingrese el número de carné del usuario o parte de su nombre">
+
+            <button>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <a href="#">Préstamo</a>
+            <a href="#">Devolución</a>
+            <a href="#">Renovar</a>
+            <a href="#">Buscar usuarios</a>
+            <a href="#">Buscar catálogo</a>
+
+        </section>
+
+        
+        <!-- LUMA ADMIN -->
+
+        <section class="admin-luma-banner">
+
+            <div class="admin-luma-icon">
+                🦜
+            </div>
+
+            <div>
+                <strong>Luma informa</strong>
+                <p>
+                    Hoy hay 26 préstamos próximos a vencer, 8 solicitudes pendientes
+                    y 12 actividades culturales programadas.
+                </p>
+            </div>
+
+            <a href="#admin-tareas">
+                Revisar pendientes
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </section>
+
+        <!-- MÉTRICAS -->
+
+        <section class="admin-metrics">
+
+            <div class="metric-card">
+                <i class="fa-solid fa-users"></i>
+                <div>
+                    <span>Usuarios activos</span>
+                    <strong>12.458</strong>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <div>
+                    <span>Préstamos del día</span>
+                    <strong>326</strong>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <i class="fa-solid fa-book"></i>
+                <div>
+                    <span>Préstamos activos</span>
+                    <strong>1.842</strong>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <i class="fa-solid fa-building-columns"></i>
+                <div>
+                    <span>Bibliotecas conectadas</span>
+                    <strong>61</strong>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- SEGUIMIENTO OPERATIVO -->
+
+        <section class="librarian-section">
+
+            <div class="section-header admin-section-title">
+
+                <span>
+                    Gestión bibliotecaria
+                </span>
+
+                <h2>
+                    Seguimiento operativo
+                </h2>
+
+                <p>
+                    Monitoreo rápido de solicitudes, préstamos, eventos y actividad de usuarios.
+                </p>
+
+            </div>
+
+            <div class="librarian-grid">
+
+                <div class="librarian-card">
+
+                    <div class="librarian-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                    <div>
+                        <h3>Solicitudes de Maletas Viajeras</h3>
+                        <p>8 pendientes por revisar</p>
+                        <span class="status-pill warning">Atención requerida</span>
+                    </div>
+
+                </div>
+
+                <div class="librarian-card">
+
+                    <div class="librarian-icon">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                    </div>
+
+                    <div>
+                        <h3>Préstamos próximos a vencer</h3>
+                        <p>26 préstamos vencen esta semana</p>
+                        <span class="status-pill">Seguimiento activo</span>
+                    </div>
+
+                </div>
+
+                <div class="librarian-card">
+
+                    <div class="librarian-icon">
+                        <i class="fa-solid fa-calendar-days"></i>
+                    </div>
+
+                    <div>
+                        <h3>Eventos programados</h3>
+                        <p>12 actividades culturales próximas</p>
+                        <span class="status-pill">Agenda actualizada</span>
+                    </div>
+
+                </div>
+
+                <div class="librarian-card">
+
+                    <div class="librarian-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+
+                    <div>
+                        <h3>Consultas frecuentes a Luma</h3>
+                        <p>Bibliotecas cercanas, accesibilidad y préstamos</p>
+                        <span class="status-pill">IA asistida</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- GRÁFICAS -->
+
+        <section class="admin-charts">
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <h3>Préstamos por día</h3>
+                    <span>Última semana</span>
+                </div>
+
+                <canvas id="loansChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <div class="chart-header">
+                    <h3>Categorías más consultadas</h3>
+                    <span>Mes actual</span>
+                </div>
+
+                <canvas id="categoriesChart"></canvas>
+
+            </div>
+
+        </section>
+
+        <!-- TAREAS -->
+
+        <section class="admin-work-grid"
+                 id="admin-tareas">
+
+            <div class="work-card">
+
+                <div class="chart-header">
+                    <h3>Tareas pendientes</h3>
+                    <span>Hoy</span>
+                </div>
+
+                <div class="task-list">
+
+                    <div class="task-item">
+                        <i class="fa-solid fa-circle-exclamation"></i>
+                        <div>
+                            <strong>Validar solicitud de Maleta Viajera</strong>
+                            <p>Comuna 13 · Biblioteca Oriente</p>
+                        </div>
+                    </div>
+
+                    <div class="task-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Revisar préstamos vencidos</strong>
+                            <p>26 registros requieren seguimiento</p>
+                        </div>
+                    </div>
+
+                    <div class="task-item">
+                        <i class="fa-solid fa-calendar-plus"></i>
+                        <div>
+                            <strong>Publicar programación cultural</strong>
+                            <p>Club de lectura infantil · 12 JUN</p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="work-card">
+
+                <div class="chart-header">
+                    <h3>Top consultas de usuarios</h3>
+                    <span>Luma</span>
+                </div>
+
+                <div class="query-list">
+                    <span>¿Cómo busco un libro?</span>
+                    <span>¿Dónde queda la biblioteca más cercana?</span>
+                    <span>¿Cómo activo el modo dislexia?</span>
+                    <span>¿Cómo solicito una maleta viajera?</span>
+                    <span>¿Qué eventos hay esta semana?</span>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACCIONES ADMIN -->
+
+        <section class="admin-content">
+
+            <div class="admin-quote">
+
+                <h3>Frase del día</h3>
+
+                <p>
+                    El libro que debes leer no es el que piensa por ti,
+                    sino el que te hace pensar.
+                    <br>
+                    <strong>— Harper Lee</strong>
+                </p>
+
+            </div>
+
+            <div class="admin-grid">
+
+                <div class="admin-card"><i class="fa-solid fa-arrow-right-arrow-left"></i>Circulación</div>
+                <div class="admin-card"><i class="fa-solid fa-tag"></i>Catalogación</div>
+                <div class="admin-card"><i class="fa-solid fa-address-card"></i>Usuarios</div>
+                <div class="admin-card"><i class="fa-solid fa-newspaper"></i>Publicaciones periódicas</div>
+                <div class="admin-card"><i class="fa-solid fa-magnifying-glass-chart"></i>Búsqueda avanzada</div>
+                <div class="admin-card"><i class="fa-solid fa-gift"></i>Adquisiciones</div>
+                <div class="admin-card"><i class="fa-solid fa-magnifying-glass"></i>Búsqueda de ítem</div>
+                <div class="admin-card"><i class="fa-solid fa-chart-pie"></i>Informes</div>
+                <div class="admin-card"><i class="fa-solid fa-list"></i>Listas</div>
+                <div class="admin-card"><i class="fa-solid fa-wrench"></i>Herramientas</div>
+                <div class="admin-card"><i class="fa-solid fa-link"></i>Autoridades</div>
+                <div class="admin-card"><i class="fa-solid fa-gears"></i>Administración SIGB</div>
+
+            </div>
+
+        </section>
+
+        <section class="admin-alert">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+            <div>
+                <span>Sugerencias con aprobación pendiente</span>
+                <strong>Centro Cultural de Cali: 17 · Todas las bibliotecas: 114</strong>
+            </div>
+
+        </section>
+
+        <button class="map-open-btn admin-map-btn"
+                onclick="openMapModal()">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Consultar mapa de comunas
+        </button>
+
+    </main>
+
+    <!-- MODAL MAPA -->
+
+    <div id="mapModal"
+         class="map-modal">
+
+        <div class="map-modal-content">
+
+            <div class="map-modal-header">
+
+                <h2>
+                    Mapa interactivo de bibliotecas por comuna
+                </h2>
+
+                <button onclick="closeMapModal()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+            </div>
+
+            <div id="mapCali"></div>
+
+        </div>
+
+    </div>
+
+    {% include 'components/accessibility.html' %}
+    {% include 'components/luma.html' %}
+    {% include 'components/footer.html' %}
+
+    <script>
+        const loansCtx = document.getElementById('loansChart');
+
+        new Chart(loansCtx, {
+            type: 'line',
+            data: {
+                labels: ['Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb', 'Dom'],
+                datasets: [{
+                    label: 'Préstamos',
+                    data: [120, 180, 150, 230, 210, 260, 190],
+                    borderWidth: 3,
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        const categoriesCtx = document.getElementById('categoriesChart');
+
+        new Chart(categoriesCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Infantil', 'Cómic', 'Historia', 'Arte', 'Tecnología'],
+                datasets: [{
+                    label: 'Consultas',
+                    data: [320, 280, 210, 190, 160],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
+            }
+        });
+
+        let mapInitialized = false;
+        let map;
+
+        function openMapModal() {
+
+            document.getElementById("mapModal").style.display = "block";
+
+            setTimeout(() => {
+
+                if (!mapInitialized) {
+
+                    map = L.map('mapCali').setView([3.4516, -76.5320], 12);
+
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(map);
+
+                    const bibliotecas = [
+                        {
+                            nombre: 'Centro Cultural de Cali',
+                            comuna: 'Comuna 3',
+                            prestamos: 326,
+                            usuarios: 12458,
+                            coords: [3.4516, -76.5320]
+                        },
+                        {
+                            nombre: 'Biblioteca Pública Municipal',
+                            comuna: 'Comuna 2',
+                            prestamos: 180,
+                            usuarios: 5400,
+                            coords: [3.4745, -76.5280]
+                        },
+                        {
+                            nombre: 'Biblioteca Comunitaria Oriente',
+                            comuna: 'Comuna 13',
+                            prestamos: 210,
+                            usuarios: 6200,
+                            coords: [3.4272, -76.4850]
+                        },
+                        {
+                            nombre: 'Biblioteca Rural',
+                            comuna: 'Corregimiento',
+                            prestamos: 95,
+                            usuarios: 1800,
+                            coords: [3.4100, -76.6000]
+                        }
+                    ];
+
+                    bibliotecas.forEach(biblioteca => {
+                        L.marker(biblioteca.coords)
+                            .addTo(map)
+                            .bindPopup(`
+                                <strong>${biblioteca.nombre}</strong><br>
+                                ${biblioteca.comuna}<br><br>
+                                Usuarios: ${biblioteca.usuarios}<br>
+                                Préstamos: ${biblioteca.prestamos}
+                            `);
+                    });
+
+                    mapInitialized = true;
+
+                } else {
+
+                    map.invalidateSize();
+
+                }
+
+            }, 300);
+        }
+
+        function closeMapModal() {
+            document.getElementById("mapModal").style.display = "none";
+        }
+    </script>
+
+    <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

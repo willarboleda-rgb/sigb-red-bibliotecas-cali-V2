@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Red Social Lectora | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="reader-page">
+
+    <section class="reader-hero">
+
+        <span class="reader-badge">
+            <i class="fa-solid fa-fire"></i>
+            Red Social Lectora
+        </span>
+
+        <h1>
+            Descubre historias de la comunidad lectora de Cali
+        </h1>
+
+        <p>
+            Miles de lectores comparten sus creaciones. Lee, comenta y conecta con escritores de tu región.
+        </p>
+
+        <div class="reader-actions">
+            <a href="#historias">
+                <i class="fa-solid fa-play"></i>
+                Empezar a leer
+            </a>
+
+            <a href="#explorar">
+                Explorar
+            </a>
+        </div>
+
+    </section>
+
+    <section class="featured-stories">
+
+        <div class="reader-section-title">
+            <h2>
+                <i class="fa-solid fa-crown"></i>
+                Historias Destacadas
+            </h2>
+
+            <a href="#">Ver todas</a>
+        </div>
+
+        <div class="featured-story-grid">
+
+            <article class="featured-story-card gradient-one">
+                <span>Destacado</span>
+                <h3>Sombras del Río Cauca</h3>
+                <p>@MariaEscritora · Romance</p>
+                <small>45K lecturas · ⭐ 4.8</small>
+            </article>
+
+            <article class="featured-story-card gradient-two">
+                <span>Destacado</span>
+                <h3>El Último Salsa</h3>
+                <p>@CarlosDJCali · Contemporáneo</p>
+                <small>32K lecturas · ⭐ 4.6</small>
+            </article>
+
+            <article class="featured-story-card gradient-three">
+                <span>Destacado</span>
+                <h3>Noches en Granada</h3>
+                <p>@PoetaCali · Poesía</p>
+                <small>28K lecturas · ⭐ 4.9</small>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="reader-stories" id="historias">
+
+        <div class="reader-section-title">
+            <h2>
+                <i class="fa-solid fa-fire"></i>
+                Historias Trending
+            </h2>
+
+            <span>En vivo</span>
+        </div>
+
+        <div class="reader-filters">
+            <button class="reader-filter active" onclick="filterReaderStories('all', this)">Todas</button>
+            <button class="reader-filter" onclick="filterReaderStories('thriller', this)">Thriller</button>
+            <button class="reader-filter" onclick="filterReaderStories('romance', this)">Romance</button>
+            <button class="reader-filter" onclick="filterReaderStories('terror', this)">Terror</button>
+            <button class="reader-filter" onclick="filterReaderStories('contemporaneo', this)">Contemporáneo</button>
+            <button class="reader-filter" onclick="filterReaderStories('scifi', this)">Ciencia ficción</button>
+        </div>
+
+        <div class="reader-grid">
+
+            <article class="reader-card thriller">
+                <div class="reader-cover dark-red">
+                    <span>Trending</span>
+                    <small>En curso</small>
+                </div>
+                <div class="reader-body">
+                    <h3>Crimen en San Antonio</h3>
+                    <p><strong>ML</strong> @MisterioLiterario</p>
+                    <div>
+                        <span>👁 56K</span>
+                        <span>♡ 5.2K</span>
+                        <span>📖 30 cap.</span>
+                        <span>⭐ 4.7</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reader-card romance">
+                <div class="reader-cover red-purple">
+                    <span>Destacado</span>
+                    <small>En curso</small>
+                </div>
+                <div class="reader-body">
+                    <h3>Sombras del Río Cauca</h3>
+                    <p><strong>ME</strong> @MariaEscritora</p>
+                    <div>
+                        <span>👁 45K</span>
+                        <span>♡ 3.2K</span>
+                        <span>📖 24 cap.</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reader-card terror">
+                <div class="reader-cover purple-blue">
+                    <span>Trending</span>
+                    <small>En curso</small>
+                </div>
+                <div class="reader-body">
+                    <h3>La Casa de las Orquídeas</h3>
+                    <p><strong>MC</strong> @MisterioCali</p>
+                    <div>
+                        <span>👁 38K</span>
+                        <span>♡ 3.6K</span>
+                        <span>📖 22 cap.</span>
+                        <span>⭐ 4.6</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reader-card romance">
+                <div class="reader-cover pink-red">
+                    <span>Completada</span>
+                    <small>Romance</small>
+                </div>
+                <div class="reader-body">
+                    <h3>Sueños de Juana</h3>
+                    <p><strong>NV</strong> @NarradoraValle</p>
+                    <div>
+                        <span>👁 19K</span>
+                        <span>♡ 1.5K</span>
+                        <span>📖 20 cap.</span>
+                        <span>⭐ 4.5</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reader-card contemporaneo">
+                <div class="reader-cover gold">
+                    <span>Destacado</span>
+                    <small>Completada</small>
+                </div>
+                <div class="reader-body">
+                    <h3>El Ángel de la Sexta</h3>
+                    <p><strong>CS</strong> @CuentosCandelaria</p>
+                    <div>
+                        <span>👁 25K</span>
+                        <span>♡ 1.9K</span>
+                        <span>📖 19 cap.</span>
+                        <span>⭐ 4.8</span>
+                    </div>
+                </div>
+            </article>
+
+            <article class="reader-card scifi">
+                <div class="reader-cover blue-green">
+                    <span>Trending</span>
+                    <small>En curso</small>
+                </div>
+                <div class="reader-body">
+                    <h3>El Código del Manglar</h3>
+                    <p><strong>SC</strong> @SciFiCali</p>
+                    <div>
+                        <span>👁 15K</span>
+                        <span>♡ 2.1K</span>
+                        <span>📖 15 cap.</span>
+                        <span>⭐ 4.4</span>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="reader-genres" id="explorar">
+
+        <div class="reader-section-title">
+            <h2>
+                <i class="fa-solid fa-bolt"></i>
+                Géneros Populares
+            </h2>
+        </div>
+
+        <div class="genres-grid">
+
+            <article>❤️ <strong>Romance</strong><span>142 historias</span></article>
+            <article>👻 <strong>Terror</strong><span>89 historias</span></article>
+            <article>🚀 <strong>Ciencia Ficción</strong><span>67 historias</span></article>
+            <article>🌸 <strong>Poesía</strong><span>124 historias</span></article>
+            <article>🔍 <strong>Thriller</strong><span>95 historias</span></article>
+            <article>🌆 <strong>Contemporáneo</strong><span>156 historias</span></article>
+            <article>📝 <strong>Crónica</strong><span>43 historias</span></article>
+            <article>✨ <strong>Realismo Mágico</strong><span>78 historias</span></article>
+
+        </div>
+
+    </section>
+
+    <section class="reader-community">
+
+        <h2>
+            <i class="fa-solid fa-users"></i>
+            Comunidad Lectora
+        </h2>
+
+        <div class="community-stats">
+
+            <article>
+                <strong>12.4K</strong>
+                <span>Lectores activos</span>
+            </article>
+
+            <article>
+                <strong>892</strong>
+                <span>Historias publicadas</span>
+            </article>
+
+            <article>
+                <strong>15.8K</strong>
+                <span>Capítulos escritos</span>
+            </article>
+
+            <article>
+                <strong>3.247</strong>
+                <span>Comentarios hoy</span>
+            </article>
+
+        </div>
+
+    </section>
+
+</main>
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Exposiciones Digitales | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+    {% include "components/top_navigation.html" %}
+
+    <main class="expo-page">
+
+        <section class="expo-hero">
+
+            <span class="expo-badge">
+                <i class="fa-solid fa-camera"></i>
+                Exposición digital · temporal
+            </span>
+
+            <h1>Andrés Caicedo</h1>
+
+            <p>
+                El Genio del Cali Viejo
+            </p>
+
+            <div class="expo-meta">
+                <span><i class="fa-regular fa-calendar"></i> 15 Ene — 15 Mar 2025</span>
+                <span><i class="fa-solid fa-location-dot"></i> Biblioteca Digital de Cali</span>
+                <span><i class="fa-solid fa-eye"></i> 1.247 visitantes</span>
+            </div>
+
+            <div class="expo-curaduria">
+                <small>Curaduría</small>
+                <strong>Departamento de Cultura de Santiago de Cali</strong>
+                <span>En colaboración con la Biblioteca Departamental</span>
+            </div>
+
+            <button class="expo-main-btn" onclick="startExpoTour()">
+                <i class="fa-solid fa-camera-retro"></i>
+                Iniciar recorrido
+            </button>
+
+            <small class="expo-note">
+                6 salas · Audio guía disponible
+            </small>
+
+        </section>
+
+        <section class="expo-summary">
+
+            <article>
+                <strong>6</strong>
+                <span>Salas digitales</span>
+            </article>
+
+            <article>
+                <strong>1.370</strong>
+                <span>Visitantes</span>
+            </article>
+
+            <article>
+                <strong>2025</strong>
+                <span>Exposición temporal</span>
+            </article>
+
+            <article>
+                <strong>Audio</strong>
+                <span>Guía disponible</span>
+            </article>
+
+        </section>
+
+        <section class="expo-content">
+
+            <div class="section-title">
+
+                <span>Recorrido</span>
+
+                <h2>
+                    Salas de la exposición
+                </h2>
+
+                <p>
+                    Explora una experiencia digital inspirada en la vida, obra y memoria cultural
+                    de Andrés Caicedo y su relación con Cali.
+                </p>
+
+            </div>
+
+            <div class="expo-filters">
+
+                <button class="expo-filter active" onclick="filterExpo('all', this)">
+                    Todas
+                </button>
+
+                <button class="expo-filter" onclick="filterExpo('vida', this)">
+                    Vida
+                </button>
+
+                <button class="expo-filter" onclick="filterExpo('obra', this)">
+                    Obra
+                </button>
+
+                <button class="expo-filter" onclick="filterExpo('cali', this)">
+                    Cali
+                </button>
+
+                <button class="expo-filter" onclick="filterExpo('archivo', this)">
+                    Archivo
+                </button>
+
+            </div>
+
+            <div class="expo-grid">
+
+                <article class="expo-card vida">
+                    <div class="expo-card-img one"></div>
+                    <span>Sala 01</span>
+                    <h3>Infancia y juventud</h3>
+                    <p>
+                        Una mirada a los primeros años de Andrés Caicedo, su entorno familiar,
+                        sus intereses tempranos y su despertar creativo.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+                <article class="expo-card obra">
+                    <div class="expo-card-img two"></div>
+                    <span>Sala 02</span>
+                    <h3>Obra literaria</h3>
+                    <p>
+                        Recorrido por sus relatos, novelas, cartas y escritos que marcaron
+                        una generación de lectores caleños.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+                <article class="expo-card cali">
+                    <div class="expo-card-img three"></div>
+                    <span>Sala 03</span>
+                    <h3>Cali como escenario</h3>
+                    <p>
+                        La ciudad como territorio narrativo, cultural y simbólico en la obra
+                        del autor.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+                <article class="expo-card archivo">
+                    <div class="expo-card-img four"></div>
+                    <span>Sala 04</span>
+                    <h3>Archivo fotográfico</h3>
+                    <p>
+                        Fotografías, documentos y registros visuales que evocan una Cali
+                        viva, artística y literaria.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+                <article class="expo-card obra">
+                    <div class="expo-card-img five"></div>
+                    <span>Sala 05</span>
+                    <h3>Cine y crítica cultural</h3>
+                    <p>
+                        Su relación con el cine, los cineclubes, la crítica y la cultura urbana
+                        de los años setenta.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+                <article class="expo-card cali">
+                    <div class="expo-card-img six"></div>
+                    <span>Sala 06</span>
+                    <h3>Legado caleño</h3>
+                    <p>
+                        Impacto de su obra en nuevas generaciones, lectores, bibliotecas y
+                        procesos culturales de la ciudad.
+                    </p>
+                    <button>Explorar sala</button>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="expo-audio">
+
+            <div>
+                <span>Audio guía</span>
+                <h2>Recorrido narrado</h2>
+                <p>
+                    Simulación de audio guía para acompañar la experiencia de personas
+                    con discapacidad visual o usuarios que prefieren contenidos sonoros.
+                </p>
+            </div>
+
+            <button>
+                <i class="fa-solid fa-play"></i>
+                Reproducir audio guía
+            </button>
+
+        </section>
+
+    </main>
+
+    {% include 'components/accessibility.html' %}
+    {% include 'components/luma.html' %}
+    {% include 'components/footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

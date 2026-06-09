@@ -1,0 +1,84 @@
+<div class="luma-widget-v2">
+
+    <div class="luma-chat-v2" id="lumaChatV2">
+
+        <div class="luma-chat-header">
+
+            <div>
+                <strong>Luma</strong>
+                <span>Asistente bibliotecaria</span>
+            </div>
+
+            <button onclick="toggleLumaV2()">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+        <div class="luma-message luma-bot">
+            Hola, soy Luma 🦜. Puedo ayudarte a encontrar libros, bibliotecas,
+            eventos culturales o servicios de la Red.
+        </div>
+
+        <div class="luma-quick-actions">
+
+            <button onclick="askLuma('prestamos')">
+                ¿Cómo hago un préstamo?
+            </button>
+
+            <button onclick="askLuma('bibliotecas')">
+                ¿Dónde encuentro una biblioteca?
+            </button>
+
+            <button onclick="askLuma('digital')">
+                ¿Cómo accedo a la biblioteca digital?
+            </button>
+
+            <button onclick="askLuma('eventos')">
+                ¿Dónde veo los eventos?
+            </button>
+
+            <button onclick="askLuma('registro')">
+                ¿Cómo me registro?
+            </button>
+
+        </div>
+
+        <div class="luma-response" id="lumaResponse">
+
+            <div class="luma-message luma-bot">
+                Selecciona una pregunta o escribe tu consulta.
+            </div>
+
+        </div>
+
+        <div class="luma-input-area">
+
+            <input type="text"
+                   id="lumaInput"
+                   placeholder="Escribe tu pregunta..."
+                   onkeydown="handleLumaEnter(event)">
+
+            <button onclick="sendLumaQuestion()"
+                    title="Enviar pregunta">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+
+            <button onclick="lumaVoiceSoon()"
+                    title="Consulta por voz">
+                <i class="fa-solid fa-microphone"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+    <button class="luma-bird-v2"
+            onclick="toggleLumaV2()"
+            title="Luma, asistente bibliotecaria">
+
+        🦜
+
+    </button>
+
+</div>
