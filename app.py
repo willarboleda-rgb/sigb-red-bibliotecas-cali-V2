@@ -131,10 +131,10 @@ def pqrsd():
 def equipo_directorio():
     return render_template('components/equipo_directorio.html')
 
-
-
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
     return render_template("404.html"), 404
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
+
