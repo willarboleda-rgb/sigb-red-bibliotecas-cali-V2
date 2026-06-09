@@ -119,10 +119,6 @@ def programacion_permanente():
     return render_template('components/programacion_permanente.html')
 
 
-@app.route('/grandes-eventos')
-def grandes_eventos():
-    return render_template('components/grandes_eventos.html')
-
 @app.route('/pqrsd')
 def pqrsd():
     return render_template('components/pqrsd.html')
