@@ -15014,3 +15014,37 @@ body {
     width: auto;
     object-fit: contain;
 }
+.auth-body {
+    font-family: inherit;
+}
+
+.auth-card,
+.auth-card input,
+.auth-card button,
+.auth-card a,
+.auth-card label,
+.auth-visual,
+.auth-visual a,
+.auth-visual span,
+.auth-visual p {
+    font-family: inherit;
+}
+.auth-submit {
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
+}
+/* ==========================================
+   UNIFICAR TIPOGRAFÍA LOGIN Y REGISTRO
+========================================== */
+
+.auth-body,
+.register-body {
+    font-family: "Inter", sans-serif;
+}
+
+.auth-body *,
+.register-body * {
+    font-family: inherit;
+}
