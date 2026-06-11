@@ -127,6 +127,10 @@ def pqrsd():
 def equipo_directorio():
     return render_template('components/equipo_directorio.html')
 
+@app.route('/lecturas')
+def lecturas():
+    return render_template('components/lecturas.html')
+
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
     return render_template("404.html"), 404

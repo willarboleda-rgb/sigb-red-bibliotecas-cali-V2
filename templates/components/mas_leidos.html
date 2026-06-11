@@ -1,0 +1,113 @@
+<!-- MÁS LEÍDOS DE LA SEMANA -->
+
+<section class="top-books-section">
+
+    <div class="section-header">
+
+        <span>
+            <i class="fa-solid fa-ranking-star"></i>
+            Tendencias de lectura
+        </span>
+
+        <h2>
+            Lo más leído esta semana
+        </h2>
+
+        <p>
+            Descubre los títulos más consultados y recomendados por la comunidad lectora de la Red.
+        </p>
+
+    </div>
+
+    <div class="top-books-grid">
+
+        <article class="top-book-card">
+
+            <div class="top-position gold">
+                🥇
+            </div>
+
+            <img src="{{ url_for('static', filename='img/libros/cien-anos-soledad.jpg') }}"
+                 alt="Cien años de soledad">
+
+            <div class="top-book-body">
+
+                <strong>Cien años de soledad</strong>
+
+                <span>
+                    Gabriel García Márquez
+                </span>
+
+                <small>
+                    1.248 préstamos este mes
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="top-book-card">
+
+            <div class="top-position silver">
+                🥈
+            </div>
+
+            <img src="{{ url_for('static', filename='img/libros/olvido-que-seremos.jpg') }}"
+                 alt="El olvido que seremos">
+
+            <div class="top-book-body">
+
+                <strong>El olvido que seremos</strong>
+
+                <span>
+                    Héctor Abad Faciolince
+                </span>
+
+                <small>
+                    1.021 préstamos este mes
+                </small>
+
+            </div>
+
+        </article>
+
+        <article class="top-book-card">
+
+            <div class="top-position bronze">
+                🥉
+            </div>
+
+            <img src="{{ url_for('static', filename='img/libros/leer-es-mi-cuento.jpg') }}"
+                 alt="El Principito">
+
+            <div class="top-book-body">
+
+                <strong>El Principito</strong>
+
+                <span>
+                    Antoine de Saint-Exupéry
+                </span>
+
+                <small>
+                    985 préstamos este mes
+                </small>
+
+            </div>
+
+        </article>
+
+    </div>
+
+    <div class="top-books-footer">
+
+        <a href="/lecturas">
+
+            Ver ranking completo
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>

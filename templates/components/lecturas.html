@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Explorar Lecturas | Red de Bibliotecas Públicas de Cali
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+{% include 'components/top_navigation.html' %}
+
+<main class="reading-page">
+
+    <!-- HERO -->
+
+    <section class="reading-hero">
+
+        <span>
+            <i class="fa-solid fa-book-open-reader"></i>
+            Explorar Lecturas
+        </span>
+
+        <h1>
+            Descubre qué leer en la Red
+        </h1>
+
+        <p>
+            Explora recomendaciones, rankings, novedades editoriales y contenidos seleccionados
+            por bibliotecarios y por Luma.
+        </p>
+
+    </section>
+    <section class="reading-highlight">
+
+    <div class="reading-highlight-content">
+
+        <div class="reading-highlight-cover">
+
+            <img src="{{ url_for('static', filename='img/libros/cien-anos-soledad.jpg') }}"
+                 alt="Cien años de soledad">
+
+        </div>
+
+        <div class="reading-highlight-info">
+
+            <span>
+                🏆 Libro más leído del mes
+            </span>
+
+            <h2>
+                Cien años de soledad
+            </h2>
+
+            <p>
+                La obra más consultada por los usuarios de la Red durante este mes.
+            </p>
+
+            <div class="reading-highlight-stats">
+
+                <article>
+                    <strong>1.248</strong>
+                    <span>Préstamos</span>
+                </article>
+
+                <article>
+                    <strong>4.9</strong>
+                    <span>Valoración</span>
+                </article>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- RANKING -->
+
+    <section class="reading-ranking">
+
+        <div class="section-header">
+
+            <span>
+                <i class="fa-solid fa-ranking-star"></i>
+                Ranking
+            </span>
+
+            <h2>
+                Más leídos de la semana
+            </h2>
+
+            <p>
+                Los títulos más consultados por la comunidad lectora de la Red.
+            </p>
+
+        </div>
+        <div class="reading-filter-tabs">
+
+    <button class="active">
+        Semana
+    </button>
+
+    <button>
+        Mes
+    </button>
+
+    <button>
+        Año
+    </button>
+
+</div>
+
+        <div class="reading-grid">
+
+            <article class="reading-card">
+
+                <div class="reading-rank">🥇</div>
+
+                <img src="{{ url_for('static', filename='img/libros/cien-anos-soledad.jpg') }}"
+                     alt="Cien años de soledad">
+
+                <div class="reading-card-body">
+
+                    <strong>Cien años de soledad</strong>
+
+                    <span>Gabriel García Márquez</span>
+
+                    <div class="reading-rating"> ⭐⭐⭐⭐⭐ <span>4.9</span> </div>
+
+                    <small>1.248 préstamos este mes</small>
+
+                </div>
+
+            </article>
+
+            <article class="reading-card">
+
+                <div class="reading-rank">🥈</div>
+
+                <img src="{{ url_for('static', filename='img/libros/olvido-que-seremos.jpg') }}"
+                     alt="El olvido que seremos">
+
+                <div class="reading-card-body">
+
+                    <strong>El olvido que seremos</strong>
+
+                    <span>Héctor Abad Faciolince</span>
+
+                    <div class="reading-rating"> ⭐⭐⭐⭐⭐ <span>4.9</span> </div>
+
+                    <small>1.021 préstamos este mes</small>
+
+                </div>
+
+            </article>
+
+            <article class="reading-card">
+
+                <div class="reading-rank">🥉</div>
+
+                <img src="{{ url_for('static', filename='img/libros/leer-es-mi-cuento.jpg') }}"
+                     alt="El Principito">
+
+                <div class="reading-card-body">
+
+                    <strong>El Principito</strong>
+
+                    <span>Antoine de Saint-Exupéry</span>
+
+                    <div class="reading-rating"> ⭐⭐⭐⭐⭐ <span>4.7</span> </div>
+
+                    <small>985 préstamos este mes</small>
+
+                </div>
+
+            </article>
+
+            <article class="reading-card">
+
+                <div class="reading-rank">4</div>
+
+                <img src="{{ url_for('static', filename='img/libros/la-voragine.jpg') }}"
+                     alt="La vorágine">
+
+                <div class="reading-card-body">
+
+                    <strong>La vorágine</strong>
+
+                    <span>José Eustasio Rivera</span>
+                    <div class="reading-rating"> ⭐⭐⭐⭐⭐ <span>4.8</span> </div>
+
+                    <small>912 préstamos este mes</small>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- LUMA RECOMIENDA -->
+
+    <section class="reading-luma">
+
+        <div class="reading-luma-box">
+
+            <span class="luma-badge">
+                🦜 Luma recomienda
+            </span>
+
+            <h2>
+                Si te gustó Cien años de soledad...
+            </h2>
+
+            <p>
+                Te puede interesar <strong>El amor en los tiempos del cólera</strong>,
+                otra obra emblemática de Gabriel García Márquez disponible para consulta
+                dentro de la Red.
+            </p>
+
+            <a href="/opac"
+               class="luma-primary">
+                Ver disponibilidad
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- CATEGORÍAS -->
+
+    <section class="reading-categories">
+
+        <div class="section-header">
+
+            <span>
+                <i class="fa-solid fa-layer-group"></i>
+                Categorías
+            </span>
+
+            <h2>
+                Explora por intereses
+            </h2>
+
+            <p>
+                Encuentra lecturas según tus gustos, edad o temas de interés.
+            </p>
+
+        </div>
+
+        <div class="categories-grid">
+
+            <article class="category-card">
+                <i class="fa-solid fa-book"></i>
+                <h3>Novela</h3>
+
+<strong class="category-total">
+    2.450 títulos
+</strong>
+
+<p>
+    Historias, clásicos y literatura contemporánea.
+</p>
+            </article>
+
+            <article class="category-card">
+                <i class="fa-solid fa-child-reaching"></i>
+                <h3>Infantil</h3>
+                <strong class="category-total">1.325 títulos</strong>
+                <p>Lecturas para niñas, niños y familias.</p>
+            </article>
+
+            <article class="category-card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Académico</h3>
+                <strong class="category-total">5.800 títulos</strong>
+                <p>Recursos de consulta, formación e investigación.</p>
+            </article>
+
+            <article class="category-card">
+                <i class="fa-solid fa-headphones"></i>
+                <h3>Audiolibros</h3>
+                <strong class="category-total">680 títulos</strong>
+                <p>Contenidos sonoros para leer escuchando.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- NOVEDADES EDITORIALES -->
+
+    <section class="reading-new">
+
+        <div class="section-header">
+
+            <span>
+                <i class="fa-solid fa-sparkles"></i>
+                Novedades
+            </span>
+
+            <h2>
+                Nuevos ingresos editoriales
+            </h2>
+
+            <p>
+                Explora contenidos recientes disponibles en las colecciones de la Red.
+            </p>
+
+        </div>
+
+        <div class="reading-new-grid">
+
+            <article class="reading-new-card">
+
+    <img src="{{ url_for('static', filename='img/libros/maria.jpg') }}"
+         alt="María">
+
+    <div class="reading-new-content">
+
+        <span>
+            Nuevo ingreso
+        </span>
+
+        <h3>
+            María
+        </h3>
+
+        <p>
+            Obra emblemática de la literatura colombiana.
+        </p>
+
+    </div>
+
+</article>
+
+<article class="reading-new-card">
+
+    <img src="{{ url_for('static', filename='img/libros/relatos-pacifico.jpg') }}"
+         alt="María">
+
+    <div class="reading-new-content">
+
+        <span>
+            Nuevo ingreso
+        </span>
+
+        <h3>
+            Relatos del Pacífico
+        </h3>
+
+        <p>
+            Narraciones, memoria oral y cultura regional para fortalecer la identidad local.
+        </p>
+
+    </div>
+
+</article>
+
+<article class="reading-new-card">
+
+    <img src="{{ url_for('static', filename='img/libros/lecturas-jovenes.jpg') }}"
+         alt="María">
+
+    <div class="reading-new-content">
+
+        <span>
+            Nuevo ingreso
+        </span>
+
+        <h3>
+            Lecturas para jóvenes
+        </h3>
+
+        <p>
+            Selección de libros recomendados para clubes de lectura juvenil y mediación cultural.
+        </p>
+
+    </div>
+
+</article>
+
+           
+
+           
+
+        </div>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>
