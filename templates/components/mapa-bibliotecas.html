@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Mapa de Bibliotecas | Red de Bibliotecas Públicas de Cali
+    </title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+{% include 'components/top_navigation.html' %}
+
+<main class="libraries-map-page">
+
+    <!-- HERO -->
+
+    <section class="libraries-map-hero">
+
+        <span>
+            <i class="fa-solid fa-map-location-dot"></i>
+            Explorador Territorial
+        </span>
+
+        <h1>
+            Encuentra bibliotecas y espacios culturales en Cali
+        </h1>
+
+        <p>
+            Explora la Red de Bibliotecas Públicas de Cali a través del territorio
+            y descubre espacios culturales cercanos a tu comunidad.
+        </p>
+
+    </section>
+
+    <!-- FILTROS -->
+
+    <section class="map-filters">
+
+        <select>
+            <option>Todas las comunas</option>
+            <option>Comuna 13</option>
+            <option>Comuna 6</option>
+            <option>Comuna 17</option>
+            <option>Comuna 20</option>
+        </select>
+
+        <select>
+            <option>Todos los servicios</option>
+            <option>Biblioteca</option>
+            <option>Sala de lectura</option>
+            <option>Centro cultural</option>
+        </select>
+
+    </section>
+
+    <!-- MAPA + LISTADO -->
+
+    <section class="libraries-map-layout">
+
+        <div class="libraries-map-container">
+
+            <img src="{{ url_for('static', filename='img/mapa-cali.png') }}"
+                 alt="Mapa de Cali">
+
+            <div class="map-marker marker-1">
+                📍
+            </div>
+
+            <div class="map-marker marker-2">
+                📍
+            </div>
+
+            <div class="map-marker marker-3">
+                📍
+            </div>
+
+            <div class="map-marker marker-4">
+                📍
+            </div>
+
+        </div>
+
+        <aside class="libraries-map-sidebar">
+
+            <article class="map-library-card">
+
+                <h3>
+                    Centro Cultural Nuevo Latir
+                </h3>
+
+                <p>
+                    Comuna 13
+                </p>
+
+                <span>
+                    🟢 Abierta
+                </span>
+
+                <div class="map-actions">
+
+                    <a href="#">
+                        Ver biblioteca
+                    </a>
+
+                    <a href="#">
+                        Cómo llegar
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="map-library-card">
+
+                <h3>
+                    Biblioteca León de Greiff
+                </h3>
+
+                <p>
+                    Comuna 20
+                </p>
+
+                <span>
+                    🟢 Abierta
+                </span>
+
+                <div class="map-actions">
+
+                    <a href="#">
+                        Ver biblioteca
+                    </a>
+
+                    <a href="#">
+                        Cómo llegar
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="map-library-card">
+
+                <h3>
+                    Biblioteca San Marino
+                </h3>
+
+                <p>
+                    Comuna 7
+                </p>
+
+                <span>
+                    🟢 Abierta
+                </span>
+
+                <div class="map-actions">
+
+                    <a href="#">
+                        Ver biblioteca
+                    </a>
+
+                    <a href="#">
+                        Cómo llegar
+                    </a>
+
+                </div>
+
+            </article>
+
+        </aside>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

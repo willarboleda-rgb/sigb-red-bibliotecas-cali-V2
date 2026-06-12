@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Observatorio Cultural | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/sigb.css') }}">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include 'components/top_navigation.html' %}
+
+<main class="observatory-page">
+
+    <section class="observatory-hero">
+
+        <span>
+            <i class="fa-solid fa-chart-line"></i>
+            Observatorio Cultural
+        </span>
+
+        <h1>
+            Datos para entender la lectura y la participación cultural
+        </h1>
+
+        <p>
+            Consulta indicadores, tendencias y comportamiento de los servicios bibliotecarios
+            para apoyar la toma de decisiones en la Red.
+        </p>
+
+    </section>
+
+    <section class="observatory-stats">
+
+        <article>
+            <i class="fa-solid fa-book-open"></i>
+            <strong>260.000+</strong>
+            <span>Materiales bibliográficos</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-users"></i>
+            <strong>32.500+</strong>
+            <span>Usuarios registrados</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-calendar-days"></i>
+            <strong>89+</strong>
+            <span>Eventos culturales</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-building-columns"></i>
+            <strong>61</strong>
+            <span>Bibliotecas y espacios</span>
+        </article>
+
+    </section>
+
+    <section class="observatory-grid">
+
+        <article class="observatory-card large">
+
+            <div class="observatory-card-header">
+                <span>Tendencias del mes</span>
+                <i class="fa-solid fa-arrow-trend-up"></i>
+            </div>
+
+            <div class="trend-list">
+
+                <div>
+                    <strong>+24%</strong>
+                    <span>Uso de biblioteca digital</span>
+                </div>
+
+                <div>
+                    <strong>+18%</strong>
+                    <span>Lectura infantil</span>
+                </div>
+
+                <div>
+                    <strong>+12%</strong>
+                    <span>Audiolibros consultados</span>
+                </div>
+
+                <div>
+                    <strong>+9%</strong>
+                    <span>Participación cultural</span>
+                </div>
+
+            </div>
+
+        </article>
+
+        <article class="observatory-card">
+
+            <div class="observatory-card-header">
+                <span>Comunas más activas</span>
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+
+            <ol class="ranking-list">
+                <li><strong>Comuna 13</strong><span>4.320 interacciones</span></li>
+                <li><strong>Comuna 6</strong><span>3.980 interacciones</span></li>
+                <li><strong>Comuna 17</strong><span>3.540 interacciones</span></li>
+            </ol>
+
+        </article>
+
+        <article class="observatory-card">
+
+            <div class="observatory-card-header">
+                <span>Top de lectura</span>
+                <i class="fa-solid fa-ranking-star"></i>
+            </div>
+
+            <ol class="ranking-list">
+                <li><strong>Cien años de soledad</strong><span>1.248 préstamos</span></li>
+                <li><strong>El olvido que seremos</strong><span>1.021 préstamos</span></li>
+                <li><strong>El Principito</strong><span>985 préstamos</span></li>
+            </ol>
+
+        </article>
+
+    </section>
+
+    <section class="observatory-insight">
+
+        <div>
+            <span>
+                <i class="fa-solid fa-lightbulb"></i>
+                Insight estratégico
+            </span>
+
+            <h2>
+                La lectura infantil y los contenidos digitales muestran mayor crecimiento.
+            </h2>
+
+            <p>
+                Este comportamiento sugiere fortalecer actividades de mediación lectora,
+                clubes infantiles, audiolibros y contenidos digitales como líneas prioritarias
+                para la programación cultural de la Red.
+            </p>
+        </div>
+
+        <a href="/lecturas">
+            Ver tendencias de lectura
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

@@ -131,6 +131,14 @@ def equipo_directorio():
 def lecturas():
     return render_template('components/lecturas.html')
 
+@app.route('/observatorio')
+def observatorio():
+    return render_template('components/observatorio.html')
+
+@app.route('/mapa-bibliotecas')
+def mapa_bibliotecas():
+    return render_template('components/mapa-bibliotecas.html')
+
 @app.errorhandler(404)
 def pagina_no_encontrada(error):
     return render_template("404.html"), 404
