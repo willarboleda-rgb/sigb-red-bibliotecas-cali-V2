@@ -323,9 +323,19 @@ def inject_eventos_destacados():
 def evento_destacado(slug):
     evento = EVENTOS_DESTACADOS.get(slug)
 
-@app.route('/biblioteca/cc_nuevo_latir')
-def cc_nuevo_latir():
-    return render_template('components/cc_nuevo_latir.html')
+    if not evento:
+        abort(404)
+
+    return render_template(
+        'components/evento_destacado.html',
+        evento=evento
+    )
+
+
+@app.route('/biblioteca/biblioteca_nuevo_latir')
+def biblioteca_nuevo_latir():
+    return render_template('components/biblioteca_nuevo_latir.html')
+
 
 @app.route('/biblioteca/comuna1')
 def biblioteca_comuna1():
@@ -340,19 +350,6 @@ def biblioteca_centenario():
 @app.route('/biblioteca/buitrera')
 def biblioteca_buitrera():
     return render_template('components/biblioteca_buitrera.html')
-
-
-    if not evento:
-        abort(404)
-
-    return render_template(
-        'components/evento_destacado.html',
-        evento=evento
-    )
-
-@app.errorhandler(404)
-def pagina_no_encontrada(error):
-    return render_template("404.html"), 404
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
