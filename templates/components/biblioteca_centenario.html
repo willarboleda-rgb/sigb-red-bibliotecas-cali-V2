@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Patrimonial Centenario | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="bibdet-page">
+
+    <a href="/bibliotecas" class="bibdet-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver a Bibliotecas y Directorio
+    </a>
+
+    <section class="bibdet-hero hero-centenario">
+
+        <div class="bibdet-badges">
+
+            <span>
+                <i class="fa-solid fa-compass"></i>
+                Territorio LEO 3
+            </span>
+
+            <span>
+                <i class="fa-solid fa-landmark"></i>
+                Patrimonial
+            </span>
+
+            <span>
+                <i class="fa-solid fa-certificate"></i>
+                ISO 9001
+            </span>
+
+        </div>
+
+        <h1>Biblioteca Patrimonial Centenario</h1>
+
+        <p>
+            Biblioteca especializada en patrimonio documental, memoria histórica,
+            investigación y conservación bibliográfica. Custodia colecciones de gran
+            valor para la historia cultural de Santiago de Cali.
+        </p>
+
+    </section>
+
+    <section class="bibdet-stats">
+
+        <article>
+            <strong>3.400</strong>
+            <span>Usuarios activos</span>
+        </article>
+
+        <article>
+            <strong>18.700</strong>
+            <span>Ejemplares</span>
+        </article>
+
+        <article>
+            <strong>4.9</strong>
+            <span>Calificación</span>
+        </article>
+
+        <article>
+            <strong>15</strong>
+            <span>Actividades mensuales</span>
+        </article>
+
+    </section>
+
+    <section class="bibdet-grid">
+
+        <article class="bibdet-card">
+
+            <h2>Información General</h2>
+
+            <ul>
+                <li><strong>Dirección:</strong> Avenida Colombia # 5-12</li>
+                <li><strong>Barrio:</strong> Centenario</li>
+                <li><strong>Comuna:</strong> 2</li>
+                <li><strong>Territorio:</strong> LEO 3</li>
+                <li><strong>Horario:</strong> Lun-Vie 8:00 a.m. - 5:00 p.m.</li>
+                <li><strong>Certificación:</strong> ISO 9001</li>
+            </ul>
+
+        </article>
+
+        <article class="bibdet-card">
+
+            <h2>Características Especiales</h2>
+
+            <div class="bibdet-tags">
+
+                <span>Archivo Fotográfico</span>
+                <span>Colección Patrimonial</span>
+                <span>Hemeroteca</span>
+                <span>Sala de Investigación</span>
+                <span>Exposiciones</span>
+                <span>Consulta Especializada</span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="bibdet-services">
+
+        <h2>Servicios</h2>
+
+        <div class="bibdet-services-grid">
+
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <h3>Consulta Patrimonial</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-camera-retro"></i>
+                <h3>Archivo Fotográfico</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <h3>Investigación Documental</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-image"></i>
+                <h3>Exposiciones</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-newspaper"></i>
+                <h3>Hemeroteca</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-scroll"></i>
+                <h3>Colecciones Especiales</h3>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-programacion">
+
+        <h2>Programación Semanal</h2>
+
+        <div class="bibdet-agenda">
+
+            <article>
+                <strong>Lunes</strong>
+                <span>Historia de Cali</span>
+            </article>
+
+            <article>
+                <strong>Martes</strong>
+                <span>Archivo Fotográfico AFC</span>
+            </article>
+
+            <article>
+                <strong>Miércoles</strong>
+                <span>Patrimonio Documental</span>
+            </article>
+
+            <article>
+                <strong>Jueves</strong>
+                <span>Conversatorios Históricos</span>
+            </article>
+
+            <article>
+                <strong>Viernes</strong>
+                <span>Exposición Temporal</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-team">
+
+        <h2>Equipo Especializado</h2>
+
+        <div class="bibdet-team-grid">
+
+            <article>
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Coordinador Patrimonial</h3>
+                <p>Gestión de colecciones y proyectos patrimoniales.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Bibliotecólogo</h3>
+                <p>Conservación y organización documental.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-landmark"></i>
+                <h3>Investigador Histórico</h3>
+                <p>Investigación sobre memoria y patrimonio cultural.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-palette"></i>
+                <h3>Gestor Cultural</h3>
+                <p>Diseño de exposiciones y actividades patrimoniales.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-gallery">
+
+        <h2>Galería Patrimonial</h2>
+
+        <div class="bibdet-gallery-grid">
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-360">
+
+        <i class="fa-solid fa-vr-cardboard"></i>
+
+        <h2>Recorrido Virtual Patrimonial</h2>
+
+        <p>
+            Explora virtualmente las salas históricas, colecciones especiales
+            y espacios patrimoniales de la Biblioteca Centenario.
+        </p>
+
+        <button>
+            Ver recorrido 360°
+        </button>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

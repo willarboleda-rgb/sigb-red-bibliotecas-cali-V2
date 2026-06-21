@@ -1,42 +1,81 @@
 <div class="floating-tools-v2">
 
-    <div class="accessibility-panel-v2" id="accessibilityPanelV2">
+    <div class="accessibility-panel-v2"
+         id="accessibilityPanelV2">
 
-        <button onclick="enableReadMode()" title="Lector de pantalla">
+        <button onclick="enableReadMode()"
+                type="button"
+                title="Lector de pantalla">
             <i class="fa-solid fa-volume-high"></i>
+            <span>Lector de pantalla</span>
         </button>
 
-        <button onclick="increaseText()" title="Aumentar texto">
+        <button onclick="increaseText()"
+                type="button"
+                title="Aumentar texto">
             <i class="fa-solid fa-text-height"></i>
+            <span>Aumentar texto</span>
         </button>
 
-        <button onclick="toggleContrast()" title="Alto contraste">
+        <button onclick="toggleContrast()"
+                type="button"
+                title="Alto contraste">
             <i class="fa-solid fa-circle-half-stroke"></i>
+            <span>Alto contraste</span>
         </button>
 
-        <button onclick="enableKeyboardMode()" title="Navegación por teclado">
+        <button onclick="enableKeyboardMode()"
+                type="button"
+                title="Navegación por teclado">
             <i class="fa-solid fa-keyboard"></i>
+            <span>Navegación por teclado</span>
         </button>
 
-        <button onclick="zoomPage()" title="Zoom">
+        <button onclick="readPage()"
+                type="button"
+                title="Lectura en voz alta">
+            <i class="fa-solid fa-volume-up"></i>
+            <span>Lectura en voz alta</span>
+        </button>
+
+        <button onclick="zoomPage()"
+                type="button"
+                title="Zoom amplificado">
             <i class="fa-solid fa-magnifying-glass-plus"></i>
+            <span>Zoom amplificado</span>
         </button>
 
-        <button onclick="signLanguageSoon()" title="Lengua de señas">
+        <button onclick="signLanguageSoon()"
+                type="button"
+                title="Lengua de señas">
             <i class="fa-solid fa-hands"></i>
+            <span>Lengua de señas</span>
         </button>
 
-        <button onclick="toggleFocusMode()" title="Modo sin distracciones">
+        <button onclick="transcriptionSoon()"
+                type="button"
+                title="Transcripción de audio a texto">
+            <i class="fa-solid fa-closed-captioning"></i>
+            <span>Audio a texto</span>
+        </button>
+
+        <button onclick="toggleFocusMode()"
+                type="button"
+                title="Modo sin distracciones">
             <i class="fa-solid fa-eye"></i>
+            <span>Sin distracciones</span>
         </button>
 
     </div>
 
     <button class="accessibility-main-v2"
             onclick="toggleAccessibilityV2()"
-            title="Accesibilidad">
+            type="button"
+            title="Opciones de accesibilidad"
+            aria-label="Abrir opciones de accesibilidad">
 
         <i class="fa-solid fa-universal-access"></i>
+        <span>Accesibilidad</span>
 
     </button>
 

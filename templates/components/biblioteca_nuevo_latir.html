@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CC Nuevo Latir | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="bibdet-page">
+
+    <a href="/bibliotecas" class="bibdet-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver a Bibliotecas y Directorio
+    </a>
+
+    <section class="bibdet-hero hero-latir">
+
+        <div class="bibdet-badges">
+
+            <span>
+                <i class="fa-solid fa-compass"></i>
+                Territorio LEO 3
+            </span>
+
+            <span>
+                <i class="fa-solid fa-city"></i>
+                Urbana
+            </span>
+
+            <span>
+                <i class="fa-solid fa-certificate"></i>
+                ISO 9001
+            </span>
+
+        </div>
+
+        <h1>Centro Cultural Nuevo Latir</h1>
+
+        <p>
+            Espacio bibliotecario y cultural ubicado en el oriente de Cali.
+            Promueve la lectura, la escritura, la oralidad, la innovación,
+            la tecnología y la participación comunitaria.
+        </p>
+
+    </section>
+
+    <section class="bibdet-stats">
+
+        <article>
+            <strong>2.300</strong>
+            <span>Usuarios activos</span>
+        </article>
+
+        <article>
+            <strong>12.400</strong>
+            <span>Ejemplares</span>
+        </article>
+
+        <article>
+            <strong>4.8</strong>
+            <span>Calificación</span>
+        </article>
+
+        <article>
+            <strong>35</strong>
+            <span>Actividades mensuales</span>
+        </article>
+
+    </section>
+
+    <section class="bibdet-grid">
+
+        <article class="bibdet-card">
+
+            <h2>Información General</h2>
+
+            <ul>
+                <li><strong>Dirección:</strong> Carrera 28D #72L-02</li>
+                <li><strong>Barrio:</strong> Potrero Grande</li>
+                <li><strong>Comuna:</strong> 21</li>
+                <li><strong>Territorio:</strong> LEO 3</li>
+                <li><strong>Horario:</strong> Lun-Sáb 8:00 a.m. - 6:00 p.m.</li>
+                <li><strong>Certificación:</strong> ISO 9001</li>
+            </ul>
+
+        </article>
+
+        <article class="bibdet-card">
+
+            <h2>Características Especiales</h2>
+
+            <div class="bibdet-tags">
+
+                <span>Auditorio</span>
+                <span>Sala TIC</span>
+                <span>Zona Infantil</span>
+                <span>Accesibilidad</span>
+                <span>WiFi</span>
+                <span>Maker Space</span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="bibdet-services">
+
+        <h2>Servicios</h2>
+
+        <div class="bibdet-services-grid">
+
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <h3>Préstamo Bibliográfico</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Acceso a Internet</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-users"></i>
+                <h3>Clubes de Lectura</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Formación Digital</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-headphones"></i>
+                <h3>Audiolibros</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-microchip"></i>
+                <h3>Laboratorio de Innovación</h3>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-programacion">
+
+        <h2>Programación Semanal</h2>
+
+        <div class="bibdet-agenda">
+
+            <article>
+                <strong>Lunes</strong>
+                <span>Club de Lectura Infantil</span>
+            </article>
+
+            <article>
+                <strong>Martes</strong>
+                <span>Taller de Escritura Creativa</span>
+            </article>
+
+            <article>
+                <strong>Miércoles</strong>
+                <span>Laboratorio Digital</span>
+            </article>
+
+            <article>
+                <strong>Jueves</strong>
+                <span>Narración Oral</span>
+            </article>
+
+            <article>
+                <strong>Viernes</strong>
+                <span>Cine Foro Comunitario</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-team">
+
+        <h2>Equipo Bibliotecario</h2>
+
+        <div class="bibdet-team-grid">
+
+            <article>
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Coordinador Biblioteca</h3>
+                <p>Gestión administrativa y cultural.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Bibliotecario</h3>
+                <p>Atención a usuarios y colecciones.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-pen"></i>
+                <h3>Promotor LEO</h3>
+                <p>Lectura, escritura y oralidad.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-gallery">
+
+        <h2>Galería</h2>
+
+        <div class="bibdet-gallery-grid">
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-360">
+
+        <i class="fa-solid fa-vr-cardboard"></i>
+
+        <h2>Recorrido Virtual 360°</h2>
+
+        <p>
+            Próximamente podrás recorrer virtualmente los espacios
+            del Centro Cultural Nuevo Latir.
+        </p>
+
+        <button>
+            Ver recorrido 360°
+        </button>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

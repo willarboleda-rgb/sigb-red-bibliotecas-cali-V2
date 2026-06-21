@@ -13,336 +13,359 @@
 
     {% include "components/top_navigation.html" %}
 
-    <main class="digital-page">
+    <main class="digital-page digital-page-v3">
+
+        <section class="digital-access-modal active" id="digitalAccessModal" aria-modal="true" role="dialog">
+            <div class="digital-access-box">
+                <button class="digital-modal-close" type="button" onclick="closeDigitalAccessModal()" aria-label="Cerrar ventana de bibliotecas digitales">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <span class="digital-badge">
+                    <i class="fa-solid fa-layer-group"></i>
+                    Accesos digitales
+                </span>
+
+                <h2>Elige la biblioteca digital que quieres consultar</h2>
+                <p>Accede a la colección propia de la RBPC, Make Make y otras plataformas suscritas o aliadas.</p>
+
+                <div class="digital-platform-modal-grid">
+                    <a href="#ebooks" onclick="closeDigitalAccessModal()">
+                        <i class="fa-solid fa-book-open-reader"></i>
+                        <strong>Biblioteca Digital RBPC</strong>
+                        <span>Libros digitales, audiolibros, podcast y recursos de la Red.</span>
+                    </a>
+
+                    <a href="https://makemake.com.co/" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-child-reaching"></i>
+                        <strong>Make Make</strong>
+                        <span>Lecturas infantiles y juveniles disponibles por suscripción.</span>
+                    </a>
+
+                    <a href="#digitalAliadas" onclick="closeDigitalAccessModal()">
+                        <i class="fa-solid fa-globe"></i>
+                        <strong>Bibliotecas aliadas</strong>
+                        <span>Repositorios, contenidos abiertos y plataformas culturales.</span>
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section class="digital-hero">
-
             <div class="digital-hero-content">
-
                 <span class="digital-badge">
                     <i class="fa-solid fa-book-open-reader"></i>
                     Biblioteca Digital
                 </span>
 
-                <h1>
-                    Explora la Colección Digital
-                </h1>
+                <h1>Lecturas, voces y cultura digital en un solo lugar</h1>
 
                 <p>
-                    Accede a libros digitales, audiolibros, podcast, recursos culturales
-                    y contenidos digitales de la Red de Bibliotecas Públicas de Cali.
+                    Explora libros digitales, audiolibros, podcast, exposiciones, recursos culturales
+                    y plataformas aliadas de la Red de Bibliotecas Públicas de Cali.
                 </p>
 
                 <div class="digital-hero-actions">
+                    <button type="button" class="digital-main-btn" onclick="openDigitalAccessModal()">
+                        <i class="fa-solid fa-layer-group"></i>
+                        Ver bibliotecas digitales
+                    </button>
 
-                    <a href="#ebooks" class="digital-main-btn">
-                        <i class="fa-solid fa-book-open"></i>
-                        E-Books
+                    <a href="#recomendados" class="digital-secondary-btn">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        Descubre qué leer
                     </a>
-
-                    <a href="#audiolibros" class="digital-secondary-btn">
-                        <i class="fa-solid fa-headphones"></i>
-                        Audiolibros
-                    </a>
-
                 </div>
-
             </div>
 
-            <div class="digital-hero-card">
-
-                <i class="fa-solid fa-layer-group"></i>
-
+            <div class="digital-hero-card digital-hero-card-v3">
+                <i class="fa-solid fa-cloud-arrow-down"></i>
                 <div>
-                    <strong>17 títulos disponibles</strong>
-                    <span>Red de Bibliotecas de Cali</span>
+                    <strong>Contenido digital para todos</strong>
+                    <span>Libros, audio, podcast, clubes y recursos culturales.</span>
                 </div>
-
             </div>
-
         </section>
 
         <section class="digital-stats">
+            <article><strong>12+</strong><span>Libros digitales</span></article>
+            <article><strong>6</strong><span>Audiolibros</span></article>
+            <article><strong>3</strong><span>Podcast destacados</span></article>
+            <article><strong>4</strong><span>Plataformas aliadas</span></article>
+        </section>
 
+        <section class="digital-platforms-strip" id="digitalAliadas">
             <article>
-                <strong>12+</strong>
-                <span>Libros Digitales</span>
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Biblioteca Digital RBPC</h3>
+                <p>Colección propia de la Red.</p>
+                <a href="#ebooks">Ingresar</a>
             </article>
 
             <article>
-                <strong>9+</strong>
-                <span>Recursos de Red</span>
+                <i class="fa-solid fa-child-reaching"></i>
+                <h3>Make Make</h3>
+                <p>Lecturas infantiles y juveniles.</p>
+                <a href="https://makemake.com.co/" target="_blank" rel="noopener">Abrir plataforma</a>
             </article>
 
             <article>
-                <strong>3</strong>
-                <span>Promocionales</span>
+                <i class="fa-solid fa-landmark"></i>
+                <h3>Biblioteca Nacional</h3>
+                <p>Recursos patrimoniales y digitales.</p>
+                <a href="#ebooks">Ver recurso</a>
             </article>
 
             <article>
-                <strong>6</strong>
-                <span>Audiolibros</span>
+                <i class="fa-solid fa-university"></i>
+                <h3>Aliados académicos</h3>
+                <p>Repositorios y contenidos abiertos.</p>
+                <a href="#ebooks">Explorar</a>
             </article>
-
         </section>
 
         <section class="digital-catalog" id="ebooks">
-
             <div class="digital-section-header">
-
-                <span>Tendencias</span>
-
-                <h2>
-                    Conoce los títulos más recientes
-                </h2>
-
-                <p>
-                    Descubre las novedades de nuestra biblioteca digital.
-                </p>
-
+                <span>Colección digital</span>
+                <h2>Explora por tipo de colección, género, emoción y formato</h2>
+                <p>Usa los filtros para encontrar libros, audiolibros, podcast y recursos recomendados.</p>
             </div>
 
-            <div class="digital-controls">
+            <div class="digital-library-layout">
+                <aside class="digital-filter-panel">
+                    <div class="filter-panel-title">
+                        <i class="fa-solid fa-sliders"></i>
+                        <div>
+                            <h3>Filtros</h3>
+                            <p>Personaliza tu búsqueda</p>
+                        </div>
+                    </div>
 
-                <div class="digital-tabs">
+                    <div class="digital-search digital-search-side">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="digitalSearch" placeholder="Buscar título, autor o tema..." onkeyup="searchDigital()">
+                    </div>
 
-                    <button class="digital-tab active" onclick="filterDigital('all', this)">
-                        Todos
-                    </button>
+                    <div class="filter-group">
+                        <h4>Tipo de colección</h4>
+                        <button class="digital-filter active" onclick="filterDigitalAdvanced('all', this)">Todo</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('ebook', this)">Libros digitales</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('audio', this)">Audiolibros</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('podcast', this)">Podcast</button>
+                    </div>
 
-                    <button class="digital-tab" onclick="filterDigital('red', this)">
-                        Red
-                    </button>
+                    <div class="filter-group">
+                        <h4>Género</h4>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('novela', this)">Novela</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('poesia', this)">Poesía</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('infantil', this)">Infantil</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('patrimonio', this)">Patrimonio</button>
+                    </div>
 
-                    <button class="digital-tab" onclick="filterDigital('promo', this)">
-                        Promocional
-                    </button>
+                    <div class="filter-group">
+                        <h4>Emoción</h4>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('inspirador', this)">Inspirador</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('nostalgico', this)">Nostálgico</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('aventura', this)">Aventura</button>
+                    </div>
 
-                    <button class="digital-tab" onclick="filterDigital('ebook', this)">
-                        E-Books
-                    </button>
+                    <div class="filter-group">
+                        <h4>Formato</h4>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('pdf', this)">PDF</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('epub', this)">EPUB</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('audioformato', this)">Audio</button>
+                    </div>
 
-                    <button class="digital-tab" onclick="filterDigital('audio', this)">
-                        Audiolibros
-                    </button>
+                    <div class="filter-group">
+                        <h4>Clubes</h4>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('club-lectura', this)">Club de lectura</button>
+                        <button class="digital-filter" onclick="filterDigitalAdvanced('club-escritura', this)">Club de escritura</button>
+                    </div>
+                </aside>
 
+                <div class="digital-results-area">
+                    <div class="digital-controls digital-controls-v3">
+                        <div>
+                            <strong>Recursos disponibles</strong>
+                            <p class="digital-count" id="digitalCount">9 recursos encontrados</p>
+                        </div>
+                        <button class="digital-clear-btn" type="button" onclick="resetDigitalFilters()">
+                            <i class="fa-solid fa-rotate-left"></i>
+                            Limpiar filtros
+                        </button>
+                    </div>
+
+                    <div class="digital-books-grid digital-books-grid-v3">
+                        <article class="digital-book-card ebook red novela nostalgico pdf club-lectura">
+                            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900" alt="Cien años de soledad">
+                            <span class="book-label red">Red</span>
+                            <span class="book-format pdf">PDF</span>
+                            <div class="book-info">
+                                <h3>Cien años de soledad</h3>
+                                <p>Gabriel García Márquez</p>
+                                <small>Novela · Nostálgico · Club de lectura</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook red novela epub inspirador">
+                            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=900" alt="El amor en los tiempos del cólera">
+                            <span class="book-label red">Red</span>
+                            <span class="book-format epub">EPUB</span>
+                            <div class="book-info">
+                                <h3>El amor en los tiempos del cólera</h3>
+                                <p>Gabriel García Márquez</p>
+                                <small>Novela · Inspirador</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook promo novela pdf aventura club-escritura">
+                            <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900" alt="La casa de los espíritus">
+                            <span class="book-label promo">Promo</span>
+                            <span class="book-format pdf">PDF</span>
+                            <div class="book-info">
+                                <h3>La casa de los espíritus</h3>
+                                <p>Isabel Allende</p>
+                                <small>Novela · Aventura · Club de escritura</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook red novela pdf nostalgico">
+                            <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="Pedro Páramo">
+                            <span class="book-label red">Red</span>
+                            <span class="book-format pdf">PDF</span>
+                            <div class="book-info">
+                                <h3>Pedro Páramo</h3>
+                                <p>Juan Rulfo</p>
+                                <small>Novela · Nostálgico</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook red novela epub aventura club-lectura">
+                            <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=900" alt="Rayuela">
+                            <span class="book-label red">Red</span>
+                            <span class="book-format epub">EPUB</span>
+                            <div class="book-info">
+                                <h3>Rayuela</h3>
+                                <p>Julio Cortázar</p>
+                                <small>Novela · Aventura · Club de lectura</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook promo poesia pdf inspirador">
+                            <img src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=900" alt="Antología poética">
+                            <span class="book-label promo">Promo</span>
+                            <span class="book-format pdf">PDF</span>
+                            <div class="book-info">
+                                <h3>Antología poética del Pacífico</h3>
+                                <p>Autores regionales</p>
+                                <small>Poesía · Inspirador</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card audio audioformato infantil aventura">
+                            <img src="https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=900" alt="Cuentos para soñar">
+                            <span class="book-label audio">Audio</span>
+                            <span class="book-format audioformato">MP3</span>
+                            <div class="book-info">
+                                <h3>Cuentos para soñar</h3>
+                                <p>Red de Bibliotecas de Cali</p>
+                                <small>Infantil · Aventura · Audiolibro</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card podcast audioformato patrimonio inspirador">
+                            <img src="https://images.unsplash.com/photo-1478737270239-2f02b77fc618?w=900" alt="Voces del Pacífico">
+                            <span class="book-label audio">Podcast</span>
+                            <span class="book-format audioformato">Audio</span>
+                            <div class="book-info">
+                                <h3>Voces del Pacífico</h3>
+                                <p>Tradición oral y memoria</p>
+                                <small>Patrimonio · Inspirador · Podcast</small>
+                            </div>
+                        </article>
+
+                        <article class="digital-book-card ebook red infantil epub aventura">
+                            <img src="https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=900" alt="Lecturas para la primera infancia">
+                            <span class="book-label red">Red</span>
+                            <span class="book-format epub">EPUB</span>
+                            <div class="book-info">
+                                <h3>Lecturas para la primera infancia</h3>
+                                <p>Selección RBPC</p>
+                                <small>Infantil · Aventura</small>
+                            </div>
+                        </article>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="digital-search">
-
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                    <input type="text"
-                           id="digitalSearch"
-                           placeholder="Buscar libro o autor..."
-                           onkeyup="searchDigital()">
-
-                </div>
-
+        <section class="digital-recommend-section" id="recomendados">
+            <div class="digital-section-header">
+                <span>Descubre qué leer</span>
+                <h2>Recomendaciones para seguir navegando</h2>
+                <p>Una sección sugerente para conectar Home, OPAC y Biblioteca Digital.</p>
             </div>
 
-            <p class="digital-count">
-                12 libros encontrados
-            </p>
-
-            <div class="digital-books-grid">
-
-                <article class="digital-book-card ebook red">
-                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900" alt="Cien años de soledad">
-                    <span class="book-label red">Red</span>
-                    <span class="book-format pdf">PDF</span>
-                    <div class="book-info">
-                        <h3>Cien años de soledad</h3>
-                        <p>Gabriel García Márquez</p>
-                        <small>⭐⭐⭐⭐⭐ 4.9</small>
-                    </div>
-                </article>
-
-                <article class="digital-book-card ebook red">
-                    <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=900" alt="El amor en los tiempos del cólera">
-                    <span class="book-label red">Red</span>
-                    <span class="book-format epub">EPUB</span>
-                    <div class="book-info">
-                        <h3>El amor en los tiempos del cólera</h3>
-                        <p>Gabriel García Márquez</p>
-                        <small>⭐⭐⭐⭐⭐ 4.7</small>
-                    </div>
-                </article>
-
-                <article class="digital-book-card ebook promo">
-                    <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?w=900" alt="La casa de los espíritus">
-                    <span class="book-label promo">Promo</span>
-                    <span class="book-format pdf">PDF</span>
-                    <div class="book-info">
-                        <h3>La casa de los espíritus</h3>
-                        <p>Isabel Allende</p>
-                        <small>⭐⭐⭐⭐⭐ 4.8</small>
-                    </div>
-                </article>
-
-                <article class="digital-book-card ebook red">
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="Pedro Páramo">
-                    <span class="book-label red">Red</span>
-                    <span class="book-format pdf">PDF</span>
-                    <div class="book-info">
-                        <h3>Pedro Páramo</h3>
-                        <p>Juan Rulfo</p>
-                        <small>⭐⭐⭐⭐ 4.6</small>
-                    </div>
-                </article>
-
-                <article class="digital-book-card ebook red">
-                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900" alt="Rayuela">
-                    <span class="book-label red">Red</span>
-                    <span class="book-format epub">EPUB</span>
-                    <div class="book-info">
-                        <h3>Rayuela</h3>
-                        <p>Julio Cortázar</p>
-                        <small>⭐⭐⭐⭐ 4.5</small>
-                    </div>
-                </article>
-
-                <article class="digital-book-card ebook promo">
-                    <img src="https://images.unsplash.com/photo-1516541196182-6bdb0516ed27?w=900" alt="Ficciones">
-                    <span class="book-label promo">Promo</span>
-                    <span class="book-format pdf">PDF</span>
-                    <div class="book-info">
-                        <h3>Ficciones</h3>
-                        <p>Jorge Luis Borges</p>
-                        <small>⭐⭐⭐⭐⭐ 4.8</small>
-                    </div>
-                </article>
-
+            <div class="digital-recommend-grid">
+                <article><i class="fa-solid fa-heart"></i><h3>Según tu emoción</h3><p>Lecturas para inspirarte, relajarte o viajar con la imaginación.</p></article>
+                <article><i class="fa-solid fa-users"></i><h3>Clubes de lectura</h3><p>Libros conectados con encuentros, conversaciones y mediadores.</p></article>
+                <article><i class="fa-solid fa-headphones-simple"></i><h3>Para escuchar</h3><p>Audiolibros y podcast recomendados para aprender en movimiento.</p></article>
             </div>
-
         </section>
 
         <section class="digital-podcast-section" id="audiolibros">
-
             <div class="digital-section-header">
-
-                <span>Podcast</span>
-
-                <h2>
-                    Únete al canal de Podcast
-                </h2>
-
-                <p>
-                    Conversaciones, entrevistas y contenido cultural para ti.
-                </p>
-
+                <span>Podcast y audio</span>
+                <h2>Escucha la Red y comparte tu voz</h2>
+                <p>Además de escuchar contenidos de la Red, los usuarios pueden proponer podcast relacionados con lectura, cultura y territorio.</p>
             </div>
 
-            <div class="podcast-list">
-
+            <div class="podcast-list podcast-list-v3">
                 <article class="podcast-card audio">
                     <i class="fa-solid fa-microphone-lines"></i>
-                    <div>
-                        <h3>Borondoteca: Cuentos para soñar</h3>
-                        <span>T1 · E15 · 25 min</span>
-                        <p>Serie de cuentacuentos con narradores profesionales de la Red de Bibliotecas de Cali.</p>
-                    </div>
+                    <div><h3>Borondoteca: Cuentos para soñar</h3><span>T1 · E15 · 25 min</span><p>Serie de cuentacuentos con narradores profesionales de la Red.</p></div>
                 </article>
 
                 <article class="podcast-card audio">
                     <i class="fa-solid fa-headphones"></i>
-                    <div>
-                        <h3>Crítica Literaria: Realismo mágico hoy</h3>
-                        <span>T2 · E3 · 42 min</span>
-                        <p>Análisis sobre cómo el realismo mágico sigue vigente en la narrativa latinoamericana contemporánea.</p>
-                    </div>
+                    <div><h3>Crítica Literaria: Realismo mágico hoy</h3><span>T2 · E3 · 42 min</span><p>Análisis sobre la narrativa latinoamericana contemporánea.</p></div>
                 </article>
 
-                <article class="podcast-card audio">
-                    <i class="fa-solid fa-radio"></i>
-                    <div>
-                        <h3>Voces del Pacífico</h3>
-                        <span>T3 · E1 · 45 min</span>
-                        <p>Exploramos tradiciones orales, música y gastronomía del Pacífico colombiano.</p>
-                    </div>
+                <article class="podcast-card audio podcast-upload-card">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                    <div><h3>Sube tu podcast cultural</h3><span>Participación ciudadana</span><p>Comparte propuestas sonoras sobre lectura, oralidad, memoria local o cultura del libro.</p><button type="button" onclick="showPodcastUploadMessage()">Proponer podcast</button></div>
                 </article>
-
             </div>
-
         </section>
 
         <section class="digital-collections">
-
             <div class="digital-section-header">
-
                 <span>Explorar</span>
-
-                <h2>
-                    Nuestras Colecciones
-                </h2>
-
-                <p>
-                    Sumérgete en mundos de conocimiento, creatividad y cultura.
-                </p>
-
+                <h2>Nuestras colecciones</h2>
+                <p>Sumérgete en mundos de conocimiento, creatividad y cultura.</p>
             </div>
 
             <div class="digital-collection-grid">
-
-                <article>
-                    <i class="fa-solid fa-headphones"></i>
-                    <h3>Audiolibros</h3>
-                    <p>Disfruta la literatura narrada por voces profesionales.</p>
-                </article>
-
-                <article>
-                    <i class="fa-solid fa-calendar-star"></i>
-                    <h3>Celebraciones</h3>
-                    <p>Celebraciones literarias y culturales de la Red.</p>
-                </article>
-
-                <article>
-                    <i class="fa-solid fa-users"></i>
-                    <h3>Encuentros</h3>
-                    <p>Encuentros comunitarios, culturales y formativos.</p>
-                </article>
-
-                <article>
-                    <i class="fa-solid fa-image"></i>
-                    <h3>Exposiciones</h3>
-                    <p>Recorridos virtuales por exhibiciones artísticas.</p>
-                </article>
-
-                <article>
-                    <i class="fa-solid fa-book"></i>
-                    <h3>Literatura</h3>
-                    <p>Novelas, cuentos, poesía y crónicas de autores latinoamericanos.</p>
-                </article>
-
-                <article>
-                    <i class="fa-solid fa-video"></i>
-                    <h3>Videos</h3>
-                    <p>Documentales, conferencias y contenido audiovisual.</p>
-                </article>
-
+                <article><i class="fa-solid fa-headphones"></i><h3>Audiolibros</h3><p>Literatura narrada para escuchar desde cualquier lugar.</p></article>
+                <article><i class="fa-solid fa-users"></i><h3>Clubes</h3><p>Lectura, escritura y oralidad conectadas con comunidad.</p></article>
+                <article><i class="fa-solid fa-image"></i><h3>Exposiciones</h3><p>Recorridos virtuales y contenidos gráficos de la Red.</p></article>
+                <article><i class="fa-solid fa-book"></i><h3>Literatura</h3><p>Novelas, cuentos, poesía y crónicas latinoamericanas.</p></article>
+                <article><i class="fa-solid fa-video"></i><h3>Videos</h3><p>Documentales, conferencias y formación cultural.</p></article>
+                <article><i class="fa-solid fa-podcast"></i><h3>Podcast</h3><p>Conversaciones, relatos y memorias sonoras de Cali.</p></article>
             </div>
-
         </section>
 
         <section class="digital-cta">
-
-            <h2>
-                Tu historia comienza aquí
-            </h2>
-
-            <p>
-                Regístrate gratis y accede a miles de recursos digitales.
-                Conecta con una comunidad de lectores apasionados.
-            </p>
-
+            <h2>Tu historia comienza aquí</h2>
+            <p>Regístrate gratis y accede a recursos digitales, clubes, recomendaciones y contenidos culturales.</p>
             <div>
                 <a href="/registro">Crear cuenta gratis</a>
                 <a href="/opac">Explorar catálogo</a>
             </div>
-
         </section>
 
     </main>
+
     {% include 'components/accessibility.html' %}
     {% include 'components/luma.html' %}
     {% include 'components/footer.html' %}

@@ -5,67 +5,118 @@
         <div class="luma-chat-header">
 
             <div>
-                <strong>Luma</strong>
-                <span>Asistente bibliotecaria</span>
+                <strong>Árbol del Saber</strong>
+                <span>Asistente IA literario · RBPC Cali</span>
             </div>
 
-            <button onclick="toggleLumaV2()">
-                <i class="fa-solid fa-xmark"></i>
+            <div class="luma-mode-tabs">
+                <button class="active" type="button" onclick="switchLumaMode('chat')">💬 Chat</button>
+                <button type="button" onclick="switchLumaMode('fases')">⚡ Fases</button>
+            </div>
+
+            <button onclick="closeLumaV2()" type="button" aria-label="Cerrar asistente Árbol del Saber">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
             </button>
 
         </div>
 
-        <div class="luma-message luma-bot">
-            Hola, soy Luma 🦜. Puedo ayudarte a encontrar libros, bibliotecas,
-            eventos culturales o servicios de la Red.
+        <div class="luma-mode-content active" id="lumaModeChat">
+
+            <div class="luma-message luma-bot">
+                🌳 👋 ¡Bienvenido al Árbol del Saber!
+                <br><br>
+                Soy el asistente inteligente de la Red de Bibliotecas Públicas de Cali.
+                Mis funciones están organizadas en cuatro fases:
+                <br><br>
+                📖 Fase 1: Lectores — Experiencia aumentada<br>
+                ✍️ Fase 2: Escritores — Copiloto creativo<br>
+                🤝 Fase 3: Comunidad y edición — Ecosistema inteligente<br>
+                🖥️ Fase 4: Plataforma — Motor backend
+                <br><br>
+                ¡Explora las funciones o pregúntame! ✨
+            </div>
+
+            <div class="luma-chat-suggestions">
+                <button onclick="askLuma('lci')" type="button">🔍 Buscar concepto</button>
+                <button onclick="askLuma('animo')" type="button">📚 Recomendación</button>
+                <button onclick="askLuma('coherencia')" type="button">✍️ Para escritores</button>
+                <button onclick="switchLumaMode('fases')" type="button">⚡ Ver fases IA</button>
+                <button onclick="askLuma('tropos')" type="button">🗺️ Mapa semántico</button>
+            </div>
+
         </div>
 
-        <div class="luma-quick-actions">
+        <div class="luma-mode-content" id="lumaModeFases">
 
-            <button onclick="askLuma('prestamos')">
-                ¿Cómo hago un préstamo?
-            </button>
+            <div class="luma-functions">
 
-            <button onclick="askLuma('bibliotecas')">
-                ¿Dónde encuentro una biblioteca?
-            </button>
+                <button class="luma-category" onclick="toggleLumaCategory('lectores')" type="button">
+                    <span>📖 Lectores</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
 
-            <button onclick="askLuma('digital')">
-                ¿Cómo accedo a la biblioteca digital?
-            </button>
+                <div class="luma-category-content" id="lectores">
+                    <button onclick="askLuma('lci')" type="button">🧠 Lectura Contextual Inteligente</button>
+                    <button onclick="askLuma('animo')" type="button">🌊 Navegación por Estados de Ánimo</button>
+                    <button onclick="askLuma('club')" type="button">📚 Club de Lectura Aumentado</button>
+                </div>
 
-            <button onclick="askLuma('eventos')">
-                ¿Dónde veo los eventos?
-            </button>
+                <button class="luma-category" onclick="toggleLumaCategory('escritores')" type="button">
+                    <span>✍️ Escritores</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
 
-            <button onclick="askLuma('registro')">
-                ¿Cómo me registro?
-            </button>
+                <div class="luma-category-content" id="escritores">
+                    <button onclick="askLuma('coherencia')" type="button">🕸️ Arquitecta de Coherencia</button>
+                    <button onclick="askLuma('ritmo')" type="button">📊 Analista de Ritmo y Tensión</button>
+                    <button onclick="askLuma('variantes')" type="button">🎭 Generadora de Variantes No Literales</button>
+                </div>
+
+                <button class="luma-category" onclick="toggleLumaCategory('comunidad-edicion')" type="button">
+                    <span>🤝 Comunidad y edición</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="luma-category-content" id="comunidad-edicion">
+                    <button onclick="askLuma('tropos')" type="button">📈 Mapping de Tropos y Temas</button>
+                    <button onclick="askLuma('curador')" type="button">🌍 Curador Lector</button>
+                    <button onclick="askLuma('traduccion')" type="button">🌐 Traducción Estilística</button>
+                </div>
+
+                <button class="luma-category" onclick="toggleLumaCategory('plataforma-ia')" type="button">
+                    <span>🖥️ Plataforma</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+
+                <div class="luma-category-content" id="plataforma-ia">
+                    <button onclick="askLuma('indexacion')" type="button">🧬 Indexación Semántica</button>
+                    <button onclick="askLuma('plagio')" type="button">🛡️ Detección de Plagio Estructural</button>
+                    <button onclick="askLuma('metadatos')" type="button">🏷️ Metadatos Dinámicos Evolutivos</button>
+                </div>
+
+            </div>
 
         </div>
 
         <div class="luma-response" id="lumaResponse">
-
             <div class="luma-message luma-bot">
-                Selecciona una pregunta o escribe tu consulta.
+                Selecciona una función o escribe tu consulta.
             </div>
-
         </div>
 
         <div class="luma-input-area">
 
             <input type="text"
                    id="lumaInput"
-                   placeholder="Escribe tu pregunta..."
+                   placeholder="¿Qué buscas en el Árbol del Saber?"
+                   aria-label="Escribe tu pregunta para el asistente Árbol del Saber"
                    onkeydown="handleLumaEnter(event)">
 
-            <button onclick="sendLumaQuestion()"
-                    title="Enviar pregunta">
+            <button onclick="sendLumaQuestion()" type="button" title="Enviar pregunta">
                 <i class="fa-solid fa-paper-plane"></i>
             </button>
 
-            <button onclick="lumaVoiceSoon()"
-                    title="Consulta por voz">
+            <button onclick="lumaVoiceSoon()" type="button" title="Consulta por voz">
                 <i class="fa-solid fa-microphone"></i>
             </button>
 
@@ -73,12 +124,42 @@
 
     </div>
 
-    <button class="luma-bird-v2"
+    <button class="luma-bird-v2 tree-assistant-button"
             onclick="toggleLumaV2()"
-            title="Luma, asistente bibliotecaria">
-
-        🦜
-
+            type="button"
+            title="Árbol del Saber"
+            aria-label="Abrir asistente Árbol del Saber">
+        🌳
     </button>
+
+</div>
+
+<div class="tree-assistant-modal" id="treeAssistantModal">
+
+    <div class="tree-assistant-box">
+
+        <div class="tree-assistant-header">
+            <div>
+                <strong id="treeAssistantTitle">Árbol del Saber</strong>
+                <span id="treeAssistantSubtitle">Asistente IA literario</span>
+            </div>
+
+            <button class="tree-assistant-close" id="treeAssistantClose" onclick="closeTreeAssistant()" type="button" aria-label="Cerrar ventana del asistente">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="tree-assistant-body" id="treeAssistantBody">
+            Aquí se mostrará la simulación del asistente.
+        </div>
+
+        <div class="tree-assistant-input">
+            <input type="text" placeholder="Escribe el texto o consulta que deseas analizar...">
+            <button type="button">
+                <i class="fa-solid fa-paper-plane"></i>
+            </button>
+        </div>
+
+    </div>
 
 </div>

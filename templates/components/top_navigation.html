@@ -1,51 +1,39 @@
 <div class="top-navigation">
 
     <div class="top-brand">
+        <div class="top-cultura-link">
+            <img src="{{ url_for('static', filename='img/cultura.png') }}"
+                 alt="Alcaldía de Santiago de Cali - Secretaría de Cultura"
+                 class="cultura-logo">
+        </div>
 
-        <a href="/"
-           title="Ir al inicio"
-           class="top-logo-link">
-
+        <a href="/" title="Ir al inicio" class="top-logo-link"
+           aria-label="Ir al inicio de la Red de Bibliotecas Públicas de Cali">
             <img src="{{ url_for('static', filename='img/logo_rbpc.png') }}"
                  alt="Red de Bibliotecas Públicas de Cali"
                  class="rbpc-logo">
-
         </a>
-
-        <div class="top-cultura-link">
-
-            <img src="{{ url_for('static', filename='img/cultura.png') }}"
-                 alt="Secretaría de Cultura"
-                 class="cultura-logo">
-
-        </div>
-
     </div>
 
     <div class="top-menu">
 
         <div class="menu-item bibliotecas">
-
-            <button type="button">
-                <i class="fa-solid fa-building-columns"></i>
+            <button type="button" aria-label="Abrir menú Red de Bibliotecas">
+                <i class="fa-solid fa-tree-city" aria-hidden="true"></i>
                 <span class="menu-label">Red de Bibliotecas</span>
             </button>
 
             <div class="dropdown-menu">
                 <a href="/la-red">Nosotros</a>
-                <a href="/directorio">Directorio</a>
-                <a href="/bibliotecas">Las Bibliotecas</a>
+                <a href="/bibliotecas">Directorio y Bibliotecas</a>
                 <a href="/servicios">Servicios</a>
                 <a href="/estrategias">Estrategias y Proyectos</a>
-                <a href="/equipo-directorio">Equipo, Espacios y Bibliotecarios</a>
             </div>
-
         </div>
 
         <div class="menu-item colecciones">
-
-            <button type="button">
-                <i class="fa-solid fa-book-open"></i>
+            <button type="button" aria-label="Abrir menú Colecciones">
+                <i class="fa-solid fa-book-open" aria-hidden="true"></i>
                 <span class="menu-label">Colecciones</span>
             </button>
 
@@ -53,80 +41,119 @@
                 <a href="/opac">Catálogo OPAC</a>
                 <a href="/biblioteca-digital">Biblioteca Digital</a>
                 <a href="/lecturas">
-                <i class="fa-solid fa-ranking-star"></i>Explorar Lecturas</a>
+                    <i class="fa-solid fa-ranking-star" aria-hidden="true"></i>
+                    Explorar Lecturas
+                </a>
                 <a href="/fondo-editorial">Fondo Editorial</a>
                 <a href="/exposiciones">Exposiciones Digitales</a>
                 <a href="/archivo-fotografico">Archivo Fotográfico</a>
                 <a href="/podcast">Podcast</a>
             </div>
-
         </div>
 
         <div class="menu-item comunidad">
-
-            <button type="button">
-                <i class="fa-solid fa-users"></i>
+            <button type="button" aria-label="Abrir menú Comunidad">
+                <i class="fa-solid fa-users" aria-hidden="true"></i>
                 <span class="menu-label">Comunidad</span>
             </button>
 
             <div class="dropdown-menu">
                 <a href="/novedades">Novedades</a>
                 <a href="/red-social">Red Social</a>
-                <a href="/observatorio"><i class="fa-solid fa-chart-line"></i>Observatorio Cultural</a>
+                <a href="/observatorio">
+                    <i class="fa-solid fa-chart-line" aria-hidden="true"></i>
+                    Observatorio Cultural
+                </a>
+               
             </div>
-
         </div>
 
         <div class="menu-item programacion">
 
-            <button type="button">
-                <i class="fa-solid fa-calendar-days"></i>
-                <span class="menu-label">Programación Cultural</span>
-            </button>
+    <button type="button" aria-label="Abrir menú Programación Cultural">
+        <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <span class="menu-label">Programación Cultural</span>
+    </button>
 
-            <div class="dropdown-menu">
+    <div class="dropdown-menu programacion-dropdown">
 
-                <a href="/programacion-cultural">
-                    <i class="fa-regular fa-star"></i>
-                    Programación Destacada
-                </a>
-
-                <a href="/programacion-permanente">
-                    <i class="fa-regular fa-clock"></i>
-                    Programación Permanente
-                </a>
-
-            </div>
-
-        </div>
-
-        <div class="menu-item convocatorias">
-
-            <a href="https://www.culturaenlineacali.com/convocatorias-disponibles"
-               target="_blank">
-
-                <i class="fa-solid fa-bullhorn"></i>
-                <span class="menu-label">Convocatorias</span>
-
+        <div class="menu-item-nested">
+            <a href="/programacion-cultural">
+                <i class="fa-regular fa-star" aria-hidden="true"></i>
+                Programación Destacada
+                <i class="fa-solid fa-chevron-right nested-arrow" aria-hidden="true"></i>
             </a>
 
+            <div class="nested-dropdown">
+                <a href="/programacion-cultural/festival-poesia">
+                    <i class="fa-solid fa-feather" aria-hidden="true"></i>
+                    Festival de Poesía
+                </a>
+
+                <a href="/programacion-cultural/feria-libro">
+                    <i class="fa-solid fa-book" aria-hidden="true"></i>
+                    Feria del Libro
+                </a>
+
+                <a href="/programacion-cultural/encuentro-narracion-oral">
+                    <i class="fa-solid fa-comments" aria-hidden="true"></i>
+                    Narración Oral
+                </a>
+
+                <a href="/programacion-cultural/cali-emprende-cultura">
+                    <i class="fa-solid fa-lightbulb" aria-hidden="true"></i>
+                    Cali Emprende Cultura
+                </a>
+
+                <a href="/programacion-cultural/simposio-patrimonio">
+                    <i class="fa-solid fa-landmark" aria-hidden="true"></i>
+                    Simposio de Patrimonio
+                </a>
+
+                <a href="/programacion-cultural/sonando-el-tambor">
+                    <i class="fa-solid fa-drum" aria-hidden="true"></i>
+                    Sonando El Tambor
+                </a>
+            </div>
+        </div>
+
+        <a href="/programacion-permanente">
+            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+            Programación Permanente
+        </a>
+
+        <a href="/agora-literaria">
+            <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            Ágora Literaria
+        </a>
+
+    </div>
+
+</div>
+
+        <div class="menu-item convocatorias">
+            <a href="https://www.culturaenlineacali.com/convocatorias-disponibles"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Abrir convocatorias disponibles en Cultura en Línea Cali">
+                <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                <span class="menu-label">Convocatorias</span>
+            </a>
         </div>
 
     </div>
 
     <div class="top-actions">
-
-        <a href="/pqrsd">PQRSD</a>
-
-        <a href="#">ES</a>
-
-        <a href="/login"
-           class="user-icon">
-
-            <i class="fa-regular fa-user"></i>
-
+        <a href="/pqrsdf"
+           aria-label="Ir al módulo de peticiones, quejas, reclamos, sugerencias, denuncias y felicitaciones"
+           title="Peticiones, Quejas, Reclamos, Sugerencias, Denuncias y Felicitaciones">
+            PQRSDF
         </a>
 
+        <a href="#" aria-label="Idioma actual español">ES</a>
+
+        <a href="/login" class="user-icon" aria-label="Ingresar al sistema">
+            <i class="fa-regular fa-user" aria-hidden="true"></i>
+        </a>
     </div>
 
 </div>

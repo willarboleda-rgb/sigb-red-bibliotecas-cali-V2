@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PQRSDF | Sistema Integrado de Gestión Bibliotecaria</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="pqrsd-v2-page">
+
+    <section class="pqrsd-v2-hero">
+
+        <span>
+            <i class="fa-solid fa-shield-halved"></i>
+            Atención ciudadana
+        </span>
+
+        <h1>PQRSDF</h1>
+
+        <p>
+            Radica peticiones, quejas, reclamos, sugerencias, denuncias o felicitaciones
+            relacionadas con los servicios de la Red de Bibliotecas Públicas de Cali.
+        </p>
+
+    </section>
+
+    <section class="pqrsd-v2-card">
+
+        <div class="pqrsd-v2-steps">
+
+            <button class="active" onclick="showPqrsdStepV2(1)" type="button">
+                <strong>1</strong>
+                Solicitante
+            </button>
+
+            <button onclick="showPqrsdStepV2(2)" type="button">
+                <strong>2</strong>
+                Ubicación
+            </button>
+
+            <button onclick="showPqrsdStepV2(3)" type="button">
+                <strong>3</strong>
+                Solicitud
+            </button>
+
+            <button onclick="showPqrsdStepV2(4)" type="button">
+                <strong>4</strong>
+                Confirmación
+            </button>
+
+        </div>
+
+        <form>
+
+            <section class="pqrsd-v2-step active" id="pqrsdV2Step1">
+
+                <h2>Datos del solicitante</h2>
+
+                <div class="pqrsd-v2-grid">
+
+                    <label>
+                        Tipo de persona
+                        <select>
+                            <option>Persona natural</option>
+                            <option>Persona jurídica</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Tipo de documento
+                        <select>
+                            <option>Cédula de ciudadanía</option>
+                            <option>Tarjeta de identidad</option>
+                            <option>Cédula de extranjería</option>
+                            <option>NIT</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Número de documento
+                        <input type="text" placeholder="Número de identificación">
+                    </label>
+
+                    <label>
+                        Nombre completo
+                        <input type="text" placeholder="Nombre del solicitante">
+                    </label>
+
+                    <label>
+                        Correo electrónico
+                        <input type="email" placeholder="correo@ejemplo.com">
+                    </label>
+
+                    <label>
+                        Teléfono o celular
+                        <input type="text" placeholder="300 000 0000">
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section class="pqrsd-v2-step" id="pqrsdV2Step2">
+
+                <h2>Datos de ubicación</h2>
+
+                <div class="pqrsd-v2-grid">
+
+                    <label>
+                        Departamento
+                        <input type="text" value="Valle del Cauca">
+                    </label>
+
+                    <label>
+                        Municipio
+                        <input type="text" value="Santiago de Cali">
+                    </label>
+
+                    <label>
+                        Comuna / Corregimiento
+                        <input type="text" placeholder="Ej. Comuna 3 / Felidia">
+                    </label>
+
+                    <label>
+                        Barrio
+                        <input type="text" placeholder="Ej. San Antonio">
+                    </label>
+
+                    <label class="full">
+                        Dirección
+                        <input type="text" placeholder="Dirección de residencia">
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section class="pqrsd-v2-step" id="pqrsdV2Step3">
+
+                <h2>Detalle de la solicitud</h2>
+
+                <div class="pqrsd-v2-grid">
+
+                    <label>
+                        Tipo de solicitud
+                        <select>
+                            <option>Petición</option>
+                            <option>Queja</option>
+                            <option>Reclamo</option>
+                            <option>Sugerencia</option>
+                            <option>Denuncia</option>
+                            <option>Felicitación</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Servicio relacionado
+                        <select>
+                            <option>Bibliotecas</option>
+                            <option>Catálogo OPAC</option>
+                            <option>Biblioteca Digital</option>
+                            <option>Programación Cultural</option>
+                            <option>Accesibilidad</option>
+                            <option>Otro</option>
+                        </select>
+                    </label>
+
+                    <label class="full">
+                        Asunto
+                        <input type="text" placeholder="Resumen breve de la solicitud">
+                    </label>
+
+                    <label class="full">
+                        Descripción
+                        <textarea placeholder="Describe tu solicitud..."></textarea>
+                    </label>
+
+                    <label class="full">
+                        Adjuntar soporte o documento
+                        <input type="file" multiple>
+                        <small>
+                            Puedes cargar archivos que sirvan como soporte de tu solicitud, por ejemplo documentos, imágenes o evidencias.
+                        </small>
+                    </label>
+
+                </div>
+
+            </section>
+
+            <section class="pqrsd-v2-step" id="pqrsdV2Step4">
+
+                <div class="pqrsd-v2-confirm">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <h2>Revisa y confirma</h2>
+
+                    <p>
+                        Al confirmar, la solicitud será registrada como una radicación PQRSDF.
+                        El sistema generará un número de radicado para consultar posteriormente
+                        el estado del trámite.
+                    </p>
+
+                    <div class="pqrsd-v2-radicado">
+                        <strong>Radicado sugerido:</strong>
+                        <span>PQRSDF-2026-000124</span>
+                        <small>Fecha de radicación: 17/06/2026</small>
+                    </div>
+
+                    <label>
+                        <input type="checkbox">
+                        Confirmo que la información suministrada es correcta.
+                    </label>
+
+                    <a href="#"
+                       class="pqrsd-v2-track">
+                        Consultar avance de una solicitud
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </section>
+
+            <div class="pqrsd-v2-actions">
+
+                <button type="button" onclick="prevPqrsdStepV2()">
+                    Atrás
+                </button>
+
+                <button type="button" onclick="nextPqrsdStepV2()">
+                    Siguiente
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

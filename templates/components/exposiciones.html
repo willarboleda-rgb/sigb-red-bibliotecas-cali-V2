@@ -13,25 +13,27 @@
 
     {% include "components/top_navigation.html" %}
 
-    <main class="expo-page">
+    <main class="expo-page expo-page-v2">
 
-        <section class="expo-hero">
+    <section class="expo-hero expo-hero-v2">
+
+        <div class="expo-hero-overlay"></div>
+
+        <div class="expo-hero-content">
 
             <span class="expo-badge">
-                <i class="fa-solid fa-camera"></i>
+                <i class="fa-solid fa-camera-retro"></i>
                 Exposición digital · temporal
             </span>
 
             <h1>Andrés Caicedo</h1>
 
-            <p>
-                El Genio del Cali Viejo
-            </p>
+            <p>El Genio del Cali Viejo</p>
 
             <div class="expo-meta">
                 <span><i class="fa-regular fa-calendar"></i> 15 Ene — 15 Mar 2025</span>
                 <span><i class="fa-solid fa-location-dot"></i> Biblioteca Digital de Cali</span>
-                <span><i class="fa-solid fa-eye"></i> 1.247 visitantes</span>
+                <span><i class="fa-solid fa-eye"></i> 1.370 visitantes</span>
             </div>
 
             <div class="expo-curaduria">
@@ -41,172 +43,185 @@
             </div>
 
             <button class="expo-main-btn" onclick="startExpoTour()">
-                <i class="fa-solid fa-camera-retro"></i>
+                <i class="fa-solid fa-route"></i>
                 Iniciar recorrido
             </button>
 
             <small class="expo-note">
-                6 salas · Audio guía disponible
+                6 salas · Audio guía disponible · Libro de visitantes
             </small>
 
-        </section>
+        </div>
 
-        <section class="expo-summary">
+    </section>
 
-            <article>
-                <strong>6</strong>
-                <span>Salas digitales</span>
+    <section class="expo-summary">
+        <article><strong>6</strong><span>Salas digitales</span></article>
+        <article><strong>1.370</strong><span>Visitantes</span></article>
+        <article><strong>25</strong><span>Años de vida</span></article>
+        <article><strong>Audio</strong><span>Guía disponible</span></article>
+    </section>
+
+    <section class="expo-intro">
+
+        <span class="expo-section-kicker">Introducción</span>
+
+        <h2>Un genio fugaz</h2>
+
+        <p>
+            Andrés Caicedo Estela fue una de las voces más intensas de la literatura caleña.
+            Su obra conecta cine, música, juventud, ciudad y memoria cultural, convirtiendo
+            a Cali en escenario vivo de una generación.
+        </p>
+
+        <div class="expo-quote">
+            <i class="fa-solid fa-quote-left"></i>
+            <p>“La vida no es sino un breve viaje que hacemos por un río que no conocemos...”</p>
+            <strong>Andrés Caicedo</strong>
+        </div>
+
+    </section>
+
+    <section class="expo-timeline">
+
+        <span class="expo-section-kicker">Línea del tiempo</span>
+
+        <h2>Momentos clave</h2>
+
+        <div class="expo-timeline-list">
+            <article><strong>1949</strong><span>Nace Andrés Caicedo en Cali.</span></article>
+            <article><strong>1968</strong><span>Funda el Cine Club de Cali.</span></article>
+            <article><strong>1973</strong><span>Viaja a Europa y fortalece su mirada cinematográfica.</span></article>
+            <article><strong>1977</strong><span>Publica “¡Que viva la música!”.</span></article>
+        </div>
+
+    </section>
+
+    <section class="expo-content" id="expoRecorrido">
+
+        <div class="section-title">
+            <span>Galería</span>
+            <h2>Salas de la exposición</h2>
+            <p>Recorre seis salas temáticas en una experiencia visual, sonora e interactiva.</p>
+        </div>
+
+        <div class="expo-filters">
+            <button class="expo-filter active" onclick="filterExpo('all', this)">Todas</button>
+            <button class="expo-filter" onclick="filterExpo('vida', this)">Vida</button>
+            <button class="expo-filter" onclick="filterExpo('obra', this)">Obra</button>
+            <button class="expo-filter" onclick="filterExpo('cali', this)">Cali</button>
+            <button class="expo-filter" onclick="filterExpo('archivo', this)">Archivo</button>
+        </div>
+
+        <div class="expo-grid expo-grid-v2">
+
+            <article class="expo-card vida">
+                <div class="expo-card-img one"></div>
+                <span>1949–1970 · Sala 01</span>
+                <h3>Los años de formación</h3>
+                <p>Infancia, juventud y primeros intereses creativos del autor.</p>
+                <button onclick="openExpoRoom('Los años de formación')">Explorar sala</button>
             </article>
 
-            <article>
-                <strong>1.370</strong>
-                <span>Visitantes</span>
+            <article class="expo-card obra">
+                <div class="expo-card-img two"></div>
+                <span>1970–1977 · Sala 02</span>
+                <h3>¡Que viva la música!</h3>
+                <p>La novela, la salsa, la juventud caleña y la ciudad nocturna.</p>
+                <button onclick="openExpoRoom('¡Que viva la música!')">Explorar sala</button>
             </article>
 
-            <article>
-                <strong>2025</strong>
-                <span>Exposición temporal</span>
+            <article class="expo-card obra">
+                <div class="expo-card-img three"></div>
+                <span>1968–1977 · Sala 03</span>
+                <h3>El cine y la literatura</h3>
+                <p>La influencia del lenguaje cinematográfico en su escritura.</p>
+                <button onclick="openExpoRoom('El cine y la literatura')">Explorar sala</button>
             </article>
 
-            <article>
-                <strong>Audio</strong>
-                <span>Guía disponible</span>
+            <article class="expo-card cali">
+                <div class="expo-card-img four"></div>
+                <span>1970–1977 · Sala 04</span>
+                <h3>Cali en los 70</h3>
+                <p>Barrios, salsa, juventud, noche y memoria urbana.</p>
+                <button onclick="openExpoRoom('Cali en los 70')">Explorar sala</button>
             </article>
 
-        </section>
+            <article class="expo-card archivo">
+                <div class="expo-card-img five"></div>
+                <span>1974–1977 · Sala 05</span>
+                <h3>La noche y la muerte</h3>
+                <p>La conciencia del tiempo, lo efímero y los límites de la juventud.</p>
+                <button onclick="openExpoRoom('La noche y la muerte')">Explorar sala</button>
+            </article>
 
-        <section class="expo-content">
+            <article class="expo-card cali">
+                <div class="expo-card-img six"></div>
+                <span>1977–Presente · Sala 06</span>
+                <h3>Legado perenne</h3>
+                <p>La vigencia de Caicedo en la literatura y la cultura latinoamericana.</p>
+                <button onclick="openExpoRoom('Legado perenne')">Explorar sala</button>
+            </article>
 
-            <div class="section-title">
+        </div>
 
-                <span>Recorrido</span>
+    </section>
 
-                <h2>
-                    Salas de la exposición
-                </h2>
+    <section class="expo-author-library">
 
-                <p>
-                    Explora una experiencia digital inspirada en la vida, obra y memoria cultural
-                    de Andrés Caicedo y su relación con Cali.
-                </p>
+        <span class="expo-section-kicker">Obras destacadas</span>
 
-            </div>
+        <h2>Biblioteca del autor</h2>
 
-            <div class="expo-filters">
+        <div class="expo-author-grid">
+            <article><span>PDF · EPUB · Audiolibro</span><h3>¡Que viva la música!</h3><p>1977 · Novela · 4.9 ⭐</p><button>Leer en la Biblioteca</button></article>
+            <article><span>PDF · EPUB</span><h3>El atravesado</h3><p>1975 · Novela corta · 4.7 ⭐</p><button>Leer en la Biblioteca</button></article>
+            <article><span>PDF</span><h3>Maternidad</h3><p>1976 · Cuento · 4.5 ⭐</p><button>Leer en la Biblioteca</button></article>
+            <article><span>PDF · EPUB</span><h3>Pronto</h3><p>1976 · Cuento · 4.3 ⭐</p><button>Leer en la Biblioteca</button></article>
+        </div>
 
-                <button class="expo-filter active" onclick="filterExpo('all', this)">
-                    Todas
-                </button>
+    </section>
 
-                <button class="expo-filter" onclick="filterExpo('vida', this)">
-                    Vida
-                </button>
+    <section class="expo-audio expo-audio-v2">
 
-                <button class="expo-filter" onclick="filterExpo('obra', this)">
-                    Obra
-                </button>
+        <div>
+            <span>Audio guía</span>
+            <h2>Sonidos de Cali</h2>
+            <p>Sumérgete en la atmósfera sonora que inspiró la obra de Andrés Caicedo.</p>
+        </div>
 
-                <button class="expo-filter" onclick="filterExpo('cali', this)">
-                    Cali
-                </button>
-
-                <button class="expo-filter" onclick="filterExpo('archivo', this)">
-                    Archivo
-                </button>
-
-            </div>
-
-            <div class="expo-grid">
-
-                <article class="expo-card vida">
-                    <div class="expo-card-img one"></div>
-                    <span>Sala 01</span>
-                    <h3>Infancia y juventud</h3>
-                    <p>
-                        Una mirada a los primeros años de Andrés Caicedo, su entorno familiar,
-                        sus intereses tempranos y su despertar creativo.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-                <article class="expo-card obra">
-                    <div class="expo-card-img two"></div>
-                    <span>Sala 02</span>
-                    <h3>Obra literaria</h3>
-                    <p>
-                        Recorrido por sus relatos, novelas, cartas y escritos que marcaron
-                        una generación de lectores caleños.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-                <article class="expo-card cali">
-                    <div class="expo-card-img three"></div>
-                    <span>Sala 03</span>
-                    <h3>Cali como escenario</h3>
-                    <p>
-                        La ciudad como territorio narrativo, cultural y simbólico en la obra
-                        del autor.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-                <article class="expo-card archivo">
-                    <div class="expo-card-img four"></div>
-                    <span>Sala 04</span>
-                    <h3>Archivo fotográfico</h3>
-                    <p>
-                        Fotografías, documentos y registros visuales que evocan una Cali
-                        viva, artística y literaria.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-                <article class="expo-card obra">
-                    <div class="expo-card-img five"></div>
-                    <span>Sala 05</span>
-                    <h3>Cine y crítica cultural</h3>
-                    <p>
-                        Su relación con el cine, los cineclubes, la crítica y la cultura urbana
-                        de los años setenta.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-                <article class="expo-card cali">
-                    <div class="expo-card-img six"></div>
-                    <span>Sala 06</span>
-                    <h3>Legado caleño</h3>
-                    <p>
-                        Impacto de su obra en nuevas generaciones, lectores, bibliotecas y
-                        procesos culturales de la ciudad.
-                    </p>
-                    <button>Explorar sala</button>
-                </article>
-
-            </div>
-
-        </section>
-
-        <section class="expo-audio">
-
-            <div>
-                <span>Audio guía</span>
-                <h2>Recorrido narrado</h2>
-                <p>
-                    Simulación de audio guía para acompañar la experiencia de personas
-                    con discapacidad visual o usuarios que prefieren contenidos sonoros.
-                </p>
-            </div>
-
-            <button>
+        <div class="expo-player">
+            <button onclick="playExpoAudioPrototype()">
                 <i class="fa-solid fa-play"></i>
-                Reproducir audio guía
             </button>
+            <div>
+                <strong>Sonidos de la calle 5</strong>
+                <span>Pista 1 de 6 · 3:24</span>
+            </div>
+        </div>
 
-        </section>
+    </section>
 
-    </main>
+    <section class="expo-visitors">
+
+        <span class="expo-section-kicker">Libro de visitantes</span>
+
+        <h2>Deja tu huella</h2>
+
+        <div class="expo-comments">
+            <article><strong>María Fernanda López ⭐</strong><p>Una exposición magistral que captura la esencia del genio caleño.</p></article>
+            <article><strong>Carlos Andrés Rivera ⭐</strong><p>Sentir la obra de Caicedo en formato digital es una experiencia única.</p></article>
+            <article><strong>Valentina Muñoz ⭐</strong><p>La interactividad y el audio guía hacen que uno se sumerja completamente.</p></article>
+        </div>
+
+        <button class="expo-comment-btn" onclick="alert('Inicia sesión para dejar tu comentario en el libro de visitantes.')">
+            <i class="fa-solid fa-camera"></i>
+            Iniciar sesión y comentar
+        </button>
+
+    </section>
+
+</main>
 
     {% include 'components/accessibility.html' %}
     {% include 'components/luma.html' %}

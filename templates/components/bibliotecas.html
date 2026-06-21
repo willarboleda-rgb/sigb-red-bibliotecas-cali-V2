@@ -3,444 +3,393 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibliotecas y Directorio | Red de Bibliotecas Públicas de Cali</title>
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
-    <title>
-        Bibliotecas | Red de Bibliotecas Públicas de Cali
-    </title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/sigb.css') }}">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
 {% include 'components/top_navigation.html' %}
 
-<main class="libraries-page">
+<main class="libraries-page libraries-directory-page">
 
-    <!-- HERO -->
-
-    <section class="libraries-new-hero">
+    <section class="libraries-new-hero libraries-directory-hero">
 
         <span class="libraries-new-badge">
-            <i class="fa-solid fa-lines-leaning"></i>
-            Red de Bibliotecas
+            <i class="fa-solid fa-location-dot"></i>
+            Red de Bibliotecas · 5 Territorios LEO
         </span>
 
-        <h1>
-            Las Bibliotecas de la Red
-        </h1>
+        <h1>Bibliotecas y Directorio de la Red</h1>
 
         <p>
-            Explora las bibliotecas públicas que transforman la cultura de Cali.
-            Descubre espacios de lectura, creación y comunidad en cada rincón de la ciudad.
+            Explora los 61 espacios bibliotecarios de Santiago de Cali. Búscalos en el mapa,
+            agrúpalos por Territorio LEO o consúltalos como lista para conocer sus servicios,
+            horarios, personal y programación.
         </p>
 
         <div class="libraries-new-search">
-
             <i class="fa-solid fa-magnifying-glass"></i>
-
             <input type="text"
                    id="librariesSearch"
-                   placeholder="Buscar biblioteca por nombre, comuna o territorio..."
+                   placeholder="Buscar biblioteca, comuna, corregimiento o territorio..."
                    onkeyup="searchLibraries()">
-
         </div>
 
         <div class="libraries-hero-stats">
-
-            <span>
-                <i class="fa-regular fa-building"></i>
-                23 Bibliotecas
-            </span>
-
-            <span>
-                <i class="fa-solid fa-book-open"></i>
-                221.5k Libros
-            </span>
-
-            <span>
-                <i class="fa-solid fa-users"></i>
-                49.4k Usuarios activos
-            </span>
-
-            <span>
-                <i class="fa-solid fa-globe"></i>
-                5 Territorios
-            </span>
-
+            <span><i class="fa-regular fa-building"></i> 61 Espacios</span>
+            <span><i class="fa-solid fa-globe"></i> 5 Territorios</span>
+            <span><i class="fa-solid fa-circle-check"></i> 57 Activos</span>
+            <span><i class="fa-solid fa-users"></i> 49.4k Usuarios</span>
         </div>
 
     </section>
 
-    <!-- TERRITORIOS RESUMEN -->
+    <section class="libraries-map-main">
 
-    <section class="libraries-territory-summary">
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/d/u/0/embed?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA"
+                loading="lazy">
+            </iframe>
+        </div>
 
-        <article>
-            <i class="fa-regular fa-building"></i>
-            <h3>Norte</h3>
-            <p>5 bibliotecas</p>
-        </article>
-
-        <article>
-            <i class="fa-regular fa-building"></i>
-            <h3>Oriente</h3>
-            <p>4 bibliotecas</p>
-        </article>
-
-        <article>
-            <i class="fa-regular fa-building"></i>
-            <h3>Sur</h3>
-            <p>5 bibliotecas</p>
-        </article>
-
-        <article>
-            <i class="fa-regular fa-building"></i>
-            <h3>Occidente</h3>
-            <p>4 bibliotecas</p>
-        </article>
-
-        <article>
-            <i class="fa-regular fa-building"></i>
-            <h3>Centro</h3>
-            <p>5 bibliotecas</p>
-        </article>
+        <a href="/mapa-bibliotecas" class="libraries-map-link">
+            <i class="fa-solid fa-up-right-from-square"></i>
+            Ver mapa completo
+        </a>
 
     </section>
 
-    <!-- FILTROS -->
+    <section class="libraries-directory-tabs">
 
-    <section class="libraries-filter-section">
-
-        <i class="fa-solid fa-filter"></i>
-
-        <button class="libraries-filter active"
-                onclick="filterLibraries('all', this)">
-            Todos
+        <button class="libraries-dir-tab active" onclick="showLibrariesDirectoryTab('territorios', this)">
+            <i class="fa-regular fa-compass"></i>
+            Por Territorio LEO
         </button>
 
-        <button class="libraries-filter"
-                onclick="filterLibraries('urbana', this)">
-            Urbanas
+        <button class="libraries-dir-tab" onclick="showLibrariesDirectoryTab('lista', this)">
+            <i class="fa-solid fa-list"></i>
+            Lista y Filtros
         </button>
 
-        <button class="libraries-filter"
-                onclick="filterLibraries('rural', this)">
-            Rurales
-        </button>
-
-        <button class="libraries-filter"
-                onclick="filterLibraries('tematica', this)">
-            Temáticas
-        </button>
-
-        <button class="libraries-filter"
-                onclick="filterLibraries('certificada', this)">
-            Certificadas
-        </button>
-
-        <button class="libraries-filter"
-                onclick="filterLibraries('bibliomio', this)">
-            BiblioMíos
+        <button class="libraries-dir-tab" onclick="showLibrariesDirectoryTab('personal', this)">
+            <i class="fa-regular fa-id-card"></i>
+            Personal
         </button>
 
     </section>
 
-    <!-- TARJETAS DESTACADAS -->
-
-    <section class="libraries-card-grid">
-
-        <article class="library-feature-card urbana certificada norte">
-
-            <div class="library-cover north">
-                <span>Norte</span>
-                <button><i class="fa-regular fa-heart"></i></button>
-
-                <div>
-                    <h3>CC Nuevo Latir</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Comuna 3</p>
-                </div>
-
-                <strong>
-                    <i class="fa-solid fa-star"></i>
-                    4.8
-                </strong>
-            </div>
-
-            <div class="library-feature-body">
-
-                <div class="library-tags">
-                    <span>CC</span>
-                    <span>Certificada</span>
-                    <span>Programa Infantil</span>
-                    <span>+2</span>
-                </div>
-
-                <p>
-                    Centro cultural comunitario que transforma el norte de Cali
-                    con programas de lectura y creación artística.
-                </p>
-
-                <div class="library-meta">
-                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
-                    <span><i class="fa-solid fa-phone"></i> (602) 885-3201</span>
-                </div>
-
-                <div class="library-numbers">
-                    <span><strong>12.4k</strong> Libros</span>
-                    <span><strong>2.3k</strong> Usuarios</span>
-                    <em>✨ Mediación de Lectura Infantil</em>
-                </div>
-
-                <a href="/directorio">
-                    Ver Biblioteca
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-        <article class="library-feature-card urbana certificada norte">
-
-            <div class="library-cover green">
-                <span>Norte</span>
-                <button><i class="fa-regular fa-heart"></i></button>
-
-                <div>
-                    <h3>CC Comuna 1</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Comuna 1</p>
-                </div>
-
-                <strong>
-                    <i class="fa-solid fa-star"></i>
-                    4.6
-                </strong>
-            </div>
-
-            <div class="library-feature-body">
-
-                <div class="library-tags">
-                    <span>CC</span>
-                    <span>Certificada</span>
-                    <span>Programa Juvenil</span>
-                    <span>+2</span>
-                </div>
-
-                <p>
-                    Espacio de encuentro comunitario en el corazón del norte.
-                    Ofrece talleres de tecnología y clubes de lectura.
-                </p>
-
-                <div class="library-meta">
-                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
-                    <span><i class="fa-solid fa-phone"></i> (602) 885-3202</span>
-                </div>
-
-                <div class="library-numbers">
-                    <span><strong>8.9k</strong> Libros</span>
-                    <span><strong>1.9k</strong> Usuarios</span>
-                    <em>✨ Club de Creadores Digitales</em>
-                </div>
-
-                <a href="/directorio">
-                    Ver Biblioteca
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-        <article class="library-feature-card rural sur">
-
-            <div class="library-cover south">
-                <span>Sur</span>
-                <button><i class="fa-regular fa-heart"></i></button>
-
-                <div>
-                    <h3>La Campiña</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Comuna 17</p>
-                </div>
-
-                <strong>
-                    <i class="fa-solid fa-star"></i>
-                    4.6
-                </strong>
-            </div>
-
-            <div class="library-feature-body">
-
-                <div class="library-tags">
-                    <span>Rural</span>
-                    <span>Huerta Comunitaria</span>
-                    <span>Pet Friendly</span>
-                </div>
-
-                <p>
-                    Biblioteca rural con huerta comunitaria que integra la lectura
-                    con la agricultura y los procesos ambientales.
-                </p>
-
-                <div class="library-meta">
-                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-17:00</span>
-                    <span><i class="fa-solid fa-phone"></i> (602) 885-3210</span>
-                </div>
-
-                <div class="library-numbers">
-                    <span><strong>4.5k</strong> Libros</span>
-                    <span><strong>980</strong> Usuarios</span>
-                    <em>✨ Semillas y Palabras</em>
-                </div>
-
-                <a href="/directorio">
-                    Ver Biblioteca
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-        <article class="library-feature-card tematica certificada oriente">
-
-            <div class="library-cover orange">
-                <span>Oriente</span>
-                <button><i class="fa-regular fa-heart"></i></button>
-
-                <div>
-                    <h3>Patrimonial Centenario</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Comuna 14</p>
-                </div>
-
-                <strong>
-                    <i class="fa-solid fa-star"></i>
-                    4.7
-                </strong>
-            </div>
-
-            <div class="library-feature-body">
-
-                <div class="library-tags">
-                    <span>Temática</span>
-                    <span>Certificada</span>
-                    <span>Auditorio</span>
-                    <span>+2</span>
-                </div>
-
-                <p>
-                    Espacio patrimonial que preserva la historia del oriente de Cali
-                    y fortalece la memoria cultural.
-                </p>
-
-                <div class="library-meta">
-                    <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-17:00</span>
-                    <span><i class="fa-solid fa-phone"></i> (602) 885-3207</span>
-                </div>
-
-                <div class="library-numbers">
-                    <span><strong>9.4k</strong> Libros</span>
-                    <span><strong>2.0k</strong> Usuarios</span>
-                    <em>✨ Archivo Histórico del Oriente</em>
-                </div>
-
-                <a href="/directorio">
-                    Ver Biblioteca
-                    <i class="fa-solid fa-chevron-right"></i>
-                </a>
-
-            </div>
-
-        </article>
-
-    </section>
-
-    <!-- MAPA -->
-
-    <section class="map-section">
+    <section class="libraries-dir-panel active" id="libraries-panel-territorios">
 
         <div class="section-header">
-
-            <span>Mapa Oficial</span>
-
-            <h2>
-                Encuentra tu biblioteca más cercana
-            </h2>
-
+            <span>Organización territorial</span>
+            <h2>Bibliotecas por Territorio LEO</h2>
             <p>
-                Consulta la ubicación de las bibliotecas y espacios
-                de lectura de la Red mediante el mapa interactivo.
+                La Red se organiza en cinco territorios estratégicos para fortalecer la lectura,
+                la escritura, la oralidad y la gestión cultural en comunas y corregimientos.
             </p>
-
         </div>
 
-        <div class="map-layout">
+        <div class="libraries-territory-cards">
 
-            <div class="map-container">
+            <article class="leo-territory-card azul">
+                <strong>T1 Azul</strong>
+                <span>Comunas 13, 14 y 21</span>
+                <p>Laboratorio de diversidad y diálogo intercultural.</p>
+                <small>12 bibliotecas</small>
+            </article>
 
-                <iframe
-                    src="https://www.google.com/maps/d/u/0/embed?mid=12chdOtIth3DCnzpnwcdOAMR-JyjBlKA"
-                    loading="lazy">
-                </iframe>
+            <article class="leo-territory-card morado">
+                <strong>T2 Morado</strong>
+                <span>Comunas 1, 10, 11 y 19</span>
+                <p>Laboratorio de diversidad biocultural.</p>
+                <small>10 bibliotecas</small>
+            </article>
 
-            </div>
+            <article class="leo-territory-card amarillo">
+                <strong>T3 Amarillo</strong>
+                <span>Comunas 2, 3, 4 y 6</span>
+                <p>Laboratorio de patrimonio, memoria y creación.</p>
+                <small>13 bibliotecas</small>
+            </article>
 
-            <div class="libraries-panel">
+            <article class="leo-territory-card verde">
+                <strong>T4 Verde</strong>
+                <span>Comunas 5, 7, 8, 18 y 20</span>
+                <p>Laboratorio de innovación y creación.</p>
+                <small>12 bibliotecas</small>
+            </article>
 
-                <h3>
-                    Bibliotecas destacadas
-                </h3>
-
-                <div class="library-card">
-                    <h4>Biblioteca León de Greiff</h4>
-                    <p>Servicios bibliotecarios, lectura, formación y actividades culturales.</p>
-                </div>
-
-                <div class="library-card">
-                    <h4>Biblioteca Gabo</h4>
-                    <p>Espacio de encuentro para la lectura, creatividad y participación ciudadana.</p>
-                </div>
-
-                <div class="library-card">
-                    <h4>Biblioteca Rigoberta Menchú</h4>
-                    <p>Programas comunitarios, lectura y fortalecimiento social.</p>
-                </div>
-
-                <div class="library-card">
-                    <h4>Biblioteca San Marino</h4>
-                    <p>Acceso a servicios bibliotecarios, contenidos digitales y actividades.</p>
-                </div>
-
-            </div>
+            <article class="leo-territory-card naranja">
+                <strong>T5 Naranja</strong>
+                <span>Comunas 12, 15 y 16</span>
+                <p>Laboratorio de identidad, territorio y cultura.</p>
+                <small>13 bibliotecas</small>
+            </article>
 
         </div>
 
     </section>
 
-    <!-- CTA -->
+    <section class="libraries-dir-panel" id="libraries-panel-lista" hidden>
 
-    <section class="services-cta">
+        <section class="libraries-filter-section">
 
-        <h2>
-            Consulta el directorio completo
-        </h2>
+            <i class="fa-solid fa-filter"></i>
 
-        <p>
-            Accede a la información detallada de todas las bibliotecas
-            y espacios de lectura de la Red.
-        </p>
+            <button class="libraries-filter active" onclick="filterLibraries('all', this)">Todos</button>
+            <button class="libraries-filter" onclick="filterLibraries('urbana', this)">Urbanas</button>
+            <button class="libraries-filter" onclick="filterLibraries('rural', this)">Rurales</button>
+            <button class="libraries-filter" onclick="filterLibraries('tematica', this)">Temáticas</button>
+            <button class="libraries-filter" onclick="filterLibraries('certificada', this)">Certificadas</button>
 
-        <a href="/directorio"
-           class="btn-primary">
-            Ver Directorio Completo →
-        </a>
+        </section>
+
+        <section class="libraries-card-grid">
+
+            <article class="library-feature-card urbana certificada norte">
+
+                <div class="library-cover north">
+                    <span>Norte</span>
+                    <button><i class="fa-regular fa-heart"></i></button>
+
+                    <div>
+                        <h3>CC Nuevo Latir</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Comuna 3</p>
+                    </div>
+
+                    <strong><i class="fa-solid fa-star"></i> 4.8</strong>
+                </div>
+
+                <div class="library-feature-body">
+
+                    <div class="library-tags">
+                        <span>CC</span>
+                        <span>Certificada</span>
+                        <span>Programa Infantil</span>
+                        <span>+2</span>
+                    </div>
+
+                    <p>
+                        Centro cultural comunitario que transforma el norte de Cali
+                        con programas de lectura y creación artística.
+                    </p>
+
+                    <div class="library-meta">
+                        <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
+                        <span><i class="fa-solid fa-phone"></i> (602) 885-3201</span>
+                    </div>
+
+                    <div class="library-numbers">
+                        <span><strong>12.4k</strong> Libros</span>
+                        <span><strong>2.3k</strong> Usuarios</span>
+                        <em>✨ Mediación de Lectura Infantil</em>
+                    </div>
+
+                    <a href="/biblioteca/cc_nuevo_latir">
+                        Ver Biblioteca
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="library-feature-card urbana certificada norte">
+
+                <div class="library-cover green">
+                    <span>Norte</span>
+                    <button><i class="fa-regular fa-heart"></i></button>
+
+                    <div>
+                        <h3>CC Comuna 1</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Comuna 1</p>
+                    </div>
+
+                    <strong><i class="fa-solid fa-star"></i> 4.6</strong>
+                </div>
+
+                <div class="library-feature-body">
+
+                    <div class="library-tags">
+                        <span>CC</span>
+                        <span>Certificada</span>
+                        <span>Programa Juvenil</span>
+                        <span>+2</span>
+                    </div>
+
+                    <p>
+                        Espacio de encuentro comunitario en el corazón del norte.
+                        Ofrece talleres de tecnología y clubes de lectura.
+                    </p>
+
+                    <div class="library-meta">
+                        <span><i class="fa-regular fa-clock"></i> Lun-Vie 8:00-18:00</span>
+                        <span><i class="fa-solid fa-phone"></i> (602) 885-3202</span>
+                    </div>
+
+                    <div class="library-numbers">
+                        <span><strong>8.9k</strong> Libros</span>
+                        <span><strong>1.9k</strong> Usuarios</span>
+                        <em>✨ Club de Creadores Digitales</em>
+                    </div>
+
+                    <a href="/biblioteca/comuna1">
+                        Ver Biblioteca
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="library-feature-card tematica certificada centro">
+
+                <div class="library-cover orange">
+                    <span>Centro</span>
+                    <button><i class="fa-regular fa-heart"></i></button>
+
+                    <div>
+                        <h3>Patrimonial Centenario</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Comuna 3</p>
+                    </div>
+
+                    <strong><i class="fa-solid fa-star"></i> 4.9</strong>
+                </div>
+
+                <div class="library-feature-body">
+
+                    <div class="library-tags">
+                        <span>Patrimonial</span>
+                        <span>Certificada</span>
+                        <span>Histórica</span>
+                    </div>
+
+                    <p>
+                        La biblioteca más antigua de Cali, fundada en 1910.
+                        Patrimonio histórico y memoria cultural de la ciudad.
+                    </p>
+
+                    <div class="library-meta">
+                        <span><i class="fa-regular fa-clock"></i> Lun-Sáb 9:00-17:00</span>
+                        <span><i class="fa-solid fa-phone"></i> (602) 885-3203</span>
+                    </div>
+
+                    <div class="library-numbers">
+                        <span><strong>31.2k</strong> Libros</span>
+                        <span><strong>4.1k</strong> Usuarios</span>
+                        <em>✨ Archivo histórico y patrimonial</em>
+                    </div>
+
+                    <a href="/biblioteca/centenario">
+                        Ver Biblioteca
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+            <article class="library-feature-card rural occidente">
+
+                <div class="library-cover south">
+                    <span>Occidente</span>
+                    <button><i class="fa-regular fa-heart"></i></button>
+
+                    <div>
+                        <h3>La Buitrera</h3>
+                        <p><i class="fa-solid fa-location-dot"></i> Corregimiento La Buitrera</p>
+                    </div>
+
+                    <strong><i class="fa-solid fa-star"></i> 4.5</strong>
+                </div>
+
+                <div class="library-feature-body">
+
+                    <div class="library-tags">
+                        <span>Rural</span>
+                        <span>Agrocultural</span>
+                    </div>
+
+                    <p>
+                        Biblioteca rural que conecta la lectura con la vida del corregimiento
+                        y sus dinámicas agroculturales.
+                    </p>
+
+                    <div class="library-meta">
+                        <span><i class="fa-regular fa-clock"></i> Mar-Sáb 9:00-16:00</span>
+                        <span><i class="fa-solid fa-phone"></i> (602) 885-3204</span>
+                    </div>
+
+                    <div class="library-numbers">
+                        <span><strong>3.1k</strong> Libros</span>
+                        <span><strong>680</strong> Usuarios</span>
+                        <em>✨ Lectura rural y memoria comunitaria</em>
+                    </div>
+
+                    <a href="/biblioteca/buitrera">
+                        Ver Biblioteca
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </section>
+
+    </section>
+
+    <section class="libraries-dir-panel" id="libraries-panel-personal" hidden>
+
+        <div class="section-header">
+            <span>Directorio institucional</span>
+            <h2>Personal de la Red</h2>
+            <p>
+                Consulta información pública del equipo administrativo, técnico,
+                bibliotecario y de promoción de lectura, escritura y oralidad.
+            </p>
+        </div>
+
+        <div class="library-staff-grid">
+
+            <article class="library-staff-card">
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Coordinación General RBPC</h3>
+                <span>Equipo administrativo</span>
+                <p>Coordina procesos estratégicos, seguimiento territorial y articulación institucional.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Secretaría de Cultura</small>
+            </article>
+
+            <article class="library-staff-card">
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Equipo Bibliotecario</h3>
+                <span>Bibliotecas y espacios de lectura</span>
+                <p>Facilita préstamo de libros, orientación a usuarios, actividades LEO y servicios bibliotecarios.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Territorios LEO</small>
+            </article>
+
+            <article class="library-staff-card">
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Promotores LEO</h3>
+                <span>Lectura, Escritura y Oralidad</span>
+                <p>Diseñan y acompañan clubes de lectura, talleres, narración oral y mediación cultural.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Bibliotecas y comunidad</small>
+            </article>
+
+            <article class="library-staff-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Equipo Técnico</h3>
+                <span>Soporte y transformación digital</span>
+                <p>Apoya sistemas, recursos digitales, catálogo, plataforma y servicios tecnológicos.</p>
+                <small><i class="fa-solid fa-location-dot"></i> Gestión central</small>
+            </article>
+
+        </div>
 
     </section>
 

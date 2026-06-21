@@ -19,27 +19,40 @@
 
 {% include 'components/top_navigation.html' %}
 
-<main class="observatory-page">
+<main class="observatory-page observatory-page-v2">
 
-    <section class="observatory-hero">
+    <section class="observatory-hero observatory-hero-v2">
 
         <span>
             <i class="fa-solid fa-chart-line"></i>
-            Observatorio Cultural
+            Observatorio Cultural · Ecosistema del Libro
         </span>
 
         <h1>
-            Datos para entender la lectura y la participación cultural
+            Datos para entender la lectura, la escritura y la cultura en Cali
         </h1>
 
         <p>
-            Consulta indicadores, tendencias y comportamiento de los servicios bibliotecarios
-            para apoyar la toma de decisiones en la Red.
+            Consulta indicadores del ecosistema del libro, hábitos de lectura,
+            uso de servicios bibliotecarios, participación cultural, producción editorial
+            y dinámicas territoriales de la Red de Bibliotecas Públicas de Cali.
         </p>
+
+        <div class="observatory-hero-actions">
+            <a href="#ecosistemaLibro">
+                <i class="fa-solid fa-book-open-reader"></i>
+                Ver ecosistema del libro
+            </a>
+
+            <a href="#indicadoresLeo">
+                <i class="fa-solid fa-chart-pie"></i>
+                Indicadores LEO
+            </a>
+        </div>
 
     </section>
 
-    <section class="observatory-stats">
+    <section class="observatory-stats observatory-stats-v2">
 
         <article>
             <i class="fa-solid fa-book-open"></i>
@@ -49,92 +62,253 @@
 
         <article>
             <i class="fa-solid fa-users"></i>
-            <strong>32.500+</strong>
-            <span>Usuarios registrados</span>
+            <strong>49.4k</strong>
+            <span>Usuarios activos</span>
         </article>
 
         <article>
             <i class="fa-solid fa-calendar-days"></i>
-            <strong>89+</strong>
-            <span>Eventos culturales</span>
+            <strong>1.200+</strong>
+            <span>Actividades culturales al año</span>
         </article>
 
         <article>
             <i class="fa-solid fa-building-columns"></i>
             <strong>61</strong>
-            <span>Bibliotecas y espacios</span>
+            <span>Espacios bibliotecarios</span>
         </article>
 
     </section>
 
-    <section class="observatory-grid">
+    <section class="observatory-section" id="ecosistemaLibro">
 
-        <article class="observatory-card large">
+        <div class="section-title">
+            <span>Ecosistema del libro</span>
+            <h2>Cifras clave del sector</h2>
+            <p>
+                El observatorio permite visualizar la relación entre bibliotecas, lectores,
+                autores, editoriales, librerías, programación cultural y circulación de contenidos.
+            </p>
+        </div>
 
-            <div class="observatory-card-header">
-                <span>Tendencias del mes</span>
-                <i class="fa-solid fa-arrow-trend-up"></i>
-            </div>
+        <div class="ecosystem-metrics-grid">
 
-            <div class="trend-list">
+            <article>
+                <i class="fa-solid fa-pen-nib"></i>
+                <strong>25</strong>
+                <span>Autores vinculados</span>
+            </article>
 
-                <div>
-                    <strong>+24%</strong>
-                    <span>Uso de biblioteca digital</span>
-                </div>
+            <article>
+                <i class="fa-solid fa-building"></i>
+                <strong>12</strong>
+                <span>Editoriales</span>
+            </article>
 
-                <div>
-                    <strong>+18%</strong>
-                    <span>Lectura infantil</span>
-                </div>
+            <article>
+                <i class="fa-solid fa-store"></i>
+                <strong>8</strong>
+                <span>Librerías</span>
+            </article>
 
-                <div>
-                    <strong>+12%</strong>
-                    <span>Audiolibros consultados</span>
-                </div>
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <strong>100+</strong>
+                <span>Títulos anuales</span>
+            </article>
 
-                <div>
-                    <strong>+9%</strong>
-                    <span>Participación cultural</span>
-                </div>
-
-            </div>
-
-        </article>
-
-        <article class="observatory-card">
-
-            <div class="observatory-card-header">
-                <span>Comunas más activas</span>
-                <i class="fa-solid fa-location-dot"></i>
-            </div>
-
-            <ol class="ranking-list">
-                <li><strong>Comuna 13</strong><span>4.320 interacciones</span></li>
-                <li><strong>Comuna 6</strong><span>3.980 interacciones</span></li>
-                <li><strong>Comuna 17</strong><span>3.540 interacciones</span></li>
-            </ol>
-
-        </article>
-
-        <article class="observatory-card">
-
-            <div class="observatory-card-header">
-                <span>Top de lectura</span>
-                <i class="fa-solid fa-ranking-star"></i>
-            </div>
-
-            <ol class="ranking-list">
-                <li><strong>Cien años de soledad</strong><span>1.248 préstamos</span></li>
-                <li><strong>El olvido que seremos</strong><span>1.021 préstamos</span></li>
-                <li><strong>El Principito</strong><span>985 préstamos</span></li>
-            </ol>
-
-        </article>
+        </div>
 
     </section>
 
-    <section class="observatory-insight">
+    <section class="observatory-section" id="indicadoresLeo">
+
+        <div class="section-title">
+            <span>Indicadores LEO</span>
+            <h2>Lectura, escritura y oralidad</h2>
+            <p>
+                Seguimiento a la prevalencia de lectura, frecuencia lectora,
+                formatos más utilizados, motivaciones, barreras y perfiles de participación.
+            </p>
+        </div>
+
+        <div class="observatory-dashboard-grid">
+
+            <article class="observatory-card large">
+                <div class="observatory-card-header">
+                    <span>Frecuencia de lectura</span>
+                    <i class="fa-solid fa-chart-column"></i>
+                </div>
+
+                <div class="bar-chart-sim">
+                    <div style="--h:82%"><span>Diaria</span></div>
+                    <div style="--h:68%"><span>Semanal</span></div>
+                    <div style="--h:46%"><span>Mensual</span></div>
+                    <div style="--h:28%"><span>Ocasional</span></div>
+                </div>
+            </article>
+
+            <article class="observatory-card">
+                <div class="observatory-card-header">
+                    <span>Formatos de lectura</span>
+                    <i class="fa-solid fa-tablet-screen-button"></i>
+                </div>
+
+                <div class="format-list">
+                    <p><span>Libro físico</span><strong>54%</strong></p>
+                    <p><span>Libro digital</span><strong>26%</strong></p>
+                    <p><span>Audiolibro</span><strong>12%</strong></p>
+                    <p><span>Podcast narrativo</span><strong>8%</strong></p>
+                </div>
+            </article>
+
+            <article class="observatory-card">
+                <div class="observatory-card-header">
+                    <span>Perfiles LEO</span>
+                    <i class="fa-solid fa-users"></i>
+                </div>
+
+                <div class="profile-tags">
+                    <span>Lector frecuente</span>
+                    <span>Lector digital</span>
+                    <span>Escritor emergente</span>
+                    <span>Participante cultural</span>
+                    <span>Mediador comunitario</span>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="observatory-section">
+
+        <div class="section-title">
+            <span>Barreras y motivaciones</span>
+            <h2>¿Qué facilita o limita la lectura?</h2>
+            <p>
+                El observatorio identifica factores que impulsan o dificultan la participación
+                lectora y cultural en los territorios.
+            </p>
+        </div>
+
+        <div class="observatory-two-columns">
+
+            <article class="observatory-card">
+                <div class="observatory-card-header">
+                    <span>Principales motivaciones</span>
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <ul class="insight-list positive">
+                    <li>Aprender nuevas habilidades</li>
+                    <li>Compartir en comunidad</li>
+                    <li>Acceder a contenidos gratuitos</li>
+                    <li>Participar en clubes y talleres</li>
+                </ul>
+            </article>
+
+            <article class="observatory-card">
+                <div class="observatory-card-header">
+                    <span>Barreras identificadas</span>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <ul class="insight-list warning">
+                    <li>Falta de tiempo disponible</li>
+                    <li>Baja conectividad en algunos territorios</li>
+                    <li>Desconocimiento de la programación</li>
+                    <li>Dificultades de movilidad</li>
+                </ul>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="observatory-section">
+
+        <div class="section-title">
+            <span>Servicios bibliotecarios</span>
+            <h2>Uso, percepción e impacto</h2>
+            <p>
+                Datos de acceso a materiales, uso de espacios, percepción ciudadana,
+                mediación lectora y programación cultural.
+            </p>
+        </div>
+
+        <div class="service-impact-grid">
+
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <h3>Préstamos</h3>
+                <strong>138k</strong>
+                <p>Préstamos bibliográficos anuales estimados.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Servicios digitales</h3>
+                <strong>+24%</strong>
+                <p>Crecimiento del uso de biblioteca digital.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-children"></i>
+                <h3>Lectura infantil</h3>
+                <strong>+18%</strong>
+                <p>Aumento en participación de primera infancia y familias.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-calendar-check"></i>
+                <h3>Programación cultural</h3>
+                <strong>89%</strong>
+                <p>Percepción positiva de actividades culturales.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="observatory-section">
+
+        <div class="section-title">
+            <span>Producción y circulación</span>
+            <h2>Editoriales, librerías y canales</h2>
+            <p>
+                Seguimiento a la producción editorial local, canales de comercialización,
+                ferias, eventos, librerías y circulación de autores.
+            </p>
+        </div>
+
+        <div class="circulation-grid">
+
+            <article>
+                <h3>Canales de circulación</h3>
+                <div class="channel-list">
+                    <p><span>Bibliotecas públicas</span><strong>42%</strong></p>
+                    <p><span>Ferias y eventos</span><strong>28%</strong></p>
+                    <p><span>Librerías</span><strong>18%</strong></p>
+                    <p><span>Plataformas digitales</span><strong>12%</strong></p>
+                </div>
+            </article>
+
+            <article>
+                <h3>Datos del ecosistema editorial</h3>
+                <ul class="insight-list">
+                    <li>Editoriales independientes activas en Cali.</li>
+                    <li>Librerías vinculadas a programación cultural.</li>
+                    <li>Autores locales con publicaciones recientes.</li>
+                    <li>Eventos de circulación editorial y mediación lectora.</li>
+                </ul>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="observatory-insight observatory-insight-v2">
 
         <div>
             <span>
@@ -143,18 +317,19 @@
             </span>
 
             <h2>
-                La lectura infantil y los contenidos digitales muestran mayor crecimiento.
+                La lectura infantil, los servicios digitales y la programación cultural
+                muestran mayor crecimiento territorial.
             </h2>
 
             <p>
                 Este comportamiento sugiere fortalecer actividades de mediación lectora,
-                clubes infantiles, audiolibros y contenidos digitales como líneas prioritarias
-                para la programación cultural de la Red.
+                clubes infantiles, audiolibros, contenidos digitales, circulación editorial
+                y medición periódica del impacto cultural por territorio LEO.
             </p>
         </div>
 
-        <a href="/lecturas">
-            Ver tendencias de lectura
+        <a href="/agora-literaria">
+            Ver ecosistema del libro
             <i class="fa-solid fa-arrow-right"></i>
         </a>
 

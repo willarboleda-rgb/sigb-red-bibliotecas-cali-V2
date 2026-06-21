@@ -3,17 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro | Sistema Integrado de Gestión Bibliotecaria</title>
 
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/sigb.css') }}">
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body class="register-body">
@@ -22,8 +16,7 @@
 
     <section class="register-hero">
 
-        <a href="/login"
-           class="auth-back">
+        <a href="/login" class="auth-back">
             <i class="fa-solid fa-arrow-left"></i>
             Volver al login
         </a>
@@ -33,9 +26,7 @@
             Registro ciudadano
         </span>
 
-        <h1>
-            Crea tu cuenta en el Sistema Integrado de Gestión Bibliotecaria
-        </h1>
+        <h1>Crea tu cuenta en el Sistema Integrado de Gestión Bibliotecaria</h1>
 
         <p>
             Accede a préstamos, recomendaciones, eventos culturales, biblioteca favorita
@@ -48,20 +39,18 @@
 
         <div class="register-social-access">
 
-            <h2>Crear cuenta</h2>
+            <h2>Crear cuenta rápida</h2>
 
             <p>
-                Regístrate rápidamente usando una cuenta existente o continúa con el formulario manual.
+                Regístrate usando una cuenta existente o continúa con el formulario completo.
             </p>
 
-            <button type="button"
-                    class="social-btn google">
+            <button type="button" class="social-btn google">
                 <i class="fa-brands fa-google"></i>
                 Continuar con Google
             </button>
 
-            <button type="button"
-                    class="social-btn microsoft">
+            <button type="button" class="social-btn microsoft">
                 <i class="fa-brands fa-microsoft"></i>
                 Continuar con Microsoft
             </button>
@@ -71,326 +60,351 @@
             </div>
 
             <p class="manual-register-text">
-                Completa el formulario para crear tu cuenta ciudadana manualmente.
+                Completa el registro ciudadano por pasos.
             </p>
 
         </div>
 
         <form>
 
-            <h2>Datos personales</h2>
+            <div class="register-step-tabs">
 
-            <div class="register-grid">
+                <button class="active" type="button" onclick="showRegisterStep(1)">
+                    <strong>1</strong>
+                    Datos personales
+                </button>
 
-                <label>
-                    Tipo de documento
-                    <select>
-                        <option>Cédula de ciudadanía</option>
-                        <option>Tarjeta de identidad</option>
-                        <option>Cédula de extranjería</option>
-                        <option>Pasaporte</option>
-                    </select>
-                </label>
+                <button type="button" onclick="showRegisterStep(2)">
+                    <strong>2</strong>
+                    Contacto
+                </button>
 
-                <label>
-                    Número de documento
-                    <input type="text"
-                           placeholder="Ej. 1.111.111.111">
-                </label>
+                <button type="button" onclick="showRegisterStep(3)">
+                    <strong>3</strong>
+                    Caracterización
+                </button>
 
-                <label>
-                    Nombres
-                    <input type="text"
-                           placeholder="Nombres">
-                </label>
+                <button type="button" onclick="showRegisterStep(4)">
+                    <strong>4</strong>
+                    Accesibilidad
+                </button>
 
-                <label>
-                    Apellidos
-                    <input type="text"
-                           placeholder="Apellidos">
-                </label>
+                <button type="button" onclick="showRegisterStep(5)">
+                    <strong>5</strong>
+                    Menores
+                </button>
 
-                <label>
-                    Fecha de nacimiento
-                    <input type="date">
-                </label>
-
-                <label>
-                    Género
-                    <select>
-                        <option>Prefiero no decirlo</option>
-                        <option>Femenino</option>
-                        <option>Masculino</option>
-                        <option>Otro</option>
-                    </select>
-                </label>
+                <button type="button" onclick="showRegisterStep(6)">
+                    <strong>6</strong>
+                    Protección de datos
+                </button>
 
             </div>
 
-            <h2>Contacto y ubicación</h2>
+            <!-- PASO 1 -->
 
-            <h2>Información de caracterización</h2>
+            <section class="register-step-content active" id="registerStep1">
 
-            <div class="register-grid">
+                <h2>Datos personales</h2>
 
-                <label>
-                    Nombre identitario
-                    <input type="text"
-                           placeholder="Nombre con el que deseas ser reconocido/a">
-                </label>
+                <div class="register-grid">
 
-                <label>
-                    Residencia
-                    <select>
-                        <option>Urbana</option>
-                        <option>Rural</option>
-                    </select>
-                </label>
+                    <label>
+                        Tipo de documento
+                        <select>
+                            <option>Cédula de ciudadanía</option>
+                            <option>Tarjeta de identidad</option>
+                            <option>Cédula de extranjería</option>
+                            <option>Pasaporte</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Dirección de residencia
-                    <input type="text"
-                           placeholder="Ej. Calle 5 # 10 - 25">
-                </label>
+                    <label>
+                        Número de documento
+                        <input type="text" placeholder="Ej. 1.111.111.111">
+                    </label>
 
-                <label>
-                    Barrio
-                    <input type="text"
-                           placeholder="Ej. San Antonio">
-                </label>
+                    <label>
+                        Nombres
+                        <input type="text" placeholder="Nombres">
+                    </label>
 
-                <label>
-                    Municipio
-                    <input type="text"
-                           value="Santiago de Cali">
-                </label>
+                    <label>
+                        Apellidos
+                        <input type="text" placeholder="Apellidos">
+                    </label>
 
-                <label>
-                    Departamento
-                    <input type="text"
-                           value="Valle del Cauca">
-                </label>
+                    <label>
+                        Fecha de nacimiento
+                        <input type="date">
+                    </label>
 
-                <label>
-                    Comuna / Corregimiento
-                    <input type="text"
-                           placeholder="Ej. Comuna 3 o Corregimiento Felidia">
-                </label>
+                    <label>
+                        Género
+                        <select>
+                            <option>Prefiero no decirlo</option>
+                            <option>Femenino</option>
+                            <option>Masculino</option>
+                            <option>Otro</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Grupo étnico
-                    <select>
-                        <option>No responde</option>
-                        <option>Afrocolombiano(a)</option>
-                        <option>Afrodescendiente</option>
-                        <option>Campesino(a)</option>
-                        <option>Indígena</option>
-                        <option>Mestizo(a)</option>
-                        <option>Mulato(a)</option>
-                        <option>Negro(a)</option>
-                        <option>Gitano o Rom</option>
-                        <option>Palenquero(a)</option>
-                        <option>Raizal</option>
-                        <option>Ninguna de las anteriores</option>
-                    </select>
-                </label>
+                </div>
 
-                <label>
-                    Nivel educativo
-                    <select>
-                        <option>No responde</option>
-                        <option>No tiene</option>
-                        <option>Primaria</option>
-                        <option>Secundaria</option>
-                        <option>Técnico laboral</option>
-                        <option>Técnico profesional</option>
-                        <option>Tecnólogo</option>
-                        <option>Universitario</option>
-                        <option>Especialización</option>
-                        <option>Maestría</option>
-                        <option>Doctorado</option>
-                        <option>Posdoctorado</option>
-                    </select>
-                </label>
+            </section>
 
-                <label>
-                    Ocupación
-                    <select>
-                        <option>No responde</option>
-                        <option>Estudiante</option>
-                        <option>Empleado</option>
-                        <option>Independiente</option>
-                        <option>Oficios del hogar</option>
-                        <option>Docente</option>
-                        <option>Investigador</option>
-                        <option>Pensionado</option>
-                        <option>Desempleado</option>
-                        <option>Otra</option>
-                    </select>
-                </label>
+            <!-- PASO 2 -->
 
-                <label>
-                    Estrato socioeconómico
-                    <select>
-                        <option>No responde</option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                        <option>6</option>
-                    </select>
-                </label>
+            <section class="register-step-content" id="registerStep2">
 
-            </div>
+                <h2>Contacto y ubicación</h2>
 
-            <div class="register-grid">
+                <div class="register-grid">
 
-                <label>
-                    Correo electrónico
-                    <input type="email"
-                           placeholder="correo@ejemplo.com">
-                </label>
+                    <label>
+                        Correo electrónico
+                        <input type="email" placeholder="correo@ejemplo.com">
+                    </label>
 
-                <label>
-                    Celular
-                    <input type="text"
-                           placeholder="Ej. 300 000 0000">
-                </label>
+                    <label>
+                        Celular
+                        <input type="text" placeholder="Ej. 300 000 0000">
+                    </label>
 
-                <label>
-                    Comuna
-                    <select>
-                        <option>Selecciona tu comuna</option>
-                        <option>Comuna 1</option>
-                        <option>Comuna 2</option>
-                        <option>Comuna 3</option>
-                        <option>Comuna 18</option>
-                        <option>Zona rural</option>
-                    </select>
-                </label>
+                    <label>
+                        Dirección de residencia
+                        <input type="text" placeholder="Ej. Calle 5 # 10 - 25">
+                    </label>
 
-                <label>
-                    Biblioteca favorita
-                    <select>
-                        <option>Centro Cultural de Cali</option>
-                        <option>Biblioteca León de Greiff</option>
-                        <option>Biblioteca Gabo</option>
-                        <option>Biblioteca San Marino</option>
-                    </select>
-                </label>
+                    <label>
+                        Barrio
+                        <input type="text" placeholder="Ej. San Antonio">
+                    </label>
 
-            </div>
+                    <label>
+                        Municipio
+                        <input type="text" value="Santiago de Cali">
+                    </label>
 
-            <h2>Accesibilidad y discapacidad</h2>
+                    <label>
+                        Departamento
+                        <input type="text" value="Valle del Cauca">
+                    </label>
 
-            <div class="register-options">
+                    <label>
+                        Comuna / Corregimiento
+                        <input type="text" placeholder="Ej. Comuna 3 o Corregimiento Felidia">
+                    </label>
 
-                <label>
-                    <input type="checkbox">
-                    Ninguna
-                </label>
+                    <label>
+                        Biblioteca favorita
+                        <select>
+                            <option>Centro Cultural de Cali</option>
+                            <option>Biblioteca León de Greiff</option>
+                            <option>Biblioteca Gabo</option>
+                            <option>Biblioteca San Marino</option>
+                        </select>
+                    </label>
 
-                <label>
-                    <input type="checkbox">
-                    Discapacidad física o motora
-                </label>
+                </div>
 
-                <label>
-                    <input type="checkbox">
-                    Discapacidad sensorial
-                </label>
+            </section>
 
-                <label>
-                    <input type="checkbox">
-                    Discapacidad intelectual o cognitiva
-                </label>
+            <!-- PASO 3 -->
 
-                <label>
-                    <input type="checkbox">
-                    Discapacidad psicosocial
-                </label>
+            <section class="register-step-content" id="registerStep3">
 
-                <label>
-                    <input type="checkbox">
-                    Discapacidad múltiple
-                </label>
+                <h2>Información de caracterización</h2>
 
-                <label>
-                    <input type="checkbox">
-                    Requiero modo de lectura accesible
-                </label>
+                <div class="register-grid">
 
-            </div>
+                    <label>
+                        Nombre identitario
+                        <input type="text" placeholder="Nombre con el que deseas ser reconocido/a">
+                    </label>
 
-            <h2>Menores de edad</h2>
+                    <label>
+                        Residencia
+                        <select>
+                            <option>Urbana</option>
+                            <option>Rural</option>
+                        </select>
+                    </label>
 
-            <div class="register-grid">
+                    <label>
+                        Grupo étnico
+                        <select>
+                            <option>No responde</option>
+                            <option>Afrocolombiano(a)</option>
+                            <option>Afrodescendiente</option>
+                            <option>Campesino(a)</option>
+                            <option>Indígena</option>
+                            <option>Mestizo(a)</option>
+                            <option>Mulato(a)</option>
+                            <option>Negro(a)</option>
+                            <option>Gitano o Rom</option>
+                            <option>Palenquero(a)</option>
+                            <option>Raizal</option>
+                            <option>Ninguna de las anteriores</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Nombre del acudiente
-                    <input type="text"
-                           placeholder="Nombre completo del acompañante">
-                </label>
+                    <label>
+                        Nivel educativo
+                        <select>
+                            <option>No responde</option>
+                            <option>No tiene</option>
+                            <option>Primaria</option>
+                            <option>Secundaria</option>
+                            <option>Técnico laboral</option>
+                            <option>Técnico profesional</option>
+                            <option>Tecnólogo</option>
+                            <option>Universitario</option>
+                            <option>Especialización</option>
+                            <option>Maestría</option>
+                            <option>Doctorado</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Vínculo
-                    <select>
-                        <option>No aplica</option>
-                        <option>Padre</option>
-                        <option>Madre</option>
-                        <option>Hermano(a)</option>
-                        <option>Tío(a)</option>
-                        <option>Abuelo(a)</option>
-                        <option>Otro</option>
-                    </select>
-                </label>
+                    <label>
+                        Ocupación
+                        <select>
+                            <option>No responde</option>
+                            <option>Estudiante</option>
+                            <option>Empleado</option>
+                            <option>Independiente</option>
+                            <option>Oficios del hogar</option>
+                            <option>Docente</option>
+                            <option>Investigador</option>
+                            <option>Pensionado</option>
+                            <option>Desempleado</option>
+                            <option>Otra</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Tipo de documento del acudiente
-                    <select>
-                        <option>No aplica</option>
-                        <option>Cédula de ciudadanía</option>
-                        <option>Cédula de extranjería</option>
-                        <option>Pasaporte</option>
-                    </select>
-                </label>
+                    <label>
+                        Estrato socioeconómico
+                        <select>
+                            <option>No responde</option>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                            <option>6</option>
+                        </select>
+                    </label>
 
-                <label>
-                    Número de documento del acudiente
-                    <input type="text"
-                           placeholder="Número de identificación">
-                </label>
+                </div>
 
-            </div>
+            </section>
 
-            <h2>Protección de datos personales</h2>
+            <!-- PASO 4 -->
 
-            <div class="register-options">
+            <section class="register-step-content" id="registerStep4">
 
-                <label>
-                    <input type="checkbox">
-                    Acepto la política de tratamiento de datos personales y autorizo el uso de mi información para la prestación de servicios bibliotecarios.
-                </label>
+                <h2>Accesibilidad y discapacidad</h2>
 
-                <label>
-                    <input type="checkbox">
-                    Deseo recibir información sobre eventos culturales, convocatorias y novedades de la Red.
-                </label>
+                <div class="register-options">
 
-            </div>
+                    <label><input type="checkbox"> Ninguna</label>
+                    <label><input type="checkbox"> Discapacidad física o motora</label>
+                    <label><input type="checkbox"> Discapacidad sensorial</label>
+                    <label><input type="checkbox"> Discapacidad intelectual o cognitiva</label>
+                    <label><input type="checkbox"> Discapacidad psicosocial</label>
+                    <label><input type="checkbox"> Discapacidad múltiple</label>
+                    <label><input type="checkbox"> Requiero modo de lectura accesible</label>
 
-            <div class="register-actions">
+                </div>
 
-                <a href="/login">
-                    Ya tengo cuenta
-                </a>
+            </section>
 
-                <button type="submit">
-                    Crear cuenta
+            <!-- PASO 5 -->
+
+            <section class="register-step-content" id="registerStep5">
+
+                <h2>Menores de edad</h2>
+
+                <p class="register-help-text">
+                    Diligencia esta información únicamente si el usuario es menor de edad.
+                </p>
+
+                <div class="register-grid">
+
+                    <label>
+                        Nombre del acudiente
+                        <input type="text" placeholder="Nombre completo del acompañante">
+                    </label>
+
+                    <label>
+                        Vínculo
+                        <select>
+                            <option>No aplica</option>
+                            <option>Padre</option>
+                            <option>Madre</option>
+                            <option>Hermano(a)</option>
+                            <option>Tío(a)</option>
+                            <option>Abuelo(a)</option>
+                            <option>Otro</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Tipo de documento del acudiente
+                        <select>
+                            <option>No aplica</option>
+                            <option>Cédula de ciudadanía</option>
+                            <option>Cédula de extranjería</option>
+                            <option>Pasaporte</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Número de documento del acudiente
+                        <input type="text" placeholder="Número de identificación">
+                    </label>
+
+                </div>
+
+            </section>
+
+            <!-- PASO 6 -->
+
+            <section class="register-step-content" id="registerStep6">
+
+                <h2>Protección de datos personales</h2>
+
+                <div class="register-options">
+
+                    <label>
+                        <input type="checkbox">
+                        Acepto la política de tratamiento de datos personales y autorizo el uso de mi información para la prestación de servicios bibliotecarios.
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        Deseo recibir información sobre eventos culturales, convocatorias y novedades de la Red.
+                    </label>
+
+                </div>
+
+            </section>
+
+            <div class="register-step-actions">
+
+                <button type="button" onclick="prevRegisterStep()">
+                    Atrás
+                </button>
+
+                <button type="button" onclick="nextRegisterStep()" id="registerNextButton">
+                    Siguiente
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
 
+            </div>
+
+            <div class="register-login-link">
+                <a href="/login">Ya tengo cuenta</a>
             </div>
 
         </form>

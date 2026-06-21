@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ágora Literaria | Red de Bibliotecas</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="agora-page agora-page-v2">
+
+    <section class="agora-hero agora-hero-v2">
+
+        <div class="agora-hero-content">
+
+            <span class="agora-badge">
+                <i class="fa-solid fa-book-open-reader"></i>
+                Ecosistema del libro · Santiago de Cali
+            </span>
+
+            <h1>Ágora Literaria</h1>
+
+            <p>
+                El ecosistema literario de Cali: donde convergen autores, editoriales,
+                librerías, bibliotecas y lectores en una red viva de cultura,
+                circulación y conocimiento.
+            </p>
+
+            <div class="agora-hero-stats">
+                <article>
+                    <i class="fa-solid fa-building"></i>
+                    <strong>12</strong>
+                    <span>Editoriales</span>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-store"></i>
+                    <strong>8</strong>
+                    <span>Librerías</span>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <strong>25</strong>
+                    <span>Autores</span>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-book"></i>
+                    <strong>100+</strong>
+                    <span>Títulos anuales</span>
+                </article>
+            </div>
+
+            <div class="agora-hero-actions">
+                <a href="#ecosistemaLibro">
+                    <i class="fa-solid fa-network-wired"></i>
+                    Explorar ecosistema
+                </a>
+
+                <a href="#publicarProgramacion">
+                    <i class="fa-solid fa-bullhorn"></i>
+                    Publicar programación
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="agora-intro" id="ecosistemaLibro">
+
+        <div class="section-title">
+            <span>Cadena de valor</span>
+            <h2>El libro como red cultural</h2>
+            <p>
+                Ágora Literaria conecta los actores del ecosistema del libro para visibilizar
+                sus procesos, fortalecer alianzas y apoyar la circulación cultural en la ciudad.
+            </p>
+        </div>
+
+        <div class="agora-chain-v2">
+
+            <article>
+                <i class="fa-solid fa-pen-nib"></i>
+                <h3>Autores</h3>
+                <p>Crean obras, relatos, poesía, crónica, narrativa, oralidad y pensamiento.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-building"></i>
+                <h3>Editoriales</h3>
+                <p>Editan, publican, curan y acompañan la producción literaria local.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-truck"></i>
+                <h3>Distribución</h3>
+                <p>Permite que los libros lleguen a librerías, ferias, bibliotecas y lectores.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-store"></i>
+                <h3>Librerías</h3>
+                <p>Son puntos de encuentro, circulación, recomendación y conversación lectora.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-building-columns"></i>
+                <h3>Bibliotecas</h3>
+                <p>Garantizan acceso, mediación, lectura pública y apropiación comunitaria.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-users"></i>
+                <h3>Lectores</h3>
+                <p>Dan vida al ecosistema participando, leyendo, creando y compartiendo.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="agora-actors-section">
+
+        <div class="section-title">
+            <span>Actores del ecosistema</span>
+            <h2>Editoriales, librerías y autores</h2>
+            <p>
+                Conoce los actores que impulsan la creación, edición, circulación
+                y conversación alrededor del libro en Cali.
+            </p>
+        </div>
+
+        <div class="agora-actor-tabs">
+            <button class="agora-filter active" onclick="filterAgoraActors('all', this)">Todos</button>
+            <button class="agora-filter" onclick="filterAgoraActors('editorial', this)">Editoriales</button>
+            <button class="agora-filter" onclick="filterAgoraActors('libreria', this)">Librerías</button>
+            <button class="agora-filter" onclick="filterAgoraActors('autor', this)">Autores</button>
+        </div>
+
+        <div class="agora-actors-grid">
+
+            <article class="agora-actor-card editorial">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <span>Editorial independiente</span>
+                <h3>Cali Letras Editorial</h3>
+                <p>
+                    Sello dedicado a narrativa, poesía y crónica urbana del Pacífico colombiano.
+                </p>
+                <small><i class="fa-solid fa-book"></i> 18 publicaciones</small>
+                <button onclick="openAgoraActor('Cali Letras Editorial')">Ver perfil</button>
+            </article>
+
+            <article class="agora-actor-card editorial">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                </div>
+                <span>Editorial universitaria</span>
+                <h3>Editorial Ríoluna</h3>
+                <p>
+                    Publicaciones de investigación, memoria cultural y pensamiento local.
+                </p>
+                <small><i class="fa-solid fa-book"></i> 24 publicaciones</small>
+                <button onclick="openAgoraActor('Editorial Ríoluna')">Ver perfil</button>
+            </article>
+
+            <article class="agora-actor-card libreria">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-store"></i>
+                </div>
+                <span>Librería independiente</span>
+                <h3>Librería La Crisálida</h3>
+                <p>
+                    Espacio de encuentro lector con clubes, lanzamientos y recomendaciones literarias.
+                </p>
+                <small><i class="fa-solid fa-calendar-days"></i> 6 eventos mensuales</small>
+                <button onclick="openAgoraActor('Librería La Crisálida')">Ver perfil</button>
+            </article>
+
+            <article class="agora-actor-card libreria">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-store-alt"></i>
+                </div>
+                <span>Librería especializada</span>
+                <h3>Página 13 Libros</h3>
+                <p>
+                    Librería especializada en literatura latinoamericana, infantil y autores emergentes.
+                </p>
+                <small><i class="fa-solid fa-calendar-days"></i> 4 eventos mensuales</small>
+                <button onclick="openAgoraActor('Página 13 Libros')">Ver perfil</button>
+            </article>
+
+            <article class="agora-actor-card autor">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-pen-nib"></i>
+                </div>
+                <span>Autora local</span>
+                <h3>Daniela Restrepo Soto</h3>
+                <p>
+                    Narrativa breve, crónica urbana y relatos sobre ciudad, memoria y territorio.
+                </p>
+                <small><i class="fa-solid fa-book-open"></i> 3 obras publicadas</small>
+                <button onclick="openAgoraActor('Daniela Restrepo Soto')">Ver perfil</button>
+            </article>
+
+            <article class="agora-actor-card autor">
+                <div class="agora-actor-icon">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+                <span>Narrador oral</span>
+                <h3>Jhon Edinson Mosquera</h3>
+                <p>
+                    Poesía oral, tradición afrodescendiente y relatos comunitarios del Pacífico.
+                </p>
+                <small><i class="fa-solid fa-users"></i> Mediador cultural</small>
+                <button onclick="openAgoraActor('Jhon Edinson Mosquera')">Ver perfil</button>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="agora-program-section">
+
+        <div class="section-title">
+            <span>Programación del ecosistema</span>
+            <h2>Eventos publicados por actores del libro</h2>
+            <p>
+                Editoriales, librerías y autores pueden publicar su programación cultural
+                para ampliar su circulación en la Red de Bibliotecas Públicas de Cali.
+            </p>
+        </div>
+
+        <div class="agora-program-grid">
+
+            <article>
+                <div class="agora-program-date">
+                    <strong>12</strong>
+                    <span>AGO</span>
+                </div>
+                <div>
+                    <span>Lanzamiento editorial</span>
+                    <h3>Presentación del poemario “Río Adentro”</h3>
+                    <p>Cali Letras Editorial · Biblioteca San Antonio</p>
+                    <small><i class="fa-regular fa-clock"></i> 6:00 p.m.</small>
+                </div>
+            </article>
+
+            <article>
+                <div class="agora-program-date">
+                    <strong>18</strong>
+                    <span>AGO</span>
+                </div>
+                <div>
+                    <span>Firma de libros</span>
+                    <h3>Encuentro con autores emergentes</h3>
+                    <p>Página 13 Libros · Centro Cultural de Cali</p>
+                    <small><i class="fa-regular fa-clock"></i> 4:00 p.m.</small>
+                </div>
+            </article>
+
+            <article>
+                <div class="agora-program-date">
+                    <strong>25</strong>
+                    <span>AGO</span>
+                </div>
+                <div>
+                    <span>Taller</span>
+                    <h3>Cómo publicar tu primer libro</h3>
+                    <p>Editorial Ríoluna · Biblioteca Departamental</p>
+                    <small><i class="fa-regular fa-clock"></i> 10:00 a.m.</small>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="agora-resources">
+
+        <div class="section-title">
+            <span>Servicios para actores</span>
+            <h2>Herramientas para circular y visibilizar</h2>
+            <p>
+                Ágora Literaria ofrece espacios de difusión y articulación para fortalecer
+                la relación entre creadores, mediadores, librerías, editoriales y lectores.
+            </p>
+        </div>
+
+        <div class="agora-resource-grid">
+
+            <article>
+                <i class="fa-solid fa-calendar-plus"></i>
+                <h3>Publicar programación</h3>
+                <p>Registra lanzamientos, talleres, firmas de libros, clubes y conversatorios.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-id-card"></i>
+                <h3>Perfil de actor cultural</h3>
+                <p>Crea una ficha pública con información, catálogo, enlaces y actividades.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Conexión con bibliotecas</h3>
+                <p>Propón actividades para circular en bibliotecas, clubes y espacios de lectura.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Visibilidad del ecosistema</h3>
+                <p>Consulta datos básicos sobre actores, obras, programación y participación.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="agora-cta" id="publicarProgramacion">
+
+        <div>
+            <span>Participa en el ecosistema</span>
+            <h2>¿Haces parte del ecosistema del libro en Cali?</h2>
+            <p>
+                Si representas una editorial, librería, colectivo, biblioteca comunitaria
+                o eres autor, autora, ilustrador o mediador cultural, puedes proponer
+                tu programación para que sea visible en el Catálogo Maestro.
+            </p>
+        </div>
+
+        <div class="agora-cta-actions">
+            <a href="/pqrsdf">
+                <i class="fa-solid fa-bullhorn"></i>
+                Publicar mi programación
+            </a>
+
+            <a href="/programacion-cultural">
+                <i class="fa-solid fa-calendar-days"></i>
+                Ver agenda cultural
+            </a>
+        </div>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>

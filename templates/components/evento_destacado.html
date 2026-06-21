@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ evento.nombre }} | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="evento-page evento-page-v2">
+
+    <a href="/programacion-cultural" class="evento-back">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        Volver a Programación Cultural
+    </a>
+
+    <section class="evento-hero evento-hero-v2 {{ evento.color }}">
+
+        <div class="evento-hero-content">
+
+            <span class="evento-kicker">
+                <i class="fa-solid {{ evento.icono }}" aria-hidden="true"></i>
+                Gran evento de la Red
+            </span>
+
+            <h1>{{ evento.nombre }}</h1>
+
+            <p>{{ evento.descripcion }}</p>
+
+            <div class="evento-hero-meta">
+                <span>
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    {{ evento.fechas }}
+                </span>
+
+                {% if evento.modalidad %}
+                <span>
+                    <i class="fa-solid fa-users" aria-hidden="true"></i>
+                    {{ evento.modalidad }}
+                </span>
+                {% endif %}
+
+                {% if evento.publico %}
+                <span>
+                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                    {{ evento.publico }}
+                </span>
+                {% endif %}
+            </div>
+
+            <div class="evento-hero-actions">
+                <a href="#eventoAgenda">
+                    <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+                    Ver agenda
+                </a>
+
+                <a href="#eventoInscripcion">
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                    Inscribirme
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="evento-summary-grid">
+
+        <article>
+            <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+            <strong>{{ evento.agenda|length if evento.agenda else 0 }}</strong>
+            <span>Actividades</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+            <strong>{{ evento.invitados|length if evento.invitados else 0 }}</strong>
+            <span>Invitados</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <strong>{{ evento.lugares|length if evento.lugares else 0 }}</strong>
+            <span>Lugares</span>
+        </article>
+
+        <article>
+            <i class="fa-solid fa-star" aria-hidden="true"></i>
+            <strong>Red</strong>
+            <span>Evento destacado</span>
+        </article>
+
+    </section>
+
+    <section class="evento-info-section">
+
+        <div class="section-title">
+            <span>Información general</span>
+            <h2>Sobre el evento</h2>
+            <p>
+                Conoce el propósito, alcance y componentes principales de este evento
+                cultural de la Red de Bibliotecas Públicas de Cali.
+            </p>
+        </div>
+
+        <div class="evento-info-card">
+            <i class="fa-solid {{ evento.icono }}" aria-hidden="true"></i>
+
+            <div>
+                <h3>{{ evento.nombre }}</h3>
+
+                <p>
+                    {{ evento.informacion_general if evento.informacion_general else evento.descripcion }}
+                </p>
+
+                {% if evento.objetivo %}
+                <p>
+                    <strong>Objetivo:</strong> {{ evento.objetivo }}
+                </p>
+                {% endif %}
+            </div>
+        </div>
+
+    </section>
+
+    <div class="evento-layout evento-layout-v2">
+
+        <div class="evento-main">
+
+            <section class="evento-block evento-block-v2" id="eventoAgenda">
+
+                <h2>
+                    <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+                    Agenda
+                </h2>
+
+                <div class="evento-agenda-list evento-agenda-list-v2">
+
+                    {% for a in evento.agenda %}
+                    <article>
+                        <div class="evento-agenda-day">
+                            <strong>{{ a.dia }}</strong>
+
+                            {% if a.hora %}
+                            <span>{{ a.hora }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div>
+                            <h4>{{ a.actividad }}</h4>
+
+                            {% if a.descripcion %}
+                            <p>{{ a.descripcion }}</p>
+                            {% endif %}
+
+                            <small>
+                                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                                {{ a.lugar }}
+                            </small>
+                        </div>
+                    </article>
+                    {% endfor %}
+
+                </div>
+
+            </section>
+
+            <section class="evento-block evento-block-v2">
+
+                <h2>
+                    <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    Lo destacado
+                </h2>
+
+                <p>{{ evento.destacado }}</p>
+
+                {% if evento.destacados %}
+                <div class="evento-highlight-grid">
+                    {% for d in evento.destacados %}
+                    <article>
+                        <i class="fa-solid fa-check" aria-hidden="true"></i>
+                        <span>{{ d }}</span>
+                    </article>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </section>
+
+            {% if evento.convocatorias %}
+            <section class="evento-block evento-block-v2">
+
+                <h2>
+                    <i class="fa-solid fa-bullhorn" aria-hidden="true"></i>
+                    Convocatorias
+                </h2>
+
+                <div class="evento-convocatorias-grid">
+                    {% for c in evento.convocatorias %}
+                    <article>
+                        <h3>{{ c.titulo }}</h3>
+                        <p>{{ c.descripcion }}</p>
+
+                        {% if c.fecha_cierre %}
+                        <small>
+                            <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                            Cierre: {{ c.fecha_cierre }}
+                        </small>
+                        {% endif %}
+
+                        <a href="{{ c.url if c.url else '/pqrsdf' }}">
+                            Ver convocatoria
+                            <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                        </a>
+                    </article>
+                    {% endfor %}
+                </div>
+
+            </section>
+            {% endif %}
+
+            {% if evento.librerias_participantes %}
+            <section class="evento-block evento-block-v2">
+
+                <h2>
+                    <i class="fa-solid fa-store" aria-hidden="true"></i>
+                    Librerías participantes
+                </h2>
+
+                <div class="evento-tags evento-tags-v2">
+                    {% for l in evento.librerias_participantes %}
+                    <span>{{ l }}</span>
+                    {% endfor %}
+                </div>
+
+            </section>
+            {% endif %}
+
+            {% if evento.galeria %}
+            <section class="evento-block evento-block-v2">
+
+                <h2>
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
+                    Galería
+                </h2>
+
+                <div class="evento-gallery-grid">
+                    {% for img in evento.galeria %}
+                    <img src="{{ img }}" alt="Imagen de {{ evento.nombre }}">
+                    {% endfor %}
+                </div>
+
+            </section>
+            {% endif %}
+
+        </div>
+
+        <aside class="evento-sidebar evento-sidebar-v2">
+
+            <div class="evento-side-card">
+
+                <h3>
+                    <i class="fa-solid fa-user-group" aria-hidden="true"></i>
+                    {% if evento.tipo_invitados %}
+                        {{ evento.tipo_invitados }}
+                    {% else %}
+                        Invitados
+                    {% endif %}
+                </h3>
+
+                <ul>
+                    {% for inv in evento.invitados %}
+                    <li>{{ inv }}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div class="evento-side-card">
+
+                <h3>
+                    <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+                    Lugares
+                </h3>
+
+                <ul>
+                    {% for l in evento.lugares %}
+                    <li>{{ l }}</li>
+                    {% endfor %}
+                </ul>
+
+            </div>
+
+            <div class="evento-side-card highlight" id="eventoInscripcion">
+
+                <h3>
+                    <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+                    Inscripción
+                </h3>
+
+                <p>{{ evento.inscripcion }}</p>
+
+                <a href="{{ evento.url_inscripcion if evento.url_inscripcion else '/pqrsdf' }}"
+                   class="evento-inscribir-btn">
+                    Inscribirme
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
+
+            </div>
+
+            {% if evento.contacto %}
+            <div class="evento-side-card">
+
+                <h3>
+                    <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                    Contacto
+                </h3>
+
+                <p>{{ evento.contacto }}</p>
+
+            </div>
+            {% endif %}
+
+        </aside>
+
+    </div>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+
+</html>

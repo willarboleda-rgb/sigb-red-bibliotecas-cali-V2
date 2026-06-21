@@ -13,96 +13,166 @@
 
     {% include "components/top_navigation.html" %}
 
-    <main class="editorial-page">
+    <main class="editorial-page editorial-page-v2">
 
-        <section class="editorial-hero">
+        <section class="editorial-hero editorial-hero-v2">
 
-            <span class="editorial-badge">
-                <i class="fa-solid fa-book-bookmark"></i>
-                Publicaciones propias · Red de Bibliotecas
-            </span>
+            <div class="editorial-hero-content">
 
-            <h1>Fondo Editorial</h1>
+                <span class="editorial-badge">
+                    <i class="fa-solid fa-book-bookmark"></i>
+                    Publicaciones propias · Red de Bibliotecas
+                </span>
 
-            <p>
-                Publicaciones propias de la Red de Bibliotecas Públicas de Cali.
-            </p>
-
-            <div class="editorial-icons">
-                <div><i class="fa-solid fa-book-open"></i><span>Libros</span></div>
-                <div><i class="fa-solid fa-pen-nib"></i><span>Escritura</span></div>
-                <div><i class="fa-solid fa-scroll"></i><span>Documentos</span></div>
-            </div>
-
-        </section>
-
-        <section class="editorial-about">
-
-            <div class="section-title">
-
-                <span>Nuestra editorial</span>
-
-                <h2>¿Qué es el Fondo Editorial?</h2>
+                <h1>Fondo Editorial</h1>
 
                 <p>
-                    El espacio editorial de la Red que transforma experiencias comunitarias
-                    en obras publicadas.
+                    Edición, difusión, intercambio y exposición de publicaciones creadas,
+                    gestionadas o acompañadas por la Red de Bibliotecas Públicas de Cali.
                 </p>
 
-            </div>
+                <div class="editorial-icons">
+                    <div><i class="fa-solid fa-book-open"></i><span>Libros</span></div>
+                    <div><i class="fa-solid fa-pen-nib"></i><span>Escritura</span></div>
+                    <div><i class="fa-solid fa-scroll"></i><span>Documentos</span></div>
+                    <div><i class="fa-solid fa-handshake"></i><span>Intercambio</span></div>
+                </div>
 
-            <div class="editorial-about-card">
+                <div class="editorial-hero-actions">
+                    <a href="#publicaciones" class="editorial-main-btn">
+                        <i class="fa-solid fa-book"></i>
+                        Ver publicaciones
+                    </a>
 
-                <i class="fa-solid fa-book-bookmark"></i>
-
-                <p>
-                    El <strong>Fondo Editorial de la RBPC</strong> es la línea de publicaciones propias
-                    de la Red de Bibliotecas Públicas de Cali, creada con el propósito de documentar
-                    la memoria cultural, sistematizar investigaciones locales, dar voz a creadores
-                    del territorio y preservar la historia institucional de la Red.
-                </p>
-
-                <p>
-                    A través de sus colecciones temáticas — Memoria, Territorios y Literatura —
-                    transforma experiencias de las comunidades bibliotecarias en obras publicadas
-                    que enriquecen el acervo cultural de Santiago de Cali y el suroccidente colombiano.
-                </p>
-
-                <div class="editorial-tags">
-                    <span>Memoria cultural</span>
-                    <span>Investigación local</span>
-                    <span>Creación literaria</span>
-                    <span>Historia institucional</span>
-                    <span>Voces comunitarias</span>
+                    <a href="#proceso-editorial" class="editorial-secondary-btn">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        Ver proceso editorial
+                    </a>
                 </div>
 
             </div>
 
         </section>
 
-        <section class="editorial-catalog">
+        <section class="editorial-stats">
+            <article><strong>36+</strong><span>Publicaciones</span></article>
+            <article><strong>50+</strong><span>Autores locales</span></article>
+            <article><strong>4</strong><span>Colecciones</span></article>
+            <article><strong>12</strong><span>Categorías editoriales</span></article>
+        </section>
+
+        <section class="editorial-about">
 
             <div class="section-title">
+                <span>Nuestra editorial</span>
+                <h2>¿Qué es el Fondo Editorial?</h2>
+                <p>
+                    Un espacio para convertir la memoria, las experiencias comunitarias
+                    y la creación local en publicaciones visibles para la ciudadanía.
+                </p>
+            </div>
 
-                <span>Catálogo</span>
+            <div class="editorial-about-card editorial-about-card-v2">
 
-                <h2>Publicaciones</h2>
+                <i class="fa-solid fa-book-bookmark"></i>
 
                 <p>
-                    Explora nuestro catálogo de obras editadas y publicadas por la Red de Bibliotecas de Cali.
+                    El <strong>Fondo Editorial de la RBPC</strong> es la línea de publicaciones
+                    propias de la Red de Bibliotecas Públicas de Cali, orientada a documentar
+                    la memoria cultural, sistematizar investigaciones locales, dar voz a creadores
+                    del territorio y preservar la historia institucional de la Red.
                 </p>
+
+                <p>
+                    Este componente permite organizar, editar, difundir, intercambiar y exponer
+                    publicaciones creadas o gestionadas por la RBPC, fortaleciendo el acceso
+                    ciudadano a contenidos culturales, pedagógicos, literarios y patrimoniales.
+                </p>
+
+                <div class="editorial-tags">
+                    <span>Edición</span>
+                    <span>Difusión</span>
+                    <span>Intercambio</span>
+                    <span>Exposición</span>
+                    <span>Memoria cultural</span>
+                    <span>Creación local</span>
+                </div>
 
             </div>
 
-            <div class="editorial-filters">
+        </section>
 
+        <section class="editorial-process" id="proceso-editorial">
+
+            <div class="section-title">
+                <span>Proceso editorial</span>
+                <h2>De la idea a la publicación</h2>
+                <p>
+                    El Fondo Editorial acompaña el ciclo de vida de una obra desde su creación
+                    hasta su circulación en bibliotecas, plataformas digitales y espacios culturales.
+                </p>
+            </div>
+
+            <div class="editorial-process-grid">
+
+                <article>
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Creación</h3>
+                    <p>Recepción de propuestas, manuscritos, memorias comunitarias o contenidos institucionales.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <h3>Edición</h3>
+                    <p>Corrección, curaduría, organización de contenidos, diseño editorial y preparación de la obra.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-bullhorn"></i>
+                    <h3>Difusión</h3>
+                    <p>Publicación, promoción, socialización y visibilidad de las obras ante la ciudadanía.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-share-nodes"></i>
+                    <h3>Intercambio</h3>
+                    <p>Circulación de publicaciones entre bibliotecas, aliados, autores y comunidades lectoras.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-display"></i>
+                    <h3>Exposición</h3>
+                    <p>Presentación de publicaciones en vitrinas digitales, ferias, encuentros y actividades culturales.</p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="editorial-catalog" id="publicaciones">
+
+            <div class="section-title">
+                <span>Catálogo</span>
+                <h2>Publicaciones RBPC</h2>
+                <p>
+                    Explora las obras editadas, gestionadas o acompañadas por la Red de Bibliotecas Públicas de Cali.
+                </p>
+            </div>
+
+            <div class="editorial-tools">
+                <div class="editorial-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="editorialSearch" placeholder="Buscar publicación, autor o tema..." onkeyup="searchEditorial()">
+                </div>
+            </div>
+
+            <div class="editorial-filters">
                 <button class="editorial-filter active" onclick="filterEditorial('all', this)">Todas</button>
                 <button class="editorial-filter" onclick="filterEditorial('memoria', this)">Memoria</button>
                 <button class="editorial-filter" onclick="filterEditorial('metodologia', this)">Metodología</button>
                 <button class="editorial-filter" onclick="filterEditorial('literatura', this)">Literatura</button>
                 <button class="editorial-filter" onclick="filterEditorial('patrimonio', this)">Patrimonio</button>
                 <button class="editorial-filter" onclick="filterEditorial('ambiente', this)">Ambiente</button>
-
             </div>
 
             <div class="editorial-grid">
@@ -113,14 +183,14 @@
                         <i class="fa-solid fa-building-columns"></i>
                     </div>
                     <div class="editorial-card-body">
-                        <small>Conmemorativo</small>
+                        <small>Memoria institucional</small>
                         <h3>35 Años de la Red</h3>
                         <strong>Red de Bibliotecas Públicas de Cali</strong>
-                        <p>
-                            Obra conmemorativa que celebra tres décadas y media de la Red de Bibliotecas,
-                            documentando su historia, hitos, logros e impacto.
-                        </p>
-                        <button>Ver más</button>
+                        <p>Obra conmemorativa sobre la historia, los hitos y el impacto cultural de la RBPC.</p>
+                        <div class="editorial-card-actions">
+                            <button onclick="openEditorialDetail('35 Años de la Red')">Ver detalle</button>
+                            <button onclick="alert('Descarga disponible en versión productiva.')">PDF</button>
+                        </div>
                     </div>
                 </article>
 
@@ -133,11 +203,11 @@
                         <small>Metodología</small>
                         <h3>Lectura, Escritura y Oralidad</h3>
                         <strong>Equipo LEO — RBPC</strong>
-                        <p>
-                            Manual metodológico que sistematiza la estrategia LEO, sus fundamentos
-                            pedagógicos y experiencias de implementación.
-                        </p>
-                        <button>Ver más</button>
+                        <p>Manual metodológico que sistematiza la estrategia LEO y sus experiencias de implementación.</p>
+                        <div class="editorial-card-actions">
+                            <button onclick="openEditorialDetail('Lectura, Escritura y Oralidad')">Ver detalle</button>
+                            <button onclick="alert('Descarga disponible en versión productiva.')">PDF</button>
+                        </div>
                     </div>
                 </article>
 
@@ -150,11 +220,11 @@
                         <small>Antología</small>
                         <h3>Cali en Palabras</h3>
                         <strong>Varios autores</strong>
-                        <p>
-                            Antología que reúne voces literarias de escritores locales, con narrativas,
-                            poesías y crónicas del territorio caleño.
-                        </p>
-                        <button>Ver más</button>
+                        <p>Antología de narrativas, poesías y crónicas creadas por voces literarias locales.</p>
+                        <div class="editorial-card-actions">
+                            <button onclick="openEditorialDetail('Cali en Palabras')">Ver detalle</button>
+                            <button onclick="alert('Descarga disponible en versión productiva.')">PDF</button>
+                        </div>
                     </div>
                 </article>
 
@@ -165,81 +235,13 @@
                     </div>
                     <div class="editorial-card-body">
                         <small>Patrimonio</small>
-                        <h3>Patrimonio Visto desde las Bibliotecas</h3>
+                        <h3>Patrimonio desde las Bibliotecas</h3>
                         <strong>Área de Patrimonio Cultural — RBPC</strong>
-                        <p>
-                            Documentación del patrimonio material e inmaterial de Santiago de Cali desde
-                            la perspectiva comunitaria de las bibliotecas.
-                        </p>
-                        <button>Ver más</button>
-                    </div>
-                </article>
-
-                <article class="editorial-card memoria">
-                    <div class="editorial-cover green">
-                        <span>2020</span>
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                    <div class="editorial-card-body">
-                        <small>Cuentos</small>
-                        <h3>Cuentos del Territorio</h3>
-                        <strong>Comunidades bibliotecarias</strong>
-                        <p>
-                            Relatos y narrativas surgidos de talleres comunitarios en bibliotecas,
-                            reflejando identidad, tradiciones e historias de vida.
-                        </p>
-                        <button>Ver más</button>
-                    </div>
-                </article>
-
-                <article class="editorial-card directorio">
-                    <div class="editorial-cover amber">
-                        <span>2023</span>
-                        <i class="fa-solid fa-list"></i>
-                    </div>
-                    <div class="editorial-card-body">
-                        <small>Directorio</small>
-                        <h3>Guía de Bibliotecas de Cali</h3>
-                        <strong>Dirección RBPC</strong>
-                        <p>
-                            Directorio completo de bibliotecas de la Red: sedes, horarios, servicios,
-                            colecciones especializadas y datos de contacto.
-                        </p>
-                        <button>Ver más</button>
-                    </div>
-                </article>
-
-                <article class="editorial-card ambiente">
-                    <div class="editorial-cover green">
-                        <span>2022</span>
-                        <i class="fa-solid fa-leaf"></i>
-                    </div>
-                    <div class="editorial-card-body">
-                        <small>Medio ambiente</small>
-                        <h3>Biodiversidad en la Ciudad</h3>
-                        <strong>Programa Ambiental — RBPC</strong>
-                        <p>
-                            Publicación que promueve conciencia ambiental y conecta lectura con
-                            educación ambiental en Cali.
-                        </p>
-                        <button>Ver más</button>
-                    </div>
-                </article>
-
-                <article class="editorial-card literatura">
-                    <div class="editorial-cover blue">
-                        <span>2024</span>
-                        <i class="fa-solid fa-droplet"></i>
-                    </div>
-                    <div class="editorial-card-body">
-                        <small>Poesía</small>
-                        <h3>Poemas del Río</h3>
-                        <strong>Varios poetas</strong>
-                        <p>
-                            Colección poética inspirada en el río Cauca, la identidad cultural,
-                            el paisaje y la memoria del territorio.
-                        </p>
-                        <button>Ver más</button>
+                        <p>Publicación sobre patrimonio material e inmaterial visto desde comunidades bibliotecarias.</p>
+                        <div class="editorial-card-actions">
+                            <button onclick="openEditorialDetail('Patrimonio desde las Bibliotecas')">Ver detalle</button>
+                            <button onclick="alert('Descarga disponible en versión productiva.')">PDF</button>
+                        </div>
                     </div>
                 </article>
 
@@ -250,66 +252,52 @@
         <section class="editorial-series">
 
             <div class="section-title">
-
                 <span>Colecciones</span>
-
-                <h2>Series Editoriales</h2>
-
-                <p>
-                    Publicaciones organizadas en tres colecciones temáticas que abordan diferentes
-                    facetas de la cultura caleña.
-                </p>
-
+                <h2>Series editoriales</h2>
+                <p>Las publicaciones se organizan por líneas temáticas para facilitar su consulta, exposición y circulación.</p>
             </div>
 
             <div class="series-list">
-
                 <article>
                     <i class="fa-solid fa-box-archive"></i>
                     <h3>Colección Memoria</h3>
                     <strong>12 publicaciones</strong>
-                    <p>
-                        Publicaciones dedicadas a preservar y difundir memoria histórica, patrimonio
-                        cultural y procesos institucionales.
-                    </p>
-                    <div>
-                        <span>Historia institucional</span>
-                        <span>Patrimonio cultural</span>
-                        <span>Memoria comunitaria</span>
-                        <span>Archivo fotográfico</span>
-                    </div>
+                    <p>Historia institucional, patrimonio cultural y memoria comunitaria.</p>
                 </article>
 
                 <article>
                     <i class="fa-solid fa-location-dot"></i>
                     <h3>Colección Territorios</h3>
                     <strong>9 publicaciones</strong>
-                    <p>
-                        Obras que documentan voces, historias y tradiciones de los cinco territorios LEO.
-                    </p>
-                    <div>
-                        <span>Narrativas locales</span>
-                        <span>Tradiciones orales</span>
-                        <span>Identidad barrial</span>
-                        <span>Cultura comunitaria</span>
-                    </div>
+                    <p>Voces, historias y tradiciones de los territorios LEO.</p>
                 </article>
 
                 <article>
                     <i class="fa-solid fa-pen-nib"></i>
                     <h3>Colección Literatura</h3>
                     <strong>15 publicaciones</strong>
-                    <p>
-                        Antologías, poemarios y obras de creación literaria de autores locales.
-                    </p>
-                    <div>
-                        <span>Poesía inédita</span>
-                        <span>Narrativa local</span>
-                        <span>Crónica caleña</span>
-                        <span>Literatura juvenil</span>
-                    </div>
+                    <p>Antologías, poemarios, crónicas y narrativa local.</p>
                 </article>
+            </div>
 
+        </section>
+
+        <section class="editorial-exchange">
+
+            <div>
+                <span>Circulación editorial</span>
+                <h2>Intercambio y exposición de publicaciones</h2>
+                <p>
+                    Las obras del Fondo Editorial pueden circular en bibliotecas, ferias del libro,
+                    clubes de lectura, actividades LEO, exposiciones digitales y alianzas culturales.
+                </p>
+            </div>
+
+            <div class="editorial-exchange-grid">
+                <article><i class="fa-solid fa-building-columns"></i><span>Bibliotecas de la Red</span></article>
+                <article><i class="fa-solid fa-users"></i><span>Clubes de lectura</span></article>
+                <article><i class="fa-solid fa-tent"></i><span>Ferias y eventos</span></article>
+                <article><i class="fa-solid fa-globe"></i><span>Biblioteca Digital</span></article>
             </div>
 
         </section>
@@ -318,31 +306,23 @@
 
             <span>Convocatoria abierta</span>
 
-            <h2>
-                Colabora con el Fondo Editorial
-            </h2>
+            <h2>Colabora con el Fondo Editorial</h2>
 
             <p>
-                ¿Eres escritor, investigador o creador cultural de Cali? El Fondo Editorial
-                de la RBPC está abierto a recibir propuestas de obras que documenten nuestra memoria,
-                celebren nuestra diversidad y enriquezcan el acervo cultural.
+                ¿Eres escritor, investigador, mediador de lectura o creador cultural de Cali?
+                El Fondo Editorial está abierto a recibir propuestas que documenten la memoria,
+                celebren la diversidad y fortalezcan el acervo cultural de la ciudad.
             </p>
 
             <div class="editorial-cta-actions">
-                <a href="#">Enviar propuesta</a>
-                <a href="#">Bases de convocatoria</a>
-            </div>
-
-            <div class="editorial-cta-stats">
-                <article><strong>50+</strong><span>Autores locales</span></article>
-                <article><strong>36+</strong><span>Obras editadas</span></article>
-                <article><strong>12</strong><span>Categorías</span></article>
-                <article><strong>4</strong><span>Nuevas obras</span></article>
+                <a href="#" onclick="alert('Formulario disponible en versión productiva.')">Enviar propuesta</a>
+                <a href="#" onclick="alert('Bases de convocatoria disponibles próximamente.')">Bases de convocatoria</a>
             </div>
 
         </section>
 
     </main>
+
     {% include 'components/accessibility.html' %}
     {% include 'components/luma.html' %}
     {% include 'components/footer.html' %}

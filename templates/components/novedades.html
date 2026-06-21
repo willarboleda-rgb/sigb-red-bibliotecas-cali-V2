@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Novedades | Red de Bibliotecas</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -18,7 +20,13 @@
             <span class="news-title-icon">
                 <i class="fa-regular fa-newspaper"></i>
             </span>
+
             <h1>Novedades <strong>de la Red</strong></h1>
+
+            <p>
+                Noticias, artículos, crónicas y contenidos de actualidad sobre la Red de
+                Bibliotecas Públicas de Cali, sus programas, servicios y comunidades lectoras.
+            </p>
         </div>
 
         <div class="news-header-actions">
@@ -55,7 +63,11 @@
             </div>
 
             <div class="featured-actions">
-                <button>Leer más <i class="fa-solid fa-chevron-right"></i></button>
+                <a href="#" class="read-more-btn">
+                    Leer artículo
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+
                 <button><i class="fa-regular fa-heart"></i> 892</button>
                 <button><i class="fa-regular fa-bookmark"></i> Guardar</button>
                 <button><i class="fa-solid fa-share-nodes"></i> Compartir</button>
@@ -90,62 +102,204 @@
 
             <article class="news-card eventos">
                 <div class="news-cover gradient-red"><span>🎉 Eventos</span></div>
+
                 <div class="news-body">
                     <h3>Feria del Libro de Cali 2025 supera expectativas con más de 50.000 visitantes</h3>
                     <p>La XXVIII Feria del Libro de Cali batió récords de asistencia con programación cultural diversa.</p>
                     <small><i class="fa-regular fa-calendar"></i> 10 de junio de 2025 · 4 min</small>
-                    <div><span>♡ 1.5k</span><span>👁 23.8k</span><span>💬 124</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 1.5k</span>
+                        <span>👁 23.8k</span>
+                        <span>💬 124</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </article>
 
             <article class="news-card servicios">
                 <div class="news-cover gradient-blue"><span>📚 Servicios</span></div>
+
                 <div class="news-body">
                     <h3>Programa de lectura en casa llega a 15 comunas de Santiago de Cali</h3>
                     <p>El programa “Leer en Casa” beneficia a familias con acompañamiento lector y recursos digitales.</p>
                     <small><i class="fa-regular fa-calendar"></i> 8 de junio de 2025 · 6 min</small>
-                    <div><span>♡ 634</span><span>👁 8.9k</span><span>💬 45</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 634</span>
+                        <span>👁 8.9k</span>
+                        <span>💬 45</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </article>
 
             <article class="news-card colecciones">
                 <div class="news-cover gradient-purple"><span>📖 Colecciones</span></div>
+
                 <div class="news-body">
                     <h3>Colaboración con Biblioteca Nacional digitaliza 10.000 documentos históricos</h3>
                     <p>Alianza para preservar y facilitar el acceso al patrimonio documental de la ciudad.</p>
                     <small><i class="fa-regular fa-calendar"></i> 5 de junio de 2025 · 7 min</small>
-                    <div><span>♡ 1.0k</span><span>👁 15.6k</span><span>💬 89</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 1.0k</span>
+                        <span>👁 15.6k</span>
+                        <span>💬 89</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </article>
 
             <article class="news-card comunidad">
                 <div class="news-cover gradient-gold"><span>💚 Comunidad</span></div>
+
                 <div class="news-body">
                     <h3>Club de lectura juvenil gana premio nacional de fomento lector</h3>
                     <p>El club “Palabras que Vuelan”, de la Biblioteca San Antonio, fue reconocido por su impacto.</p>
                     <small><i class="fa-regular fa-calendar"></i> 2 de junio de 2025 · 5 min</small>
-                    <div><span>♡ 1.9k</span><span>👁 11.2k</span><span>💬 156</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 1.9k</span>
+                        <span>👁 11.2k</span>
+                        <span>💬 156</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </article>
 
             <article class="news-card colecciones">
                 <div class="news-cover gradient-orange"><span>📖 Colecciones</span></div>
+
                 <div class="news-body">
                     <h3>Nueva colección de literatura afrocolombiana disponible en la Red</h3>
                     <p>La Red enriquece su catálogo con títulos de literatura afrocolombiana y memoria cultural.</p>
                     <small><i class="fa-regular fa-calendar"></i> 28 de mayo de 2025 · 4 min</small>
-                    <div><span>♡ 543</span><span>👁 7.8k</span><span>💬 38</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 543</span>
+                        <span>👁 7.8k</span>
+                        <span>💬 38</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
             </article>
 
             <article class="news-card servicios">
                 <div class="news-cover gradient-green"><span>📚 Servicios</span></div>
+
                 <div class="news-body">
                     <h3>Biblioteca móvil recorre barrios vulnerables de Cali</h3>
                     <p>El programa Biblioteca sobre Ruedas beneficia a más de 3.000 personas mensualmente.</p>
                     <small><i class="fa-regular fa-calendar"></i> 25 de mayo de 2025 · 5 min</small>
-                    <div><span>♡ 487</span><span>👁 6.3k</span><span>💬 32</span></div>
+
+                    <div class="news-card-stats">
+                        <span>♡ 487</span>
+                        <span>👁 6.3k</span>
+                        <span>💬 32</span>
+                    </div>
+
+                    <a href="#" class="news-read-btn">
+                        Leer artículo
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
                 </div>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="news-blog-section">
+
+        <div class="latest-title">
+            <h2><i class="fa-solid fa-pen-nib"></i> Blog de la Red</h2>
+            <span>Artículos y crónicas</span>
+        </div>
+
+        <div class="news-blog-grid">
+
+            <article class="blog-card">
+                <span>Opinión</span>
+
+                <h3>¿Por qué las bibliotecas siguen siendo espacios esenciales para la ciudadanía?</h3>
+
+                <p>
+                    Una reflexión sobre el papel de las bibliotecas públicas como lugares de encuentro,
+                    aprendizaje, cultura y construcción comunitaria.
+                </p>
+
+                <small>
+                    <i class="fa-regular fa-user"></i>
+                    Equipo RBPC · 6 min de lectura
+                </small>
+
+                <a href="#">
+                    Leer artículo
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="blog-card">
+                <span>Crónica</span>
+
+                <h3>Historias que nacen en los clubes de lectura</h3>
+
+                <p>
+                    Jóvenes, familias y adultos mayores encuentran en los clubes de lectura una forma
+                    de compartir experiencias, memorias y nuevas miradas del territorio.
+                </p>
+
+                <small>
+                    <i class="fa-regular fa-user"></i>
+                    Promotores LEO · 5 min de lectura
+                </small>
+
+                <a href="#">
+                    Leer artículo
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </article>
+
+            <article class="blog-card">
+                <span>Memoria</span>
+
+                <h3>Archivo, fotografía y memoria visual de Cali</h3>
+
+                <p>
+                    El archivo fotográfico y las colecciones patrimoniales permiten reconstruir
+                    la historia urbana, cultural y social de Santiago de Cali.
+                </p>
+
+                <small>
+                    <i class="fa-regular fa-user"></i>
+                    Archivo Fotográfico · 7 min de lectura
+                </small>
+
+                <a href="#">
+                    Leer artículo
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
             </article>
 
         </div>
@@ -169,10 +323,12 @@
         <article class="newsletter-card">
             <h2><i class="fa-regular fa-bell"></i> Boletín Informativo</h2>
             <p>Recibe las últimas noticias y eventos de la Red de Bibliotecas directamente en tu correo.</p>
+
             <div>
                 <input type="email" placeholder="tu@correo.com">
                 <button>Suscribir</button>
             </div>
+
             <small>Sin spam. Cancela cuando quieras.</small>
         </article>
 
@@ -187,10 +343,13 @@
     </section>
 
 </main>
+
 {% include 'components/accessibility.html' %}
 {% include 'components/luma.html' %}
 {% include 'components/footer.html' %}
+
 <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
 
 </body>
+
 </html>

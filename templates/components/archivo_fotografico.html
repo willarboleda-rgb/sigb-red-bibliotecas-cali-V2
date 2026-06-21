@@ -1,132 +1,414 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Archivo Fotográfico | Red de Bibliotecas</title>
+
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
-{% include "components/top_navigation.html" %}
+    {% include "components/top_navigation.html" %}
 
-<main class="archivo-page">
+    <main class="archivo-page archivo-page-v2">
 
-    <section class="archivo-hero">
-        <span class="archivo-badge">
-            <i class="fa-solid fa-camera"></i>
-            Red de Bibliotecas Públicas de Cali
-        </span>
+        <section class="archivo-hero archivo-hero-v2">
 
-        <h1>Archivo Fotográfico</h1>
-        <p>Memoria visual de Santiago de Cali</p>
+            <div class="archivo-hero-content">
 
-        <div class="archivo-meta">
-            <span><i class="fa-solid fa-box-archive"></i> +7.000 fotografías digitales</span>
-            <span><i class="fa-regular fa-clock"></i> Desde 1850 hasta hoy</span>
-            <span><i class="fa-solid fa-location-dot"></i> Biblioteca Departamental</span>
-        </div>
+                <span class="archivo-badge">
+                    <i class="fa-solid fa-camera"></i>
+                    Archivo Fotográfico de Cali
+                </span>
 
-        <button onclick="scrollArchivoGallery()" class="archivo-main-btn">
-            <i class="fa-solid fa-camera-retro"></i>
-            Ver exposición
-        </button>
+                <h1>Memoria visual de Santiago de Cali</h1>
 
-        <small>Exposición: Cali Viejo · 10 fotografías históricas</small>
-    </section>
+                <p>
+                    Consulta fotografías, exposiciones, investigaciones, talleres y colecciones
+                    del patrimonio visual de la ciudad.
+                </p>
 
-    <section class="archivo-stats">
-        <article><strong>7.350</strong><span>Fotografías</span></article>
-        <article><strong>1850</strong><span>Desde este año</span></article>
-        <article><strong>10</strong><span>Fotos exposición Cali Viejo</span></article>
-        <article><strong>Patrimonio</strong><span>Memoria visual</span></article>
-    </section>
-
-    <section class="archivo-gallery-section" id="archivoGaleria">
-
-        <div class="section-title">
-            <span>Exposición</span>
-            <h2>Cali Viejo</h2>
-            <p>
-                Recorrido visual por imágenes históricas, espacios patrimoniales,
-                bibliotecas y memoria urbana de Santiago de Cali.
-            </p>
-        </div>
-
-        <div class="archivo-filters">
-            <button class="archivo-filter active" onclick="filterArchivo('all', this)">Todas</button>
-            <button class="archivo-filter" onclick="filterArchivo('ciudad', this)">Ciudad</button>
-            <button class="archivo-filter" onclick="filterArchivo('bibliotecas', this)">Bibliotecas</button>
-            <button class="archivo-filter" onclick="filterArchivo('patrimonio', this)">Patrimonio</button>
-            <button class="archivo-filter" onclick="filterArchivo('comunidad', this)">Comunidad</button>
-        </div>
-
-        <div class="archivo-grid">
-
-            <article class="archivo-card ciudad">
-                <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900" alt="Cali antiguo">
-                <div>
-                    <span>Ciudad · 1920</span>
-                    <h3>Cali antiguo</h3>
-                    <p>Vista urbana histórica del centro de Santiago de Cali.</p>
+                <div class="archivo-meta">
+                    <span><i class="fa-solid fa-box-archive"></i> +7.350 fotografías digitales</span>
+                    <span><i class="fa-regular fa-clock"></i> Desde 1850 hasta hoy</span>
+                    <span><i class="fa-solid fa-location-dot"></i> Biblioteca Departamental</span>
                 </div>
-            </article>
 
-            <article class="archivo-card bibliotecas">
-                <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900" alt="Biblioteca histórica">
-                <div>
-                    <span>Bibliotecas · 1965</span>
-                    <h3>Sala de lectura patrimonial</h3>
-                    <p>Registro de espacios bibliotecarios dedicados a la lectura pública.</p>
+                <div class="archivo-hero-actions">
+                    <a href="#archivoCatalogo" class="archivo-main-btn">
+                        <i class="fa-solid fa-images"></i>
+                        Ver catálogo
+                    </a>
+
+                    <a href="#archivoExposicion" class="archivo-secondary-btn">
+                        <i class="fa-solid fa-camera-retro"></i>
+                        Ver exposición
+                    </a>
                 </div>
-            </article>
 
-            <article class="archivo-card patrimonio">
-                <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900" alt="Arquitectura patrimonial">
-                <div>
-                    <span>Patrimonio · 1950</span>
-                    <h3>Arquitectura caleña</h3>
-                    <p>Memoria visual de edificaciones representativas de la ciudad.</p>
+            </div>
+
+        </section>
+
+        <section class="archivo-stats">
+            <article><strong>7.350</strong><span>Fotografías</span></article>
+            <article><strong>150+</strong><span>Años de historia</span></article>
+            <article><strong>3</strong><span>Colecciones</span></article>
+            <article><strong>AFC</strong><span>Archivo Fotográfico de Cali</span></article>
+        </section>
+
+        <section class="archivo-mission">
+
+            <div class="section-title">
+                <span>Sobre el archivo</span>
+                <h2>Nuestra misión</h2>
+                <p>Preservar, digitalizar y compartir la memoria fotográfica de Santiago de Cali.</p>
+            </div>
+
+            <div class="archivo-mission-card">
+
+                <p>
+                    El <strong>Archivo Fotográfico de Cali</strong> es un repositorio dedicado a la
+                    preservación, consulta y difusión del patrimonio visual de la ciudad. A través de
+                    fotografías históricas, registros documentales, exposiciones digitales e investigaciones,
+                    se busca proteger la memoria colectiva para las generaciones presentes y futuras.
+                </p>
+
+                <div class="archivo-mission-grid">
+                    <article>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Preservar</h3>
+                        <p>Conservar imágenes históricas, negativos, placas y documentos iconográficos.</p>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-camera"></i>
+                        <h3>Digitalizar</h3>
+                        <p>Transformar colecciones físicas en archivos digitales accesibles y consultables.</p>
+                    </article>
+
+                    <article>
+                        <i class="fa-solid fa-globe"></i>
+                        <h3>Compartir</h3>
+                        <p>Facilitar el acceso público a la memoria visual mediante plataformas digitales.</p>
+                    </article>
                 </div>
-            </article>
 
-            <article class="archivo-card comunidad">
-                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900" alt="Comunidad">
-                <div>
-                    <span>Comunidad · 1980</span>
-                    <h3>Encuentros ciudadanos</h3>
-                    <p>Fotografías de actividades comunitarias y culturales.</p>
+            </div>
+
+        </section>
+
+        <section class="archivo-featured" id="archivoExposicion">
+
+            <div class="section-title">
+                <span>Exposición destacada</span>
+                <h2>Cali Viejo</h2>
+                <p>
+                    Un viaje visual por la memoria urbana de Santiago de Cali a través de lugares,
+                    edificios, barrios y símbolos patrimoniales.
+                </p>
+            </div>
+
+            <div class="archivo-featured-layout">
+
+                <article class="archivo-featured-main">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200" alt="Exposición Cali Viejo">
+                    <div>
+                        <span>Exposición · 10 fotografías históricas</span>
+                        <h3>Cali Viejo: ciudad, memoria y patrimonio</h3>
+                        <p>
+                            Esta exposición reúne imágenes históricas que capturan la transformación de Cali,
+                            sus espacios públicos, su arquitectura, sus bibliotecas y sus comunidades.
+                        </p>
+                        <button onclick="scrollArchivoGallery()">
+                            Iniciar recorrido
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+
+                <div class="archivo-featured-side">
+                    <article><strong>1900–1950</strong><span>Río Cauca</span></article>
+                    <article><strong>1920–1960</strong><span>Parque de los Poetas</span></article>
+                    <article><strong>1940–1970</strong><span>Edificio Coltabaco</span></article>
+                    <article><strong>1880–1940</strong><span>Plaza de Caicedo</span></article>
                 </div>
-            </article>
 
-            <article class="archivo-card ciudad">
-                <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900" alt="Calles de Cali">
-                <div>
-                    <span>Ciudad · 1975</span>
-                    <h3>Calles y memoria urbana</h3>
-                    <p>Registro histórico de recorridos, calles y movilidad urbana.</p>
+            </div>
+
+        </section>
+
+        <section class="archivo-catalog" id="archivoCatalogo">
+
+            <div class="section-title">
+                <span>Catálogo de fotografías</span>
+                <h2>Imágenes digitalizadas</h2>
+                <p>
+                    Explora fotografías del AFC por tema, periodo histórico, territorio o tipo de colección.
+                </p>
+            </div>
+
+            <div class="archivo-tools">
+
+                <div class="archivo-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="archivoSearch" placeholder="Buscar por lugar, año, tema o colección..." onkeyup="searchArchivo()">
                 </div>
-            </article>
 
-            <article class="archivo-card bibliotecas">
-                <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900" alt="Biblioteca">
-                <div>
-                    <span>Bibliotecas · 1990</span>
-                    <h3>Bibliotecas públicas de barrio</h3>
-                    <p>Memoria de la expansión bibliotecaria en territorios de Cali.</p>
+                <div class="archivo-filters">
+                    <button class="archivo-filter active" onclick="filterArchivo('all', this)">Todas</button>
+                    <button class="archivo-filter" onclick="filterArchivo('ciudad', this)">Ciudad</button>
+                    <button class="archivo-filter" onclick="filterArchivo('bibliotecas', this)">Bibliotecas</button>
+                    <button class="archivo-filter" onclick="filterArchivo('patrimonio', this)">Patrimonio</button>
+                    <button class="archivo-filter" onclick="filterArchivo('comunidad', this)">Comunidad</button>
                 </div>
-            </article>
 
-        </div>
+            </div>
 
-    </section>
+            <div class="archivo-grid archivo-grid-v2" id="archivoGaleria">
 
-</main>
-{% include 'components/accessibility.html' %}
-{% include 'components/luma.html' %}
-{% include 'components/footer.html' %}
-<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+                <article class="archivo-card ciudad patrimonio">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=900" alt="Cali antiguo">
+                    <div>
+                        <span>Ciudad · 1920</span>
+                        <h3>Cali antiguo</h3>
+                        <p>Vista urbana histórica del centro de Santiago de Cali.</p>
+                        <button onclick="openArchivoPhoto('Cali antiguo')">Ver ficha</button>
+                    </div>
+                </article>
+
+                <article class="archivo-card bibliotecas comunidad">
+                    <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=900" alt="Biblioteca histórica">
+                    <div>
+                        <span>Bibliotecas · 1965</span>
+                        <h3>Sala de lectura patrimonial</h3>
+                        <p>Registro de espacios bibliotecarios dedicados a la lectura pública.</p>
+                        <button onclick="openArchivoPhoto('Sala de lectura patrimonial')">Ver ficha</button>
+                    </div>
+                </article>
+
+                <article class="archivo-card patrimonio ciudad">
+                    <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900" alt="Arquitectura patrimonial">
+                    <div>
+                        <span>Patrimonio · 1950</span>
+                        <h3>Arquitectura caleña</h3>
+                        <p>Memoria visual de edificaciones representativas de la ciudad.</p>
+                        <button onclick="openArchivoPhoto('Arquitectura caleña')">Ver ficha</button>
+                    </div>
+                </article>
+
+                <article class="archivo-card comunidad">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=900" alt="Comunidad">
+                    <div>
+                        <span>Comunidad · 1980</span>
+                        <h3>Encuentros ciudadanos</h3>
+                        <p>Fotografías de actividades comunitarias y culturales.</p>
+                        <button onclick="openArchivoPhoto('Encuentros ciudadanos')">Ver ficha</button>
+                    </div>
+                </article>
+
+                <article class="archivo-card ciudad">
+                    <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=900" alt="Calles de Cali">
+                    <div>
+                        <span>Ciudad · 1975</span>
+                        <h3>Calles y memoria urbana</h3>
+                        <p>Registro histórico de recorridos, calles y movilidad urbana.</p>
+                        <button onclick="openArchivoPhoto('Calles y memoria urbana')">Ver ficha</button>
+                    </div>
+                </article>
+
+                <article class="archivo-card bibliotecas">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=900" alt="Biblioteca pública">
+                    <div>
+                        <span>Bibliotecas · 1990</span>
+                        <h3>Bibliotecas públicas de barrio</h3>
+                        <p>Memoria de la expansión bibliotecaria en los territorios de Cali.</p>
+                        <button onclick="openArchivoPhoto('Bibliotecas públicas de barrio')">Ver ficha</button>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="archivo-investigaciones">
+
+            <div class="section-title">
+                <span>Investigaciones</span>
+                <h2>Memoria visual e investigación</h2>
+                <p>
+                    Artículos, investigaciones y documentos que acompañan la lectura histórica
+                    del archivo fotográfico.
+                </p>
+            </div>
+
+            <div class="archivo-research-grid">
+
+                <article>
+                    <span>Investigación</span>
+                    <h3>Transformación urbana de Cali</h3>
+                    <p>Lectura visual del crecimiento de la ciudad a través de sus fotografías históricas.</p>
+                    <a href="#">Leer investigación</a>
+                </article>
+
+                <article>
+                    <span>Memoria cultural</span>
+                    <h3>Bibliotecas y ciudadanía</h3>
+                    <p>Relación entre espacios bibliotecarios, comunidades lectoras y memoria barrial.</p>
+                    <a href="#">Leer investigación</a>
+                </article>
+
+                <article>
+                    <span>Patrimonio</span>
+                    <h3>El archivo como fuente histórica</h3>
+                    <p>Uso del archivo fotográfico para procesos educativos, patrimoniales y culturales.</p>
+                    <a href="#">Leer investigación</a>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="archivo-activities">
+
+            <div class="section-title">
+                <span>Talleres y actividades</span>
+                <h2>Formación alrededor de la fotografía</h2>
+                <p>
+                    Espacios para aprender sobre fotografía, archivo, memoria visual,
+                    conservación y patrimonio.
+                </p>
+            </div>
+
+            <div class="archivo-activity-grid">
+
+                <article>
+                    <i class="fa-solid fa-camera-retro"></i>
+                    <h3>Taller de fotografía patrimonial</h3>
+                    <p>Aprende a leer, conservar y narrar imágenes históricas.</p>
+                    <button>Inscribirme</button>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-box-archive"></i>
+                    <h3>Laboratorio de archivo comunitario</h3>
+                    <p>Creación de archivos barriales con fotografías familiares y comunitarias.</p>
+                    <button>Conocer más</button>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                    <h3>Charlas sobre memoria visual</h3>
+                    <p>Conversaciones con investigadores, fotógrafos, mediadores y ciudadanía.</p>
+                    <button>Ver agenda</button>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="archivo-collections">
+
+            <div class="section-title">
+                <span>Más colecciones</span>
+                <h2>Otros archivos</h2>
+                <p>Explora otras colecciones del patrimonio documental y visual de la Red.</p>
+            </div>
+
+            <div class="archivo-collection-grid">
+
+                <article>
+                    <i class="fa-solid fa-building-columns"></i>
+                    <h3>Archivo de Bibliotecas</h3>
+                    <strong>3.400 ítems</strong>
+                    <p>Historia de bibliotecas públicas, documentos, fotografías y testimonios.</p>
+                    <a href="#">Explorar colección</a>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-book-open"></i>
+                    <h3>Memoria Cultural</h3>
+                    <strong>2.100 ítems</strong>
+                    <p>Tradiciones, festivales, expresiones artísticas y acontecimientos culturales.</p>
+                    <a href="#">Explorar colección</a>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h3>Patrimonio Inmaterial</h3>
+                    <strong>1.850 ítems</strong>
+                    <p>Saberes ancestrales, gastronomía, oralidad y manifestaciones folclóricas.</p>
+                    <a href="#">Explorar colección</a>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="archivo-access">
+
+            <div class="section-title">
+                <span>Acceso</span>
+                <h2>Cómo consultar el archivo</h2>
+                <p>Conoce las formas disponibles para acceder a la colección fotográfica.</p>
+            </div>
+
+            <div class="archivo-access-grid">
+
+                <article>
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Visita presencial</h3>
+                    <p>Consulta guiada en sala para investigadores, estudiantes y ciudadanía.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-file-signature"></i>
+                    <h3>Solicitud de copias</h3>
+                    <p>Reproducciones digitales bajo criterios de conservación y uso responsable.</p>
+                </article>
+
+                <article>
+                    <i class="fa-solid fa-globe"></i>
+                    <h3>Acceso digital</h3>
+                    <p>Consulta progresiva de imágenes digitalizadas desde el Catálogo Maestro.</p>
+                </article>
+
+            </div>
+
+            <div class="archivo-contact-cta">
+                <div>
+                    <h3>¿Necesitas más información?</h3>
+                    <p>Contáctanos y te ayudaremos a encontrar lo que buscas en el archivo.</p>
+                </div>
+
+                <div>
+                    <a href="mailto:archivo@bibliotecasdecali.gov.co">
+                        <i class="fa-solid fa-envelope"></i>
+                        Correo
+                    </a>
+                    <a href="#">
+                        <i class="fa-solid fa-phone"></i>
+                        Teléfono
+                    </a>
+                    <a href="#">
+                        Solicitar cita
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    {% include 'components/accessibility.html' %}
+    {% include 'components/luma.html' %}
+    {% include 'components/footer.html' %}
+
+    <script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
 
 </body>
+
 </html>

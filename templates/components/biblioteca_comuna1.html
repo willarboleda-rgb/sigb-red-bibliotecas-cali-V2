@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centro Cultural Comuna 1 | Red de Bibliotecas Públicas de Cali</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sigb.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+{% include "components/top_navigation.html" %}
+
+<main class="bibdet-page">
+
+    <a href="/bibliotecas" class="bibdet-back">
+        <i class="fa-solid fa-arrow-left"></i>
+        Volver a Bibliotecas y Directorio
+    </a>
+
+    <section class="bibdet-hero hero-comuna1">
+
+        <div class="bibdet-badges">
+
+            <span>
+                <i class="fa-solid fa-compass"></i>
+                Territorio LEO 1
+            </span>
+
+            <span>
+                <i class="fa-solid fa-city"></i>
+                Urbana
+            </span>
+
+            <span>
+                <i class="fa-solid fa-certificate"></i>
+                ISO 9001
+            </span>
+
+        </div>
+
+        <h1>Centro Cultural Comuna 1</h1>
+
+        <p>
+            Espacio de encuentro ciudadano ubicado en la ladera de Cali.
+            Promueve procesos de lectura, escritura, apropiación digital,
+            participación juvenil y fortalecimiento comunitario.
+        </p>
+
+    </section>
+
+    <section class="bibdet-stats">
+
+        <article>
+            <strong>1.900</strong>
+            <span>Usuarios activos</span>
+        </article>
+
+        <article>
+            <strong>8.900</strong>
+            <span>Ejemplares</span>
+        </article>
+
+        <article>
+            <strong>4.6</strong>
+            <span>Calificación</span>
+        </article>
+
+        <article>
+            <strong>28</strong>
+            <span>Actividades mensuales</span>
+        </article>
+
+    </section>
+
+    <section class="bibdet-grid">
+
+        <article class="bibdet-card">
+
+            <h2>Información General</h2>
+
+            <ul>
+                <li><strong>Dirección:</strong> Calle 72 # 1A-45</li>
+                <li><strong>Barrio:</strong> Terrón Colorado</li>
+                <li><strong>Comuna:</strong> 1</li>
+                <li><strong>Territorio:</strong> LEO 1</li>
+                <li><strong>Horario:</strong> Lun-Sáb 8:00 a.m. - 6:00 p.m.</li>
+                <li><strong>Certificación:</strong> ISO 9001</li>
+            </ul>
+
+        </article>
+
+        <article class="bibdet-card">
+
+            <h2>Características Especiales</h2>
+
+            <div class="bibdet-tags">
+
+                <span>Sala TIC</span>
+                <span>Zona Juvenil</span>
+                <span>Auditorio</span>
+                <span>Accesibilidad</span>
+                <span>WiFi</span>
+                <span>Sala Multimedia</span>
+
+            </div>
+
+        </article>
+
+    </section>
+
+    <section class="bibdet-services">
+
+        <h2>Servicios</h2>
+
+        <div class="bibdet-services-grid">
+
+            <article>
+                <i class="fa-solid fa-book"></i>
+                <h3>Préstamo Bibliográfico</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-users"></i>
+                <h3>Clubes de Lectura</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-laptop"></i>
+                <h3>Acceso a Internet</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h3>Formación Digital</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-code"></i>
+                <h3>Alfabetización Digital</h3>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-people-group"></i>
+                <h3>Talleres Comunitarios</h3>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-programacion">
+
+        <h2>Programación Semanal</h2>
+
+        <div class="bibdet-agenda">
+
+            <article>
+                <strong>Lunes</strong>
+                <span>Club Juvenil de Lectura</span>
+            </article>
+
+            <article>
+                <strong>Martes</strong>
+                <span>Programación y Robótica</span>
+            </article>
+
+            <article>
+                <strong>Miércoles</strong>
+                <span>Cine Foro Comunitario</span>
+            </article>
+
+            <article>
+                <strong>Jueves</strong>
+                <span>Escritura Creativa</span>
+            </article>
+
+            <article>
+                <strong>Viernes</strong>
+                <span>Club de Creadores Digitales</span>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-team">
+
+        <h2>Equipo Bibliotecario</h2>
+
+        <div class="bibdet-team-grid">
+
+            <article>
+                <i class="fa-solid fa-user-tie"></i>
+                <h3>Coordinador Biblioteca</h3>
+                <p>Gestión administrativa y articulación territorial.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-book-open-reader"></i>
+                <h3>Bibliotecario</h3>
+                <p>Atención a usuarios y gestión de colecciones.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-pen"></i>
+                <h3>Promotor LEO</h3>
+                <p>Procesos de lectura, escritura y oralidad.</p>
+            </article>
+
+            <article>
+                <i class="fa-solid fa-laptop-code"></i>
+                <h3>Facilitador TIC</h3>
+                <p>Formación digital y apropiación tecnológica.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-gallery">
+
+        <h2>Galería Comunitaria</h2>
+
+        <div class="bibdet-gallery-grid">
+
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+
+        </div>
+
+    </section>
+
+    <section class="bibdet-360">
+
+        <i class="fa-solid fa-vr-cardboard"></i>
+
+        <h2>Recorrido Virtual 360°</h2>
+
+        <p>
+            Explora virtualmente los espacios del Centro Cultural Comuna 1,
+            sus salas de lectura, espacios juveniles y laboratorios digitales.
+        </p>
+
+        <button>
+            Ver recorrido 360°
+        </button>
+
+    </section>
+
+</main>
+
+{% include 'components/accessibility.html' %}
+{% include 'components/luma.html' %}
+{% include 'components/footer.html' %}
+
+<script src="{{ url_for('static', filename='js/sigb.js') }}"></script>
+
+</body>
+</html>
