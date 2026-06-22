@@ -331,7 +331,6 @@ def evento_destacado(slug):
         evento=evento
     )
 
-
 @app.route('/biblioteca/biblioteca_nuevo_latir')
 def biblioteca_nuevo_latir():
     return render_template('components/biblioteca_nuevo_latir.html')
